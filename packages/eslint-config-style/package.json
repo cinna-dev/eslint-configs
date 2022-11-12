@@ -1,0 +1,24 @@
+{
+  "name": "@cinna-dev/eslint-config-style",
+  "version": "1.0.15",
+  "description": "eslint config",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "eslint",
+    "eslint config",
+    "style",
+    "linter"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cinna-dev/eslint-config-style.git"
+  },
+  "peerDependencies": {
+    "eslint": ">= 3"
+  },
+  "author": "cinna-dev",
+  "license": "ISC"
+}

@@ -1,0 +1,21 @@
+{
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+		"minify-all": "node scripts/minify-all-src-files.cjs",
+    "build": "npm run minify-all && npm run build-table && npm run increment",
+    "build-tables": "node scripts/create-all-rule-tables.cjs",
+    "increment": "node scripts/auto-increment-package-version.cjs --patch"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.42.1",
+    "@typescript-eslint/parser": "^5.42.1",
+    "eslint": "^8.27.0",
+    "eslint-plugin-react": "^7.31.10",
+    "node-fetch": "^3.3.0",
+    "terser": "^5.15.1",
+    "typescript": "^4.8.4"
+  }
+}

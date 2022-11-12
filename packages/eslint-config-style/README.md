@@ -1,0 +1,56 @@
+# eslint formatting style config
+/extensions" | "warn" |
+
+## Table of Content
+
+| Rule | Alert |
+| ---- | ----- |
+| "template-tag-spacing" | "warn" |
+| "padding-line-between-statements" | "warn" |
+| "no-multiple-empty-lines" | "warn" |
+| "max-statements-per-line" | "warn" |
+| "max-lines-per-function" | "warn" |
+| "max-depth" | "warn" |
+| "max-len" | "warn" |
+| "max-lines" | "warn" |
+| "spaced-comment" | "warn" |
+| "computed-property-spacing" | "warn" |
+| "max-params" | "warn" |
+| "max-nested-callbacks" | "warn" |
+| "no-multi-spaces" | "warn" |
+| "eol-last" | "warn" |
+| "space-unary-ops" | "warn" |
+| "space-infix-ops" | "warn" |
+| "space-before-function-paren" | "warn" |
+| "space-before-blocks" | "warn" |
+| "func-call-spacing" | "warn" |
+| "block-spacing" | "warn" |
+| "no-trailing-spaces" | "warn" |
+| "no-whitespace-before-property" | "warn" |
+| "object-curly-spacing" | "warn" |
+| "object-property-newline" | "warn" |
+| "key-spacing" | "warn" |
+| "object-curly-newline" | "warn" |
+| "dot-location" | "warn" |
+| "array-bracket-newline" | "warn" |
+| "array-bracket-spacing" | "warn" |
+| "function-call-argument-newline" | "warn" |
+| "function-paren-newline" | "warn" |
+| "arrow-parens" | "warn" |
+| "arrow-spacing" | "warn" |
+| "id-length" | "warn" |
+| "no-unused-vars" | "warn" |
+| "brace-style" | "warn" |
+| "comma-dangle" | "warn" |
+| "no-duplicate-imports" | "warn" |
+| "wrap-iife" | "warn" |
+| "nonblock-statement-body-position" | "warn" |
+| "rest-spread-spacing" | "warn" |
+| "jsx-quotes" | "warn" |
+| "padded-blocks" | "warn" |
+| "comma-spacing" | "warn" |
+| "template-curly-spacing" | "warn" |
+| "keyword-spacing" | "warn" |
+| "use-isnan" | "error" |
+| "no-loss-of-precision" | "error" |
+| "import/extensions" | "warn" |

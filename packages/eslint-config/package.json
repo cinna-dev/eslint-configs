@@ -1,0 +1,21 @@
+{
+  "name": "@cinna-dev/eslint-config",
+  "version": "1.0.25",
+  "description": "eslint config",
+  "main": "index.js",
+  "keywords": [
+    "eslint",
+    "eslint config"
+  ],
+  "peerDependencies": {
+    "eslint": ">= 3"
+  },
+  "author": "cinna-dev",
+  "license": "ISC",
+  "dependencies": {
+    "@cinna-dev/eslint-config-error": "1.0.12",
+    "@cinna-dev/eslint-config-style": "1.0.15",
+    "@cinna-dev/eslint-config-suggestions": "1.0.14",
+    "@cinna-dev/eslint-config-ts": "1.0.3"
+  }
+}
