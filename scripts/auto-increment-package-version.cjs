@@ -41,7 +41,10 @@ const incrementPackageVersion = async (
     fs.writeFileSync(path, incrementedMinorVersionFile);
 
     console.log(
-      "version: " +
+      "package: " +
+        packageName +
+        "\n" +
+        "version: " +
         module["dist-tags"].latest +
         " => " +
         `${major}.${minor}.${patch}`

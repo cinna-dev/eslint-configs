@@ -6,13 +6,6 @@
   "files": [
     "dist"
   ],
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "minify": "terser src/index.js -f quote_style=1 -o dist/index.js",
-    "build": "npm run minify && npm run table && npm run increment",
-    "table": "node scripts/rule-table.cjs",
-    "increment": "node scripts/auto-increment-package-version.cjs --patch"
-  },
   "keywords": [
     "eslint",
     "config",

@@ -1,18 +1,11 @@
 {
   "name": "@cinna-dev/eslint-config-suggestions",
-  "version": "1.0.14",
+  "version": "1.0.16",
   "description": "eslint config for suggestions",
   "main": "dist/index.js",
   "files": [
     "dist"
   ],
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "minify": "terser src/index.js --output=dist/index.js",
-    "build": "npm run minify && npm run table && npm run increment",
-    "table": "node scripts/rule-table.cjs",
-    "increment": "node scripts/auto-increment-module-version.cjs --patch"
-  },
   "keywords": [
     "eslint",
     "eslint config",

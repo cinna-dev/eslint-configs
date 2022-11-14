@@ -1,33 +1,44 @@
-const {
-  incrementPackageVersion,
-} = require("./auto-increment-package-version.cjs");
+const incrementPackageVersion = require("./auto-increment-package-version.cjs");
 const path = require("path");
 
-autoIncrementPackageVersion(path.join(__dirname, "../packages/eslint-config"), {
-  patch: true,
+let options = {
+  major: false,
+  minor: false,
+  patch: false,
+};
+
+process.argv.forEach((val) => {
+  options.patch ||= ["--patch", "-p"].includes(val);
+  options.minor ||= ["--minor", "-mi"].includes(val);
+  options.major ||= ["--major", "-ma"].includes(val);
 });
 
-autoIncrementPackageVersion(
+incrementPackageVersion(
+  path.join(__dirname, "../packages/eslint-config"),
+  options
+);
+
+incrementPackageVersion(
   path.join(__dirname, "../packages/eslint-config-error"),
-  { patch: true }
+  options
 );
 
-autoIncrementPackageVersion(
+incrementPackageVersion(
   path.join(__dirname, "../packages/eslint-config-react"),
-  { patch: true }
+  options
 );
 
-autoIncrementPackageVersion(
+incrementPackageVersion(
   path.join(__dirname, "../packages/eslint-config-style"),
-  { patch: true }
+  options
 );
 
-autoIncrementPackageVersion(
+incrementPackageVersion(
   path.join(__dirname, "../packages/eslint-config-suggestions"),
-  { patch: true }
+  options
 );
 
-autoIncrementPackageVersion(
+incrementPackageVersion(
   path.join(__dirname, "../packages/eslint-config-ts"),
-  { patch: true }
+  options
 );

@@ -13,7 +13,9 @@ const TABLE_HEAD = `
 
 // "...":"..." or "...":["...",...]
 const RULE_EXTRACTION_REGEX =
-  /"[^:{}[\]]+":\s?"\w+"|"[^:{}[\]]+":\s?\["[^:{}[\],]+/g;
+  // /"[^:{}[\]]+":\s?"\w+"|"[^:{}[\]]+":\s?\["[^:{}[\],]+/g;
+  /"{0,1}[^:{}[\]\"\,]+"{0,1}:\s?\[?"\w+"/g;
+// /"{0,1}[^:{}[\]\"\,]+"{0,1}:\s?"\w+"|"[^:{}[\]]+":\s?\["[^:{}[\],]+/g;
 
 const extractRules = (path) => {
   const file = fs.readFileSync(path, "utf-8");
@@ -38,11 +40,11 @@ const extractRules = (path) => {
 
 const parseToIcon = (alert) => {
   switch (alert) {
-    case "'error'":
+    case '"error"':
       return EMOJI.HIGH_VOLTAGE;
-    case "'warn'":
+    case '"warn"':
       return EMOJI.WARNING;
-    case "'off'":
+    case '"off"':
       return EMOJI.CROSS;
     default:
       return alert;

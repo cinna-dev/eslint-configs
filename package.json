@@ -5,9 +5,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
 		"minify-all": "node scripts/minify-all-src-files.cjs",
-    "build": "npm run minify-all && npm run build-table && npm run increment",
-    "build-tables": "node scripts/create-all-rule-tables.cjs",
-    "increment": "node scripts/auto-increment-package-version.cjs --patch"
+    "build-all": "npm run minify-all && npm run build-all-tables && npm run increment-all",
+    "build-all-tables": "node scripts/create-all-rule-tables.cjs",
+    "increment-all": "node scripts/increment-all.cjs --patch",
+		"publish-error": "npm publish packages/eslint-config-error",
+		"publish-react": "npm publish packages/eslint-config-react",
+		"publish-style": "npm publish packages/eslint-config-style",
+		"publish-suggestions": "npm publish packages/eslint-config-suggestions",
+		"publish-ts": "npm publish packages/eslint-config-ts"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.42.1",

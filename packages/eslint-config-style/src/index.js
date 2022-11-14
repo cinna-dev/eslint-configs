@@ -1,6 +1,70 @@
 module.exports = {
   rules: {
-    /* Layout & Formatting */
+    /* Arrays */
+
+    // https://eslint.org/docs/latest/rules/array-bracket-newline
+    // Enforce linebreaks after opening and before closing array brackets
+    "array-bracket-newline": ["warn", { multiline: true, minItems: 4 }],
+
+    // https://eslint.org/docs/latest/rules/array-bracket-spacing
+    // Enforce consistent spacing inside array brackets
+    "array-bracket-spacing": [
+      "warn",
+      "always",
+      { singleValue: false, objectsInArrays: false, arraysInArrays: true },
+    ],
+
+    // https://eslint.org/docs/latest/rules/array-element-newline
+    // Enforce line breaks after each array element
+    // This rule enforces line breaks between array elements.
+    "array-element-newline": [
+      "error",
+      {
+        ArrayExpression: "consistent",
+        ArrayPattern: { minItems: 3 },
+      },
+    ],
+
+    // https://eslint.org/docs/latest/rules/arrow-parens
+    // Require parentheses around arrow function arguments
+    "arrow-parens": ["warn", "as-needed"],
+
+    // https://eslint.org/docs/latest/rules/arrow-spacing
+    // Enforce consistent spacing before and after the arrow in arrow functions
+    "arrow-spacing": ["warn", { before: true, after: true }],
+
+    // https://eslint.org/docs/latest/rules/block-spacing
+    // Disallow or enforce spaces inside of blocks after opening block and before closing block
+    "block-spacing": "warn",
+
+    // https://eslint.org/docs/latest/rules/brace-style
+    // Enforce consistent brace style for blocks
+    // The one true brace style is one of the most common brace styles in JavaScript,
+    // in which the opening brace of a block is placed on the same line as its corresponding statement or declaration.
+    "brace-style": "warn",
+
+    // https://eslint.org/docs/latest/rules/comma-dangle
+    // Require or disallow trailing commas
+    "comma-dangle": [
+      "warn",
+      {
+        arrays: "always-multiline",
+        objects: "always-multiline",
+        imports: "never",
+        exports: "never",
+        functions: "never",
+      },
+    ],
+
+    // https://eslint.org/docs/latest/rules/comma-style
+    // Enforce consistent comma style
+    // The Comma Style rule enforces styles for comma-separated lists. There are two comma styles primarily used in JavaScript:
+    // - The standard style, in which commas are placed at the end of the current line
+    // - Comma First style, in which commas are placed at the start of the next line
+    // One of the justifications for using Comma First style is that it can help track missing and trailing commas.
+    // These are problematic because missing commas in variable declarations can lead to the leakage of global variables and trailing commas can lead to errors in older versions of IE.
+    "comma-style": ["error", "last"],
+
     indent: ["warn", 2],
     "linebreak-style": [0, "unix"],
 
@@ -73,8 +137,6 @@ module.exports = {
     // https://eslint.org/docs/latest/rules/func-call-spacing
     "func-call-spacing": ["warn", "never"],
     // space in block scope
-    // https://eslint.org/docs/latest/rules/block-spacing
-    "block-spacing": "warn",
 
     "no-trailing-spaces": "warn",
     "no-whitespace-before-property": "warn",
@@ -94,34 +156,15 @@ module.exports = {
     "space-infix-ops": "warn",
     // "keyword-spacings": ["off", { before: true, after: true }],
     // Arrays
-    "array-bracket-newline": ["warn", { multiline: true, minItems: 4 }],
-    "array-bracket-spacing": [
-      "warn",
-      "never",
-      { singleValue: false, objectsInArrays: false, arraysInArrays: false },
-    ],
     // Function
     "function-call-argument-newline": ["warn", "consistent"],
     "function-paren-newline": ["warn", { minItems: 4 }],
     // Arrow Function
-    "arrow-parens": ["warn", "as-needed"],
-    "arrow-spacing": ["warn", { before: true, after: true }],
     // vars
     "id-length": ["warn", { exceptions: ["_"] }],
     "no-unused-vars": ["warn", { args: "after-used" }],
     // Braces
-    "brace-style": "warn",
     // Commas
-    "comma-dangle": [
-      "warn",
-      {
-        arrays: "always-multiline",
-        objects: "always-multiline",
-        imports: "never",
-        exports: "never",
-        functions: "never",
-      },
-    ],
 
     // https://eslint.org/docs/latest/rules/no-duplicate-imports
     // Disallow duplicate module imports

@@ -566,7 +566,7 @@ module.exports = {
     "no-proto": "error",
 
     // https://eslint.org/docs/latest/rules/no-redeclare
-    // Disallow variable redeclaration
+    // Disallow variable re-declaration
     // In JavaScript, it’s possible to redeclare the same variable name using `var`.
     // This can lead to confusion as to where the variable is actually declared and initialized.
     // This rule is aimed at eliminating variables that have multiple declarations in the same scope.
@@ -826,6 +826,232 @@ module.exports = {
     // This applies to all methods (including generators) defined in object literals and
     // any properties defined where the key name matches name of the assigned variable.
     "object-shorthand": "error",
+
+    // https://eslint.org/docs/latest/rules/one-var
+    // Enforce variables to be declared either together or separately in functions
+    // This rule enforces variables to be declared either together or separately per function ( for var) or block (for let and const) scope.
+    "one-var": ["warn", "never"],
+
+    // https://eslint.org/docs/latest/rules/one-var-declaration-per-line
+    // Require or disallow newlines around variable declarations
+    // This rule enforces a consistent newlines around variable declarations.
+    // This rule ignores variable declarations inside for `loop` conditionals.
+    "one-var-declaration-per-line": ["error", "initializations"],
+
+    // https://eslint.org/docs/latest/rules/operator-assignment
+    // Require or disallow assignment operator shorthand where possible
+    // This rule requires or disallows assignment operator shorthand where possible.
+    // The rule applies to the operators listed in the above table.
+    // It does not report the logical assignment operators `&&=`, `||=`, and `??=` because their short-circuiting behavior is different from the other assignment operators.
+    "operator-assignment": ["warn", "always"],
+
+    // https://eslint.org/docs/latest/rules/prefer-arrow-callback
+    // Require using arrow functions for callbacks
+    // Arrow functions can be an attractive alternative to function expressions for callbacks or function arguments.
+    // For example, arrow functions are automatically bound to their surrounding scope/context.
+    // This provides an alternative to the pre-ES6 standard of explicitly binding function expressions to achieve similar behavior.
+    // This rule locates function expressions used as callbacks or function arguments.
+    // An error will be produced for any that could be replaced by an arrow function without changing the result.
+    "prefer-arrow-callback": "warn",
+
+    // https://eslint.org/docs/latest/rules/prefer-const
+    // Require `const` declarations for variables that are never reassigned after declared
+    // If a variable is never reassigned, using the const declaration is better.
+    // const declaration tells readers, “this variable is never reassigned,” reducing cognitive load and improving maintainability.
+    // This rule is aimed at flagging variables that are declared using `yet` keyword,
+    // but never reassigned after the initial assignment.
+    "prefer-const": "warn",
+
+    // https://eslint.org/docs/latest/rules/prefer-destructuring
+    // Require destructuring from arrays and/or objects
+    "prefer-destructuring": [
+      "warn",
+      {
+        array: true,
+        object: true,
+      },
+      {
+        enforceForRenamedProperties: false,
+      },
+    ],
+
+    // https://eslint.org/docs/latest/rules/prefer-exponentiation-operator
+    // Disallow the use of `Math.pow` in favor of the `**` operator
+    // Introduced in ES2016, the infix exponentiation operator `**` is an alternative for the standard `Math.pow` function.
+    // Infix notation is considered to be more readable and thus more preferable than the function notation.
+    // This rule disallows calls to `Math.pow` and suggests using the `**` operator instead.
+    "prefer-exponentiation-operator": "warn",
+
+    // https://eslint.org/docs/latest/rules/prefer-named-capture-group
+    // Enforce using named capture group in regular expression
+    "prefer-named-capture-group": "off",
+
+    // https://eslint.org/docs/latest/rules/prefer-numeric-literals
+    // Disallow `parseInt()` and `Number.parseInt()` in favor of binary, octal, and hexadecimal literals
+    // The `parseInt()` and `Number.parseInt()` functions can be used to turn binary, octal, and hexadecimal strings into integers.
+    // As binary, octal, and hexadecimal literals are supported in ES6,
+    // this rule encourages use of those numeric literals instead of `parseInt()` or `Number.parseInt()`.
+    "prefer-numeric-literals": "warn",
+
+    // https://eslint.org/docs/latest/rules/prefer-object-has-own
+    // Disallow use of `Object.prototype.hasOwnProperty.call()` and prefer use of `Object.hasOwn()`
+    "prefer-object-has-own": "error",
+
+    // https://eslint.org/docs/latest/rules/prefer-object-spread
+    // Disallow using Object.assign with an object literal as the first argument and prefer the use of object spread instead.
+    // When `Object.assign` is called using an object literal as the first argument, this rule requires using the object spread syntax instead.
+    // This rule also warns on cases where an `Object.assign` call is made using a single argument that is an object literal, in this case, the `Object.assign` call is not needed.
+    // Introduced in ES2018, object spread is a declarative alternative which may perform better than the more dynamic, imperative `Object.assign`.
+    "prefer-object-spread": "warn",
+
+    // https://eslint.org/docs/latest/rules/prefer-promise-reject-errors
+    // Require using Error objects as Promise rejection reasons
+    // It is considered good practice to only pass instances of the built-in `Error` object to the reject() function for user-defined errors in Promises.
+    // `Error` objects automatically store a stack trace, which can be used to debug an error by determining where it came from.
+    // If a Promise is rejected with a non-`Error` value, it can be difficult to determine where the rejection occurred.
+    // This rule aims to ensure that Promises are only rejected with `Error` objects.
+    "prefer-promise-reject-errors": "error",
+
+    // https://eslint.org/docs/latest/rules/prefer-regex-literals
+    // Disallow use of the RegExp constructor in favor of regular expression literals
+    "prefer-regex-literals": "warn",
+
+    // https://eslint.org/docs/latest/rules/prefer-rest-params
+    // Require rest parameters instead of `arguments`
+    // There are rest parameters in ES2015. We can use that feature for variadic functions instead of the `arguments` variable.
+    // `arguments` does not have methods of `Array.prototype`, so it’s a bit of an inconvenience.
+    // This rule is aimed to flag usage of `arguments` variables.
+    "prefer-rest-params": "warn",
+
+    // https://eslint.org/docs/latest/rules/prefer-spread
+    // Require spread operators instead of `.apply()`
+    // Before ES2015, one must use `Function.prototype.apply()` to call variadic functions.
+    // This rule is aimed to flag usage of `Function.prototype.apply()` in situations where spread syntax could be used instead.
+    "prefer-spread": "warn",
+
+    // https://eslint.org/docs/latest/rules/prefer-template
+    // Require template literals instead of string concatenation
+    // This rule is aimed to flag usage of `+` operators with strings.
+    "prefer-template": "warn",
+
+    // https://eslint.org/docs/latest/rules/quote-props
+    // Require quotes around object literal property names
+    "quote-props": ["warn", "as-needed"],
+
+    // https://eslint.org/docs/latest/rules/radix
+    // Enforce the consistent use of the radix argument when using `parseInt()`
+    // When using the `parseInt()` function it is common to omit the second argument, the radix,
+    // and let the function try to determine from the first argument what type of number it is.
+    // By default, `parseInt()` will autodetect decimal and hexadecimal (via `0x` prefix).
+    // Prior to ECMAScript 5, `parseInt()` also autodetected octal literals,
+    // which caused problems because many developers assumed a leading `0` would be ignored.
+    // This confusion led to the suggestion that you always use the radix parameter to `parseInt()` to eliminate unintended consequences.
+    // ECMAScript 5 changed the behavior of `parseInt()` so that it no longer autodetects octal literals and instead treats them as decimal literals.
+    // However, the differences between hexadecimal and decimal interpretation of the first parameter causes many developers to continue using the radix parameter to ensure the string is interpreted in the intended way.
+    // On the other hand, if the code is targeting only ES5-compliant environments passing the radix `10` may be redundant.
+    // In such a case you might want to disallow using such a radix.
+    // This rule is aimed at preventing the unintended conversion of a string to a number of a different base than intended or at preventing the redundant 10 radix if targeting modern environments only.
+    radix: "warn",
+
+    // https://eslint.org/docs/latest/rules/require-await
+    // Disallow async functions which have no `await` expression
+    // Asynchronous functions in JavaScript behave differently than other functions in two important ways:
+    // The return value is always a `Promise`.
+    // You can use the `await` operator inside of them.
+    // The primary reason to use asynchronous functions is typically to use the `await` operator
+    // This rule warns async functions which have no `await` expression.
+    "require-await": "warn",
+
+    // https://eslint.org/docs/latest/rules/require-unicode-regexp
+    // Enforce the use of `u` flag on RegExp
+    // RegExp u flag has two effects:
+    // - Make the regular expression handling UTF-16 surrogate pairs correctly.
+    // Make the regular expression throwing syntax errors early as disabling `Annex B extensions`.
+    // Because of historical reason, JavaScript regular expressions are tolerant of syntax errors.
+    // For example, `/\w{1, 2/` is a syntax error, but JavaScript doesn’t throw the error.
+    // It matches strings such as `"a{1, 2"` instead. Such a recovering logic is defined in Annex B.
+    // The `u` flag disables the recovering logic Annex B defined. As a result, you can find errors early. This is similar to `the strict mode`.
+    // Therefore, the `u` flag lets us work better with regular expressions.
+    "require-unicode-regexp": "error",
+
+    // https://eslint.org/docs/latest/rules/require-yield
+    // Require generator functions to contain `yield`
+    // This rule generates warnings for generator functions that do not have the `yield` keyword.
+    "require-yield": "error",
+
+    // https://eslint.org/docs/latest/rules/sort-imports
+    // Enforce sorted import declarations within modules
+    // This rule checks all import declarations and verifies that all imports are first sorted by the used member syntax
+    // and then alphabetically by the first member or alias name.
+    "sort-imports": [
+      "warn",
+      {
+        ignoreCase: false,
+        ignoreDeclarationSort: false,
+        ignoreMemberSort: false,
+        memberSyntaxSortOrder: ["none", "all", "multiple", "single"],
+        allowSeparatedGroups: false,
+      },
+    ],
+
+    // https://eslint.org/docs/latest/rules/sort-keys
+    // Require object keys to be sorted
+    // When declaring multiple properties,
+    // some developers prefer to sort property names alphabetically to more easily find and/or diff necessary properties at a later time.
+    // Others feel that it adds complexity and becomes burden to maintain.
+    // This rule checks all property definitions of object expressions and verifies that all variables are sorted alphabetically.
+    "sort-keys": "off",
+
+    // https://eslint.org/docs/latest/rules/sort-vars
+    // Require variables within the same declaration block to be sorted
+    // When declaring multiple variables within the same block,
+    // some developers prefer to sort variable names alphabetically to be able to find necessary variable easier at the later time.
+    // Others feel that it adds complexity and becomes burden to maintain.
+    // This rule checks all variable declaration blocks and verifies that all variables are sorted alphabetically.
+    // The default configuration of the rule is case-sensitive.
+    "sort-vars": "off",
+
+    // https://eslint.org/docs/latest/rules/spaced-comment
+    // Enforce consistent spacing after the `//` or `/*` in a comment
+    // Some style guides require or disallow a whitespace immediately after the initial `//` or `/*` of a comment.
+    // Whitespace after the `//` or `/*` makes it easier to read text in comments.
+    // On the other hand, commenting out code is easier without having to put a whitespace right after the `//` or `/*.`
+    "spaced-comment": [
+      "warn",
+      "always",
+      {
+        line: {
+          markers: ["/"],
+          exceptions: ["-", "+"],
+        },
+        block: {
+          markers: ["!"],
+          exceptions: ["*"],
+          balanced: true,
+        },
+      },
+    ],
+
+    // https://eslint.org/docs/latest/rules/strict
+    // A strict mode directive is a "use strict" literal at the beginning of a script or function body.
+    // It enables strict mode semantics.
+    strict: ["error", "global"],
+
+    // https://eslint.org/docs/latest/rules/symbol-description
+    // Require symbol descriptions
+    // Using `description` promotes easier debugging: when a symbol is logged the description is used
+    // This rules requires a description when creating symbols.
+    "symbol-description": "warn",
+
+    // https://eslint.org/docs/latest/rules/vars-on-top
+    // Require `var` declarations be placed at the top of their containing scope
+    // This rule aims to keep all variable declarations in the leading series of statements.
+    // Allowing multiple declarations helps promote maintainability and is thus allowed.
+    "vars-on-top": "warn",
+
+    // https://eslint.org/docs/latest/rules/yoda
+    // This rule aims to enforce consistent style of conditions which compare a variable to a literal value.
+    yoda: "warn",
   },
   overrides: [
     {
@@ -833,6 +1059,15 @@ module.exports = {
       files: ["*.tsx", "*.jsx"],
       rules: {
         "new-cap": ["error", { newIsCap: true, properties: true }],
+      },
+    },
+    {
+      // ts Files
+      files: ["*.ts", "*.mts", "*.cts"],
+      rules: {
+        "new-cap": ["error", { newIsCap: true, properties: true }],
+        "no-shadow": "off",
+        "id-length": "off",
       },
     },
     {
