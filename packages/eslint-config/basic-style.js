@@ -13,7 +13,7 @@ module.exports = {
     es2022: true,
   },
   extends: [
-    "@cinna-dev/eslint-config-style",
+    "@cinna-dev/eslint-config-style/basic",
     "@cinna-dev/eslint-config-error",
     "@cinna-dev/eslint-config-suggestions",
     "@cinna-dev/eslint-config-ts",

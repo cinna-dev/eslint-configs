@@ -1,21 +1,27 @@
 {
   "name": "@cinna-dev/eslint-config",
-  "version": "1.0.26",
+  "version": "1.0.50",
   "description": "eslint config",
   "main": "index.js",
   "keywords": [
     "eslint",
-    "eslint config"
+    "eslint-config"
   ],
   "peerDependencies": {
     "eslint": ">= 3"
   },
+  "exports": {
+    ".": "./index.js",
+    "./basic-style": "./basic-style.js"
+  },
   "author": "cinna-dev",
   "license": "ISC",
   "dependencies": {
-    "@cinna-dev/eslint-config-error": "1.0.12",
-    "@cinna-dev/eslint-config-style": "1.0.16",
-    "@cinna-dev/eslint-config-suggestions": "1.0.16",
-    "@cinna-dev/eslint-config-ts": "1.0.3"
+    "@cinna-dev/eslint-config-error": "^1.0.12",
+    "@cinna-dev/eslint-config-import": "^1.0.12",
+    "@cinna-dev/eslint-config-react": "^1.0.6",
+    "@cinna-dev/eslint-config-style": "^1.0.27",
+    "@cinna-dev/eslint-config-suggestions": "^1.0.23",
+    "@cinna-dev/eslint-config-ts": "^1.0.17"
   }
 }
