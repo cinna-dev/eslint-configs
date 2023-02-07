@@ -5,13 +5,14 @@ module.exports = {
   },
   overrides: [
     {
-      files: ["__test__/**/*.ts"],
+      files: ["__test__/**/*"],
       extends: [
-        "./packages/eslint-config-error/dist/index.js",
-        "./packages/eslint-config-react/dist/index.js",
-        "./packages/eslint-config-style/dist/index.js",
-        "./packages/eslint-config-suggestions/dist/index.js",
-        "./packages/eslint-config-ts/dist/index.js",
+        "@cinna-dev/eslint-config-error",
+        "@cinna-dev/eslint-config-style/basic",
+        "@cinna-dev/eslint-config-suggestions",
+        "@cinna-dev/eslint-config-ts",
+        "@cinna-dev/eslint-config-react",
+        "@cinna-dev/eslint-config-import",
       ],
     },
   ],

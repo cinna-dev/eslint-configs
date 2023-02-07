@@ -1,26 +1,33 @@
 {
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "packages/eslint-config-react"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-		"minify-all": "node scripts/minify-all-src-files.cjs",
-    "build-all": "npm run minify-all && npm run build-all-tables && npm run increment-all",
+    "lint": "set TIMING=1 && eslint ./__test__",
+    "minify-all": "node scripts/minify-all-src-files.cjs",
+    "minify-test": "node scripts/minify-test.cjs",
+    "build-all": "npm run minify-all && npm run increment-all",
     "build-all-tables": "node scripts/create-all-rule-tables.cjs",
     "increment-all": "node scripts/increment-all.cjs --patch",
-		"publish-error": "npm publish packages/eslint-config-error",
-		"publish-react": "npm publish packages/eslint-config-react",
-		"publish-style": "npm publish packages/eslint-config-style",
-		"publish-suggestions": "npm publish packages/eslint-config-suggestions",
-		"publish-ts": "npm publish packages/eslint-config-ts"
+    "publish-error": "npm publish packages/eslint-config-error",
+    "publish-react": "npm publish packages/eslint-config-react",
+    "publish-style": "npm publish packages/eslint-config-style",
+    "publish-suggestions": "npm publish packages/eslint-config-suggestions",
+    "publish-ts": "npm publish packages/eslint-config-ts",
+    "test-npmjs-api": "node ./scripts/test-npm-api.js",
+    "update:deps": "npm i -D eslint-import-resolver-typescript@latest -w @cinna-dev/eslint-config-import && npm i -D eslint-import-resolver-typescript@latest -w eslint-config-import && npm i -D @typescript-eslint/eslint-plugin@latest -m @cinna-dev/eslint-config-ts && npm i -D @typescript-eslint/parser@latest -m @cinna-dev/eslint-config-ts",
+    "auto-update": "node lib/auto-update.cjs",
+		"cli": "node lib/cli.cjs"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.42.1",
-    "@typescript-eslint/parser": "^5.42.1",
-    "eslint": "^8.27.0",
-    "eslint-plugin-react": "^7.31.10",
+    "eslint": "^8.33.0",
     "node-fetch": "^3.3.0",
     "terser": "^5.15.1",
-    "typescript": "^4.8.4"
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "commander": "^10.0.0"
   }
 }

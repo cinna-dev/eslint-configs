@@ -17,6 +17,7 @@
   "author": "cinna-dev",
   "license": "ISC",
   "dependencies": {
+    "eslint": "^8.33.0",
     "@cinna-dev/eslint-config-error": "^1.0.12",
     "@cinna-dev/eslint-config-import": "^1.0.12",
     "@cinna-dev/eslint-config-react": "^1.0.6",

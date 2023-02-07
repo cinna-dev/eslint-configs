@@ -12,6 +12,7 @@ const inputOutputFiles = [
   "../packages/eslint-config-style",
   "../packages/eslint-config-suggestions",
   "../packages/eslint-config-ts",
+  "../packages/eslint-config-import",
 ].map(createPath);
 
 inputOutputFiles.forEach(([input, output]) => createRuleTable(input, output));

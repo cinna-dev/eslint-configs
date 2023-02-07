@@ -42,3 +42,8 @@ incrementPackageVersion(
   path.join(__dirname, "../packages/eslint-config-ts"),
   options
 );
+
+incrementPackageVersion(
+  path.join(__dirname, "../packages/eslint-config-import"),
+  options
+);

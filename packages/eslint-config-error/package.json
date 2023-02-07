@@ -1,9 +1,9 @@
 {
   "name": "@cinna-dev/eslint-config-error",
-  "version": "1.0.13",
+  "version": "1.0.15",
   "description": "eslint config finding potential errors",
   "main": "dist/index.js",
-  "file": [
+  "files": [
     "dist"
   ],
   "keywords": [
@@ -16,5 +16,8 @@
     "eslint": ">= 3"
   },
   "author": "cinna-dev",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.33.0"
+  }
 }

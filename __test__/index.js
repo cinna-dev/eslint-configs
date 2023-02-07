@@ -1,7 +1,17 @@
+"use strict";
 /* eslint-disable func-style */
 /* eslint-disable id-length */
 
 /*eslint accessor-pairs: "error"*/
+import test from './exportModule';
+import {test} from './exportModule';
+import {obj} from './exportModule';
+const {obj} = require('./exportModule');
+
+const f = obj;
+
+f.hello();
+test();
 
 var o = {
   set a(value) {
@@ -57,7 +67,6 @@ function foo() {
   var alert = myCustomLib.customAlert;
   alert();
 }
-
 /*eslint no-array-constructor: "error"*/
 
 Array(0, 1, 2);

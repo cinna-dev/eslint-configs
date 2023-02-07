@@ -181,16 +181,13 @@ module.exports = {
 
     // https://eslint.org/docs/latest/rules/logical-assignment-operators
     // Require or disallow logical assignment logical operator shorthand
-    "logical-assignment-operators": [
-      "warn",
-      "always",
-      { enforceForIfStatements: true },
-    ],
+    //  note: causes error
+    // "logical-assignment-operators": ["warn", "always"],
 
     // https://eslint.org/docs/latest/rules/max-classes-per-file
     // Enforce a maximum number of classes per file
     // This rule enforces that each file may contain only a particular number of classes and no more.
-    "max-classes-per-file": ["warn", { ignoreExpressions: true }],
+    "max-classes-per-file": ["warn", 1],
 
     // https://eslint.org/docs/latest/rules/max-depth
     // Enforce a maximum depth that blocks can be nested
@@ -286,7 +283,7 @@ module.exports = {
     // it’s considered a best practice to avoid using methods on `console`.
     // Such messages are considered to be for debugging purposes and therefore not suitable to ship to the client.
     // In general, calls using `console` should be stripped before being pushed to production.
-    "no-console": "error",
+    "no-console": ["error", { allow: ["warn", "error"] }],
 
     // https://eslint.org/docs/latest/rules/no-continue
     // Disallow `continue` statements
@@ -473,7 +470,8 @@ module.exports = {
     // https://eslint.org/docs/latest/rules/no-multi-assign
     // Disallow use of chained assignment expressions
     // This rule disallows using multiple assignments within a single statement.
-    "no-multi-assign": ["warn", { ignoreNonDeclaration: true }],
+    // "no-multi-assign": ["warn", { ignoreNonDeclaration: true }],
+    "no-multi-assign": "warn",
 
     // https://eslint.org/docs/latest/rules/no-multi-str
     // Disallow multiline strings
@@ -683,7 +681,8 @@ module.exports = {
     // The comma operator includes multiple expressions where only one is expected.
     // It evaluates each operand from left to right and returns the value of the last operand.
     // However, this frequently obscures side effects, and its use is often an accident.
-    "no-sequences": ["warn", { allowInParentheses: false }],
+    // "no-sequences": ["warn", { allowInParentheses: false }],
+    "no-sequences": "warn",
 
     // https://eslint.org/docs/latest/rules/no-shadow
     // Disallow variable declarations from shadowing variables declared in the outer scope
@@ -852,7 +851,13 @@ module.exports = {
     // This provides an alternative to the pre-ES6 standard of explicitly binding function expressions to achieve similar behavior.
     // This rule locates function expressions used as callbacks or function arguments.
     // An error will be produced for any that could be replaced by an arrow function without changing the result.
-    "prefer-arrow-callback": "warn",
+		"prefer-arrow-callback": [
+      "warn",
+      {
+        "allowNamedFunctions": true,
+        "allowUnboundThis": true
+      }
+    ],
 
     // https://eslint.org/docs/latest/rules/prefer-const
     // Require `const` declarations for variables that are never reassigned after declared
@@ -984,7 +989,7 @@ module.exports = {
     // This rule checks all import declarations and verifies that all imports are first sorted by the used member syntax
     // and then alphabetically by the first member or alias name.
     "sort-imports": [
-      "warn",
+      "off",
       {
         ignoreCase: false,
         ignoreDeclarationSort: false,
@@ -1059,12 +1064,16 @@ module.exports = {
       files: ["*.tsx", "*.jsx"],
       rules: {
         "new-cap": ["error", { newIsCap: true, properties: true }],
+        "no-magic-numbers": "off",
+				"spaced-comment": "off",
+				"max-lines-per-function": "off"
       },
     },
     {
       // ts Files
       files: ["*.ts", "*.mts", "*.cts"],
       rules: {
+        "max-classes-per-file": "off",
         "new-cap": ["error", { newIsCap: true, properties: true }],
         "no-shadow": "off",
         "id-length": "off",

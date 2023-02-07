@@ -3,8 +3,9 @@ const { minify } = require("terser");
 
 const minifyFile = async (inputPath, exportPath, options = {}) => {
   try {
-    const configErrorFile = fs.readFileSync(inputPath, "utf-8");
-    const { code } = await minify(configErrorFile, options);
+    const file = fs.readFileSync(inputPath, "utf-8");
+		console.log(file);
+    const { code } = await minify(file, options);
     fs.writeFileSync(exportPath, code);
   } catch (error) {
     console.error(error);

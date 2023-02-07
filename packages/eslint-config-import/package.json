@@ -1,0 +1,28 @@
+{
+  "name": "@cinna-dev/eslint-config-import",
+  "version": "1.0.12",
+  "description": "eslint config concerning es6 imports",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": "./dist/index.js",
+    "./ci": "./dist/ci.js"
+  },
+  "keywords": [
+    "eslint",
+    "eslint-config",
+    "imports"
+  ],
+  "peerDependencies": {
+    "eslint": ">= 3"
+  },
+  "author": "cinna-dev",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.33.0",
+    "eslint-import-resolver-typescript": "^3.5.3",
+    "eslint-plugin-i": "^2.26.0-2"
+  }
+}
