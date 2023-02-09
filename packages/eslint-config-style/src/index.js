@@ -217,7 +217,8 @@ module.exports = {
     "no-extra-parens": [ "warn", "all",
 			{
 				"returnAssign": false,
-				"ignoreJSX": "multi-line"
+				"ignoreJSX": "multi-line",
+				"nestedBinaryExpressions": true
 			}
 		],
 

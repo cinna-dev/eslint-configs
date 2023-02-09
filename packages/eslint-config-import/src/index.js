@@ -6,6 +6,7 @@ module.exports = {
 		"import",
 	],
 	"settings": {
+		"import/internal-regex": "^packages/",
     "import/parsers": {
       "@typescript-eslint/parser": [
         ".ts",

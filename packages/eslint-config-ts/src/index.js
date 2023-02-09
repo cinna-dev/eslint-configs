@@ -165,7 +165,8 @@ module.exports = {
         "selector": "variable",
         "format": [
           "camelCase",
-          "PascalCase"
+          "PascalCase",
+					"UPPER_CASE"
         ]
       },
       {
@@ -671,7 +672,8 @@ module.exports = {
 						"selector": "variable",
 						"format": [
 							"camelCase",
-							"PascalCase"
+							"PascalCase",
+							"UPPER_CASE"
 						]
 					},
 					{

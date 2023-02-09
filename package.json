@@ -19,7 +19,13 @@
     "test-npmjs-api": "node ./scripts/test-npm-api.js",
     "update:deps": "npm i -D eslint-import-resolver-typescript@latest -w @cinna-dev/eslint-config-import && npm i -D eslint-import-resolver-typescript@latest -w eslint-config-import && npm i -D @typescript-eslint/eslint-plugin@latest -m @cinna-dev/eslint-config-ts && npm i -D @typescript-eslint/parser@latest -m @cinna-dev/eslint-config-ts",
     "auto-update": "node lib/auto-update.cjs",
-		"cli": "node lib/cli.cjs"
+		"cli": "node lib/cli.cjs",
+		"cli:info": "npm run cli @cinna-dev/eslint-config-error @cinna-dev/eslint-config-import @cinna-dev/eslint-config-react @cinna-dev/eslint-config-style @cinna-dev/eslint-config-suggestions @cinna-dev/eslint-config-ts -- -nvs",
+		"cli:build": "npm run cli @cinna-dev/eslint-config-error @cinna-dev/eslint-config-import @cinna-dev/eslint-config-react @cinna-dev/eslint-config-style @cinna-dev/eslint-config-suggestions @cinna-dev/eslint-config-ts -- -bsn",
+		"cli:pre-publish": "npm run cli @cinna-dev/eslint-config-error @cinna-dev/eslint-config-import @cinna-dev/eslint-config-react @cinna-dev/eslint-config-style @cinna-dev/eslint-config-suggestions @cinna-dev/eslint-config-ts -- -in",
+		"publish:all": "npm publish --workspaces",
+		"cli:after-publish": "npm run cli @cinna-dev/eslint-config-error @cinna-dev/eslint-config-import @cinna-dev/eslint-config-react @cinna-dev/eslint-config-style @cinna-dev/eslint-config-suggestions @cinna-dev/eslint-config-ts -- -cn"
+
   },
   "devDependencies": {
     "eslint": "^8.33.0",

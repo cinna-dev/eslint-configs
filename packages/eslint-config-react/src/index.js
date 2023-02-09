@@ -691,7 +691,7 @@ module.exports = {
         // Disallow missing props validation in a React component definition
         // Defining types for component props improves reusability of your components by validating received data.
         // It can warn other developers if they make a mistake while reusing the component with improper data type.
-        "react/prop-types": "error",
+        "react/prop-types": "off",
 
         // https://github.com/jsx-eslint/eslint-plugin-react/blob/c6d082a7b1a95746dfb7f2581723d184b467be65/docs/rules/react-in-jsx-scope.md
         // When using JSX, `<a />` expands to `React.createElement("a")`.
@@ -709,7 +709,7 @@ module.exports = {
           {
             forbidDefaultForRequired: false,
             classes: "defaultProps",
-            functions: "defaultProps",
+            functions: "defaultArguments",
           },
         ],
 

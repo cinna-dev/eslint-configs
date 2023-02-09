@@ -97,7 +97,7 @@ module.exports = {
     // https://eslint.org/docs/latest/rules/function-paren-newline
     // Enforce consistent line breaks inside function parentheses
     // This rule enforces consistent line breaks inside parentheses of function parameters or arguments.
-    "function-paren-newline": ["off", "consistent"],
+    "function-paren-newline": ["warn", "multiline-arguments"],
 
     // https://eslint.org/docs/latest/rules/generator-star-spacing
     // Enforce consistent spacing around `*` operators in generator functions
@@ -292,7 +292,7 @@ module.exports = {
     // This rule permits you to restrict the locations of property specifications in object literals.
     // You may prohibit any part of any property specification from appearing on the same line as any part of any other property specification.
     // You may make this prohibition absolute, or, by invoking an object option, you may allow an exception, permitting an object literal to have all parts of all of its property specifications on a single line.
-    "object-property-newline": "off",
+    "object-property-newline": ["warn", { "allowAllPropertiesOnSameLine": true }],
 
     // https://eslint.org/docs/latest/rules/operator-linebreak
     // Enforce consistent linebreak style for operators

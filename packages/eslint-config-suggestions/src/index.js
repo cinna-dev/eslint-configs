@@ -57,7 +57,9 @@ module.exports = {
     // Enforce a maximum cyclomatic complexity allowed in a program
     // Cyclomatic complexity measures the number of linearly independent paths through a program’s source code.
     // This rule allows setting a cyclomatic complexity threshold.
-    complexity: ["warn", 2],
+		// ! no idea if enforcement is a good idea
+		// * complexity can be much higher in react Components because of different rendering conditions and reactive variables
+    complexity: ["off", 2],
 
     // https://eslint.org/docs/latest/rules/consistent-return
     // Require `return` statements to either always or never specify values
@@ -1027,7 +1029,7 @@ module.exports = {
       {
         line: {
           markers: ["/"],
-          exceptions: ["-", "+"],
+          exceptions: ["-", "+", "*", "!", "?", "/"],
         },
         block: {
           markers: ["!"],
