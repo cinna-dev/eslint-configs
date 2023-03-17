@@ -1,6 +1,6 @@
 module.exports = {
   extends: ["plugin:react/jsx-runtime"],
-  plugins: ["react"],
+  plugins: ["react", "jsx-a11y"],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -789,6 +789,30 @@ module.exports = {
         // These are collectively known as void DOM elements.
         // If you try to give these children, React will give you a warning like:
         "react/void-dom-elements-no-children": "error",
+
+
+				/* jsx a11y | accessibility */
+
+				// https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/accessible-emoji.md
+				// Emoji have become a common way of communicating content to the end user.
+				// To a person using a screenreader, however, they may not be aware that this content is there at all.
+				// By wrapping the emoji in a <span>, giving it the role="img", and providing a useful description in aria-label,
+				// the screenreader will treat the emoji as an image in the accessibility tree with an accessible name for the end user.
+				"jsx-a11y/accessible-emoji": "error",
+
+				// https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/alt-text.md
+				// Enforce that all elements that require alternative text have meaningful information to relay back to the end user.
+				// This is a critical component of accessibility for screen reader users in order for them to understand the content's purpose on the page.
+				// By default, this rule checks for alternative text on the following elements: `<img>`, `<area>`, `<input type="image">`, and `<object>`.
+        "jsx-a11y/alt-text": "error",
+
+				// https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/anchor-ambiguous-text.md
+				// Enforces <a> values are not exact matches for the phrases "click here", "here", "link", "a link", or "learn more".
+				// Screenreaders announce tags as links/interactive, but rely on values for context.
+				// Ambiguous anchor descriptions do not provide sufficient context for users.
+				"jsx-a11y/anchor-ambiguous-text": ["error", {
+					"words": ["click this"],
+				}],
       },
       files: ["*.tsx"],
       rules: {

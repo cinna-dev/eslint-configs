@@ -216,7 +216,9 @@ module.exports = {
 		"no-extra-parens": [ "warn", "all",
 			{
 				"returnAssign": false,
-				"ignoreJSX": "multi-line"
+				"ignoreJSX": "multi-line",
+        "nestedBinaryExpressions": false,
+        "enforceForArrowConditionals": false
 			}
 		],
 
@@ -509,13 +511,13 @@ module.exports = {
     },
 		{
       files: ["*.tsx"],
-      rules: { 
+      rules: {
 				"jsx-quotes": ["warn", "prefer-double"],
 			}
 		},
 		{
       files: ["*.tsx", "*.jsx" ],
-      rules: { 
+      rules: {
         "max-lines-per-function": ["warn", 200],
 				"arrow-parens": ["warn", "always"],
 			}

@@ -218,7 +218,8 @@ module.exports = {
 			{
 				"returnAssign": false,
 				"ignoreJSX": "multi-line",
-				"nestedBinaryExpressions": true
+				"nestedBinaryExpressions": false,
+        "enforceForArrowConditionals": false
 			}
 		],
 
@@ -512,7 +513,7 @@ module.exports = {
     },
 		{
       files: ["*.tsx", "*.jsx" ],
-      rules: { 
+      rules: {
         "max-lines-per-function": ["warn", 200],
 				"arrow-parens": ["warn", "always"],
 			}

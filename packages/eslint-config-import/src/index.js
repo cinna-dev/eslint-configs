@@ -30,7 +30,7 @@ module.exports = {
     }
   },
 	rules: {
-		/* Warning */	
+		/* Warning */
 
 		// https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/export.md
 		// Reports funny business with exports, like repeated exports of names or defaults.
@@ -53,12 +53,14 @@ module.exports = {
 		// Normally ignores imports of modules marked internal, but this can be changed with the rule option includeInternal.
 		// Type imports can be verified by specifying includeTypes.
 		"import/no-extraneous-dependencies": [
-      "error",
+      "off",
       {
         "devDependencies": [
           "**/*.test.js",
-          "**/*.test.ts"
+          "**/*.test.ts",
+					"packages/**/*"
         ],
+				"includeInternal": true,
         "optionalDependencies": false,
         "peerDependencies": false,
         "packageDir": "."
@@ -109,7 +111,7 @@ module.exports = {
 		// Reports require([string]) function calls. Will not report if >1 argument, or single argument is not a literal string.
 		// Reports module.exports or exports.*, also.
 		// Intended for temporary use when migrating to pure ES6 modules.
-		"import/no-commonjs": 2,
+		"import/no-commonjs": "off",
 
 		// https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-import-module-exports.md
 		// Reports the use of import declarations with CommonJS exports in any module except for the main module.
@@ -196,7 +198,21 @@ module.exports = {
           "@mui/material/*",
           "next/*",
           "@apollo/*",
-          "@iconify/icons-carbon/*"
+					"next-i18next/*",
+					"nextjs-routes/*",
+					"next-seo/**",
+					"@apollo/*",
+					"@hoc/*",
+					"@graphql/generated/*",
+					"lodash/*",
+					"@public/**/*",
+					"react-mui/*",
+					"@graphql/*",
+					"@graphql/generated/*",
+					"@iconify/**",
+					"next-auth/*",
+					"@theme/*",
+					"**/*.css"
         ]
       }
     ],
@@ -288,7 +304,7 @@ module.exports = {
 					 "tsc": "never",
 					 "jsx": "never",
 					 "tsx": "never",
-					 "json": "never"  
+					 "json": "never"
 					}
 			}
 		],
@@ -310,9 +326,9 @@ module.exports = {
 		// Forbid modules to have too many dependencies (`import` or `require` statements).
 		// This is a useful rule because a module with too many dependencies is a code smell, and usually indicates the module is doing too much and/or should be broken up into smaller modules.
 		// Importing multiple named exports from a single module will only count once (e.g. `import {x, y, z} from './foo'` will only count as a single dependency).
-		"import/max-dependencies": ["error", {
+		"import/max-dependencies": ["warn", {
 			"max": 10,
-			"ignoreTypeImports": false,
+			"ignoreTypeImports": true,
 		}],
 
 		// https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/newline-after-import.md
@@ -329,7 +345,7 @@ module.exports = {
 			"allowAnonymousClass": false,
 			"allowAnonymousFunction": false,
 			"allowCallExpression": true, // The true value here is for backward compatibility
-			"allowNew": false,
+			// "allowNew": false, // creates error
 			"allowLiteral": false,
 			"allowObject": false
 		}],
@@ -370,7 +386,14 @@ module.exports = {
 		// - Having side-effects, makes it hard to know whether the module is actually used or can be removed.
 		//   It can also make it harder to test or mock parts of your application.
 		// This rule aims to remove modules with side-effects by reporting when a module is imported but not assigned.
-		"import/no-unassigned-import": "warn",
+		"import/no-unassigned-import": [
+			"error",
+			{
+				"allow": [
+					"**/*.css"
+				]
+			}
+		],
 
 		// https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/order.md
 		// Enforce a convention in the order of `require()` / `import` statements.
@@ -397,7 +420,7 @@ module.exports = {
 		// In exporting files, this rule checks if there is default export or not.
 		"import/prefer-default-export": [
 			 "warn" ,
-			{ "target": "single"  } 
+			//{ "target": "single"  }  // no items allowed
 		],
 
 		// https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-restricted-paths.md

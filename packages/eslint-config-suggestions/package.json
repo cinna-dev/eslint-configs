@@ -18,6 +18,6 @@
   "author": "cinna-dev",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^8.33.0"
+    "eslint": "^8.36.0"
   }
 }

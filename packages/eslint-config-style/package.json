@@ -1,6 +1,6 @@
 {
   "name": "@cinna-dev/eslint-config-style",
-  "version": "1.0.28",
+  "version": "1.0.29",
   "description": "eslint config",
   "main": "dist/index.js",
   "files": [
@@ -26,6 +26,6 @@
   "author": "cinna-dev",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^8.33.0"
+    "eslint": "^8.36.0"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@cinna-dev/eslint-config-react",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "eslint config for react",
   "main": "dist/index.js",
   "files": [
@@ -19,7 +19,8 @@
     "eslint": ">= 3"
   },
   "devDependencies": {
-    "eslint": "^8.33.0",
-    "eslint-plugin-react": "^7.31.11"
+    "eslint": "^8.36.0",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.32.2"
   }
 }

@@ -1,6 +1,10 @@
 // Troubleshooting
 // https://typescript-eslint.io/linting/troubleshooting/
 
+const returnTypeWhitelist = [
+	"getStaticProps"
+];
+
 module.exports = {
   extends: [
     "plugin:@typescript-eslint/recommended",
@@ -136,7 +140,12 @@ module.exports = {
     // Require explicit return and argument types on exported functions' and classes' public class methods.
     // Explicit types for function return values and arguments makes it clear to any calling code what is the module boundary's input and output. Adding explicit type annotations for those types can help improve code readability.
     // It can also improve TypeScript type checking performance on larger codebases.
-    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/explicit-module-boundary-types": [
+			"error",
+			{
+				"allowedNames" : returnTypeWhitelist
+			}
+		],
 
     // https://typescript-eslint.io/rules/member-delimiter-style/
     // Require a specific member delimiter style for interfaces and type literals.
@@ -378,7 +387,7 @@ module.exports = {
 		"@typescript-eslint/no-unnecessary-qualifier": "warn",
 
 		// https://typescript-eslint.io/rules/no-unnecessary-type-arguments/
-		// Disallow type arguments that are equal to the default. 
+		// Disallow type arguments that are equal to the default.
 		"@typescript-eslint/no-unnecessary-type-arguments": "warn",
 
 		// https://typescript-eslint.io/rules/no-unnecessary-type-assertion/
@@ -429,7 +438,7 @@ module.exports = {
 
 		// https://typescript-eslint.io/rules/no-var-requires/
 		// Disallow `require` statements except in import statements.
-		"@typescript-eslint/no-var-requires": "error",
+		"@typescript-eslint/no-var-requires": "off",
 
 		// https://typescript-eslint.io/rules/non-nullable-type-assertion-style/
 		// Enforce non-null assertions over explicit type casts.
@@ -481,7 +490,7 @@ module.exports = {
 		// it's preferred to refer to them as namespaces.
 		// This rule reports when the `module` keyword is used instead of `namespace`.
 		"@typescript-eslint/prefer-namespace-keyword": "error",
-		
+
 		// https://typescript-eslint.io/rules/prefer-nullish-coalescing/
 		// Enforce using the nullish coalescing operator instead of logical chaining.
 		"@typescript-eslint/prefer-nullish-coalescing": "warn",
@@ -501,7 +510,7 @@ module.exports = {
 		// Require private members to be marked as `readonly` if they're never
 		// modified outside of the constructor.
 		"@typescript-eslint/prefer-readonly": "warn",
-		 
+
 		// https://typescript-eslint.io/rules/prefer-reduce-type-parameter/
 		// Enforce using type parameter when calling `Array#reduce` instead of casting.
 		"@typescript-eslint/prefer-reduce-type-parameter": "warn",
@@ -633,6 +642,7 @@ module.exports = {
 		"@typescript-eslint/unified-signatures": "warn",
 
 		/* Extension Rules */
+		// can be found in the overrides
 
   },
   overrides: [
@@ -640,6 +650,86 @@ module.exports = {
       // enable the rule specifically for TypeScript files
       files: ["*.ts", "*.mts", "*.cts", "*.tsx"],
       rules: {
+				/* Extension Rules */
+				// https://typescript-eslint.io/rules/default-param-last
+				"default-param-last": "off",
+				"@typescript-eslint/default-param-last": "warn",
+				// https://typescript-eslint.io/rules/dot-notation
+				"dot-notation": "off",
+				"@typescript-eslint/dot-notation": "warn",
+				// https://typescript-eslint.io/rules/init-declarations
+				"init-declarations": "off",
+				"@typescript-eslint/init-declarations": "warn",
+				// https://typescript-eslint.io/rules/no-array-constructor
+				"no-array-constructor": "off",
+				"@typescript-eslint/no-array-constructor": "error",
+				// https://typescript-eslint.io/rules/no-dupe-class-members
+				"no-dupe-class-members": "off",
+				"@typescript-eslint/no-dupe-class-members": "warn",
+				// https://typescript-eslint.io/rules/no-empty-function
+				"no-empty-function": "off",
+				"@typescript-eslint/no-empty-function": [
+					"error", {
+						 "allow": [
+							"private-constructors",
+							"protected-constructors",
+							"decoratedFunctions",
+							"overrideMethods"
+						]
+					}
+				],
+				// https://typescript-eslint.io/rules/no-extra-semi
+				"no-extra-semi": "off",
+				"@typescript-eslint/no-extra-semi": "error",
+				// https://typescript-eslint.io/rules/no-implied-eval
+				"no-implied-eval": "off",
+				"@typescript-eslint/no-implied-eval": "error",
+				// https://typescript-eslint.io/rules/no-invalid-this
+				"no-invalid-this": "off",
+				"@typescript-eslint/no-invalid-this": "warn",
+				// https://typescript-eslint.io/rules/no-loop-func
+				"no-loop-func": "off",
+				"@typescript-eslint/no-loop-func": "warn",
+				// https://typescript-eslint.io/rules/no-loss-of-precision
+				"no-loss-of-precision": "off",
+				"@typescript-eslint/no-loss-of-precision": "error",
+				// https://typescript-eslint.io/rules/no-magic-numbers
+				"no-magic-numbers": "off",
+				"@typescript-eslint/no-magic-numbers": "warn",
+				// https://typescript-eslint.io/rules/no-redeclare
+				"no-redeclare": "off",
+				"@typescript-eslint/no-redeclare": [
+					"warn",
+					{ ignoreDeclarationMerge: true }
+				],
+				// https://typescript-eslint.io/rules/no-restricted-imports
+				"no-restricted-imports": "off",
+				"@typescript-eslint/no-restricted-imports": "warn",
+				// https://typescript-eslint.io/rules/no-shadow
+				"no-shadow": "off",
+				"@typescript-eslint/no-shadow": "warn",
+				// https://typescript-eslint.io/rules/no-throw-literal/
+				"no-throw-literal": "off",
+				"@typescript-eslint/no-throw-literal": "warn",
+				// https://typescript-eslint.io/rules/no-unused-expressions
+				"no-unused-expressions": "off",
+				"@typescript-eslint/no-unused-expressions": "warn",
+				// https://typescript-eslint.io/rules/no-unused-vars
+				"no-unused-vars": "off",
+				"@typescript-eslint/no-unused-vars": "warn",
+				// https://typescript-eslint.io/rules/no-use-before-define
+				"no-use-before-define": "off",
+				"@typescript-eslint/no-use-before-define": "warn",
+				// https://typescript-eslint.io/rules/no-useless-constructor
+				"no-useless-constructor": "off",
+				"@typescript-eslint/no-useless-constructor": "warn",
+				// https://typescript-eslint.io/rules/require-await
+				"require-await": "off",
+				"@typescript-eslint/require-await": "error",
+				// https://typescript-eslint.io/rules/return-await
+				"no-return-await": "off",
+				"@typescript-eslint/return-await": "warn",
+				// *******************************************************************
         "@typescript-eslint/explicit-member-accessibility": [
           "warn",
           {
@@ -657,7 +747,8 @@ module.exports = {
 					allowExpressions: true,
 					allowTypedFunctionExpressions: true ,
 					allowHigherOrderFunctions: true,
-					allowConciseArrowFunctionExpressionsStartingWithVoid: true 
+					allowConciseArrowFunctionExpressionsStartingWithVoid: true,
+					allowedNames: returnTypeWhitelist
 				}],
         "@typescript-eslint/explicit-module-boundary-types": "error",
       },
