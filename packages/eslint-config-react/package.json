@@ -1,6 +1,6 @@
 {
   "name": "@cinna-dev/eslint-config-react",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "eslint config for react",
   "main": "dist/index.js",
   "files": [

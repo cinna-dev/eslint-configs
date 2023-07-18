@@ -4,7 +4,12 @@
     "packages/eslint-config-react"
   ],
   "private": true,
+  "engines": {
+    "node": ">=16"
+  },
   "scripts": {
+    "outdated": "npm outdated",
+    "update": "npm update",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "set TIMING=1 && eslint ./__test__",
     "minify-all": "node scripts/minify-all-src-files.cjs",
@@ -17,8 +22,9 @@
     "cli-info": "npm run cli @cinna-dev/eslint-config-error @cinna-dev/eslint-config-import @cinna-dev/eslint-config-react @cinna-dev/eslint-config-style @cinna-dev/eslint-config-suggestions @cinna-dev/eslint-config-ts -- -nvs",
     "cli-build": "npm run cli @cinna-dev/eslint-config-error @cinna-dev/eslint-config-import @cinna-dev/eslint-config-react @cinna-dev/eslint-config-style @cinna-dev/eslint-config-suggestions @cinna-dev/eslint-config-ts -- -bsn",
     "cli-pre-publish": "npm run cli @cinna-dev/eslint-config-error @cinna-dev/eslint-config-import @cinna-dev/eslint-config-react @cinna-dev/eslint-config-style @cinna-dev/eslint-config-suggestions @cinna-dev/eslint-config-ts -- -in",
-    "publish-all": "npm publish --workspaces",
+    "publish-all": "npm run cli-pre-publish && bash ./scripts/publish-all.sh && npm run cli-after-publish && exit 1",
     "cli-after-publish": "npm run cli @cinna-dev/eslint-config-error @cinna-dev/eslint-config-import @cinna-dev/eslint-config-react @cinna-dev/eslint-config-style @cinna-dev/eslint-config-suggestions @cinna-dev/eslint-config-ts -- -cn",
+    "config-outdated": "cd ./packages/eslint-config && npm outdated && cd ../..",
     "increment-config": "npm run cli @cinna-dev/eslint-config -- -in",
     "publish-config": "npm publish -w @cinna-dev/eslint-config"
   },
@@ -27,9 +33,12 @@
     "eslint": "^8.36.0",
     "node-fetch": "^3.3.1",
     "terser": "^5.16.6",
-    "typescript": "^4.9.5"
+    "typescript": "^5.1.6"
   },
   "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.1.0",
+    "@typescript-eslint/parser": "^6.1.0",
+    "comander": "^0.0.1-security",
     "commander": "^10.0.0"
   }
 }

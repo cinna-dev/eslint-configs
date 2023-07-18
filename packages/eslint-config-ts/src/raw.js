@@ -6,17 +6,6 @@ const returnTypeWhitelist = [
 ];
 
 module.exports = {
-  extends: [
-		'plugin:@typescript-eslint/recommended-type-checked',
-    'plugin:@typescript-eslint/stylistic-type-checked',
-  ],
-  parser: "@typescript-eslint/parser",
-  plugins: ["@typescript-eslint"],
-  parserOptions: {
-		tsconfigRootDir: __dirname,
-    project: true, // Specify it only for TypeScript files
-  },
-  root: true,
   rules: {
     // https://typescript-eslint.io/rules/adjacent-overload-signatures/
     // Require that function overload signatures be consecutive.

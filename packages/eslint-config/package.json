@@ -1,6 +1,6 @@
 {
   "name": "@cinna-dev/eslint-config",
-  "version": "1.0.56",
+  "version": "1.0.64",
   "description": "eslint config",
   "main": "index.js",
   "keywords": [
@@ -8,22 +8,26 @@
     "eslint-config"
   ],
   "peerDependencies": {
-    "eslint": "^8.36.0",
-    "typescript": "^4.9.5"
+    "eslint": ">= 3",
+    "typescript": ">= 4.2.4"
   },
   "exports": {
     ".": "./index.js",
-    "./basic-style": "./basic-style.js"
+    "./basic-style": "./basic-style.js",
+    "./no-style": "./no-style.js",
+    "./nx": "./nx/index.js",
+    "./nx/no-style": "./nx/no-style.js"
   },
   "author": "cinna-dev",
   "license": "ISC",
   "dependencies": {
     "@cinna-dev/eslint-config-error": "^1.0.14",
-    "@cinna-dev/eslint-config-import": "^1.0.16",
+    "@cinna-dev/eslint-config-import": "^1.0.21",
     "@cinna-dev/eslint-config-react": "^1.0.8",
     "@cinna-dev/eslint-config-style": "^1.0.29",
-    "@cinna-dev/eslint-config-suggestions": "^1.0.24",
-    "@cinna-dev/eslint-config-ts": "^1.0.21",
-    "eslint": "^8.36.0"
+    "@cinna-dev/eslint-config-suggestions": "^1.0.31",
+    "@cinna-dev/eslint-config-ts": "^1.0.30",
+    "@typescript-eslint/eslint-plugin": "^6.1.0",
+    "@typescript-eslint/parser": "^6.1.0"
   }
 }

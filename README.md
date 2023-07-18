@@ -10,7 +10,6 @@ a collection of eslint configs
 - include `ts` and `tsx files
 - allow incremental
 
-
 ```json
  "incremental": true,
  "exclude": [

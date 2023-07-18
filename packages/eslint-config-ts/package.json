@@ -1,11 +1,18 @@
 {
   "name": "@cinna-dev/eslint-config-ts",
-  "version": "1.0.21",
+  "version": "1.0.30",
   "description": "eslint config for typescript",
   "main": "dist/index.js",
   "files": [
     "dist"
   ],
+  "peerDependencies": {
+    "typescript": ">= 4.2.4"
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./raw": "./dist/raw.js"
+  },
   "keywords": [
     "eslint",
     "config",
@@ -15,8 +22,8 @@
   "author": "cinna-dev",
   "license": "ISC",
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.55.0",
-    "@typescript-eslint/parser": "^5.55.0"
+    "@typescript-eslint/eslint-plugin": "^6.1.0",
+    "@typescript-eslint/parser": "^6.1.0"
   },
   "devDependencies": {
     "eslint": "^8.36.0"

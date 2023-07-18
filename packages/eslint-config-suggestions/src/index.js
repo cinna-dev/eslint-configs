@@ -31,7 +31,12 @@ module.exports = {
     // camelcase (variableName) and underscores (variable_name).
     // This rule focuses on using the camelcase approach.
     // If your style guide calls for camelCasing your variable names, then this rule is for you!
-    camelcase: "warn",
+		camelcase: [
+      "warn",
+      {
+        "properties": "never"
+      }
+    ],
 
     // https://eslint.org/docs/latest/rules/capitalized-comments
     // Enforce or disallow capitalization of the first letter of a comment
@@ -451,13 +456,15 @@ module.exports = {
     // ‘Magic numbers’ are numbers that occur multiple times in code without an explicit meaning.
     // They should preferably be replaced by named constants.
     // The `no-magic-numbers` rule aims to make code more readable and refactoring easier by ensuring that special numbers are declared as constants to make their meaning explicit.
+		// * too impractical in execution
     "no-magic-numbers": [
-      "warn",
+      "off",
       {
         ignore: [0, 1, 2],
         ignoreArrayIndexes: true,
         ignoreDefaultValues: true,
         enforceConst: true,
+				detectObjects: false
       },
     ],
 
@@ -718,7 +725,7 @@ module.exports = {
 
     // https://eslint.org/docs/latest/rules/no-undefined
     // This rule aims to eliminate the use of `undefined`, and as such, generates a warning whenever it is used.
-    "no-undefined": "error",
+    "no-undefined": "off",
 
     // https://eslint.org/docs/latest/rules/no-underscore-dangle
     // Disallow dangling underscores in identifiers
@@ -1065,7 +1072,7 @@ module.exports = {
       // React Files
       files: ["*.tsx", "*.jsx"],
       rules: {
-        "new-cap": ["error", { newIsCap: true, properties: true }],
+        "new-cap": ["off", { newIsCap: true, properties: true }],
         "no-magic-numbers": "off",
 				"spaced-comment": "off",
 				"max-lines-per-function": "off"

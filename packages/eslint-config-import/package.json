@@ -1,6 +1,6 @@
 {
   "name": "@cinna-dev/eslint-config-import",
-  "version": "1.0.16",
+  "version": "1.0.21",
   "description": "eslint config concerning es6 imports",
   "main": "dist/index.js",
   "files": [

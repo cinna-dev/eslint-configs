@@ -77,7 +77,7 @@ module.exports = {
 		// - misleading: others familiar with foo.js probably expect the name to be foo
 		// - a mistake: only needed to import bar and forgot the brackets (the case that is prompting this)
 		// ! ci only
-		//* when accounting an error make sure your not accidentally also exporting a type with the same name.
+		// * when accounting an error make sure your not accidentally also exporting a type with the same name.
 		"import/no-named-as-default": "off",
 
 		// https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-named-as-default-member.md
@@ -190,8 +190,9 @@ module.exports = {
 		// This rule has two mutally exclusive options that are arrays of `minimatch/glob patterns` patterns:
 		// - `allow` that include paths and import statements that can be imported with reaching.
 		// - `forbid` that exclude paths and import statements that can be imported with reaching.
+		// * nx requires relative imports for apps
 		"import/no-internal-modules": [
-      "error",
+      "off",
       {
         "allow": [
           "@mui/icons-material/*",
@@ -245,8 +246,9 @@ module.exports = {
 		"import/no-relative-parent-imports": "off",
 
 		// * used in favor for import/no-relative-parent-imports
+		// ! nx requires relative imports for apps
 		"no-restricted-imports": [
-			"error",
+			"off",
 			{
 				"patterns": [
 					{
@@ -289,7 +291,7 @@ module.exports = {
 		// In order to provide a consistent use of file extensions across your code base,
 		// this rule can enforce or disallow the use of certain file extensions.
 		// ! https://typescript-eslint.io/linting/troubleshooting/performance-troubleshooting/#importextensions
-		// !  you want to enforce file extensions are always used and you're NOT using `moduleResolution`
+		// ! you want to enforce file extensions are always used and you're NOT using `moduleResolution`
 		// ! `node16` or `nodenext`, then there's not really a good alternative for you,
 		// ! and you should continue using the `import/extensions` lint rule.
 		"import/extensions": [
@@ -352,7 +354,8 @@ module.exports = {
 
 		// https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-default-export.md
 		// Prohibit default exports. Mostly an inverse of `prefer-default-export`.
-		"import/no-default-export": "off",
+		// * should prefer names export and prohibit default exports
+		"import/no-default-export": "error",
 
 		// https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-duplicates.md
 		// Reports if a resolved path is imported more than once. +(fixable) The --fix option on the [command line] automatically fixes some problems reported by this rule.
@@ -419,7 +422,7 @@ module.exports = {
 		// https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/prefer-default-export.md
 		// In exporting files, this rule checks if there is default export or not.
 		"import/prefer-default-export": [
-			 "warn" ,
+			 "off" ,
 			//{ "target": "single"  }  // no items allowed
 		],
 
@@ -451,5 +454,21 @@ module.exports = {
 		// This syntax is non-standard, so it couples the code to Webpack.
 		// The recommended way to specify Webpack loader configuration is in a Webpack configuration file.
 		"import/no-webpack-loader-syntax": "off"
-	}
+	},
+  overrides: [
+    {
+			files: ["**/pages/**/*.tsx","**/app/**/*.tsx"  ],
+      rules: {
+				// * framework specific exceptions. Next.js ... .etc
+				"import/no-default-export": "off",
+        "import/prefer-default-export": [
+          "error",
+          {
+            "target": "any"
+          }
+        ]
+      },
+    },
+  ],
+
 }
