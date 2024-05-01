@@ -3,6 +3,9 @@
   "version": "1.0.30",
   "description": "eslint config",
   "main": "dist/index.js",
+  "scripts": {
+    "build": "terser src/index.js -o dist/index.js && terser src/basic.js -o dist/basic.js "
+  },
   "files": [
     "dist"
   ],
@@ -21,11 +24,8 @@
     "url": "https://github.com/cinna-dev/eslint-config-style.git"
   },
   "peerDependencies": {
-    "eslint": ">= 3"
+    "eslint": "^8"
   },
   "author": "cinna-dev",
-  "license": "ISC",
-  "devDependencies": {
-    "eslint": "^8.36.0"
-  }
+  "license": "ISC"
 }

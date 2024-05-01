@@ -11,15 +11,13 @@ a collection of eslint configs
 - allow incremental
 
 ```json
+{
  "incremental": true,
  "exclude": [
     "node_modules",
     ".next"
-  ],
- "exclude": [
-    "node_modules",
-    ".next"
   ]
+}
 ```
 
 import/group-exports

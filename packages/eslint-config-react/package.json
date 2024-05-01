@@ -3,6 +3,9 @@
   "version": "1.0.9",
   "description": "eslint config for react",
   "main": "dist/index.js",
+  "scripts": {
+    "build": "terser src/index.js -o dist/index.js"
+  },
   "files": [
     "dist"
   ],
@@ -16,11 +19,8 @@
   "author": "cinna-dev",
   "license": "ISC",
   "peerDependencies": {
-    "eslint": ">= 3"
-  },
-  "devDependencies": {
-    "eslint": "^8.36.0",
-    "eslint-plugin-jsx-a11y": "^6.7.1",
-    "eslint-plugin-react": "^7.32.2"
+    "eslint": "^8",
+    "eslint-plugin-jsx-a11y": "^6",
+    "eslint-plugin-react": "^7"
   }
 }

@@ -3,12 +3,12 @@
   "version": "1.0.30",
   "description": "eslint config for typescript",
   "main": "dist/index.js",
+  "scripts": {
+    "build": "terser src/index.js -o dist/index.js && terser src/raw.js -o dist/raw.js "
+  },
   "files": [
     "dist"
   ],
-  "peerDependencies": {
-    "typescript": ">= 4.2.4"
-  },
   "exports": {
     ".": "./dist/index.js",
     "./raw": "./dist/raw.js"
@@ -21,11 +21,9 @@
   ],
   "author": "cinna-dev",
   "license": "ISC",
-  "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.1.0",
-    "@typescript-eslint/parser": "^6.1.0"
-  },
-  "devDependencies": {
-    "eslint": "^8.36.0"
+  "peerDependencies": {
+    "eslint": "^8",
+    "@typescript-eslint/eslint-plugin": "^7",
+    "@typescript-eslint/parser": "^7"
   }
 }

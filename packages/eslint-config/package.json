@@ -8,8 +8,7 @@
     "eslint-config"
   ],
   "peerDependencies": {
-    "eslint": ">= 3",
-    "typescript": ">= 4.2.4"
+    "eslint": "^8"
   },
   "exports": {
     ".": "./index.js",
@@ -20,14 +19,13 @@
   },
   "author": "cinna-dev",
   "license": "ISC",
+  "packageManager": "pnpm@8.0.0",
   "dependencies": {
-    "@cinna-dev/eslint-config-error": "^1.0.14",
-    "@cinna-dev/eslint-config-import": "^1.0.21",
-    "@cinna-dev/eslint-config-react": "^1.0.8",
-    "@cinna-dev/eslint-config-style": "^1.0.29",
-    "@cinna-dev/eslint-config-suggestions": "^1.0.31",
-    "@cinna-dev/eslint-config-ts": "^1.0.30",
-    "@typescript-eslint/eslint-plugin": "^6.1.0",
-    "@typescript-eslint/parser": "^6.1.0"
+    "@cinna-dev/eslint-config-error": "workspace:^",
+    "@cinna-dev/eslint-config-import": "workspace:^",
+    "@cinna-dev/eslint-config-react": "workspace:^",
+    "@cinna-dev/eslint-config-style": "workspace:^",
+    "@cinna-dev/eslint-config-suggestions": "workspace:^",
+    "@cinna-dev/eslint-config-ts": "workspace:^"
   }
 }

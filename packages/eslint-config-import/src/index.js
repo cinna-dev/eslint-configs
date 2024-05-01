@@ -1,3 +1,5 @@
+
+/** @type { import("eslint").Linter.FlatConfig[] } */
 module.exports = {
 	extends: [
 		"plugin:import/typescript",
@@ -5,7 +7,7 @@ module.exports = {
 	plugins: [
 		"import",
 	],
-	"settings": {
+	settings: {
 		"import/internal-regex": "^packages/",
     "import/parsers": {
       "@typescript-eslint/parser": [
@@ -60,7 +62,7 @@ module.exports = {
           "**/*.test.ts",
 					"packages/**/*"
         ],
-				"includeInternal": true,
+		"includeInternal": true,
         "optionalDependencies": false,
         "peerDependencies": false,
         "packageDir": "."

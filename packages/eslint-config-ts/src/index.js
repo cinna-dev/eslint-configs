@@ -13,7 +13,7 @@ module.exports = {
   parser: "@typescript-eslint/parser",
   plugins: ["@typescript-eslint"],
   parserOptions: {
-		tsconfigRootDir: __dirname,
+	tsconfigRootDir: __dirname,
     project: true, // Specify it only for TypeScript files
   },
   root: true,
@@ -812,4 +812,3 @@ module.exports = {
     },
   ],
 };
-

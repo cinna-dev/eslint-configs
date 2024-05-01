@@ -3,6 +3,9 @@
   "version": "1.0.31",
   "description": "eslint config for suggestions",
   "main": "dist/index.js",
+  "scripts": {
+    "build": "terser src/index.js -o dist/index.js"
+  },
   "files": [
     "dist"
   ],
@@ -13,11 +16,8 @@
     "linter"
   ],
   "peerDependencies": {
-    "eslint": ">= 3"
+    "eslint": "^8"
   },
   "author": "cinna-dev",
-  "license": "ISC",
-  "devDependencies": {
-    "eslint": "^8.36.0"
-  }
+  "license": "ISC"
 }

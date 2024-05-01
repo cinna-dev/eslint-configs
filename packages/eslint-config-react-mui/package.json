@@ -1,8 +1,12 @@
 {
   "name": "@cinna-dev/eslint-config-react-mui",
   "version": "1.0.0",
+  "private": true,
   "description": "eslint config for react",
   "main": "dist/index.js",
+  "scripts": {
+    "build": "terser src/index.js -o dist/index.js"
+  },
   "files": [
     "dist"
   ],
@@ -12,8 +16,8 @@
     "eslint",
     "config",
     "react",
-		"mui",
-		"material-ui"
+    "mui",
+    "material-ui"
   ],
   "author": "cinna-dev",
   "license": "ISC"

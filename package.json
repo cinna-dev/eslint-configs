@@ -1,8 +1,4 @@
 {
-  "workspaces": [
-    "packages/*",
-    "packages/eslint-config-react"
-  ],
   "private": true,
   "engines": {
     "node": ">=16"
@@ -26,19 +22,22 @@
     "cli-after-publish": "npm run cli @cinna-dev/eslint-config-error @cinna-dev/eslint-config-import @cinna-dev/eslint-config-react @cinna-dev/eslint-config-style @cinna-dev/eslint-config-suggestions @cinna-dev/eslint-config-ts -- -cn",
     "config-outdated": "cd ./packages/eslint-config && npm outdated && cd ../..",
     "increment-config": "npm run cli @cinna-dev/eslint-config -- -in",
-    "publish-config": "npm publish -w @cinna-dev/eslint-config"
+    "publish-config": "npm publish -w @cinna-dev/eslint-config",
+    "update-all-dependencies@latest": "pnpm --filter @cinna-dev/eslint* update *@latest",
+    "lerna:build": "pnpm lerna run build",
+    "lerna:publish": "lerna publish from-package",
+    "show-changes": "bash ./scripts/git-changes.sh"
   },
   "devDependencies": {
     "babel-minify": "^0.5.2",
-    "eslint": "^8.36.0",
-    "node-fetch": "^3.3.1",
-    "terser": "^5.16.6",
-    "typescript": "^5.1.6"
+    "eslint": "^8.56.0",
+    "lerna": "^8.1.2",
+    "node-fetch": "^3.3.2",
+    "terser": "^5.31.0",
+    "typescript": "^5.4.5"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.1.0",
-    "@typescript-eslint/parser": "^6.1.0",
-    "comander": "^0.0.1-security",
-    "commander": "^10.0.0"
+    "comander": "0.0.1-security",
+    "commander": "^12.0.0"
   }
 }
