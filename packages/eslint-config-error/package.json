@@ -3,6 +3,9 @@
   "version": "1.0.16",
   "description": "eslint config finding potential errors",
   "main": "dist/index.js",
+  "scripts": {
+    "build": "terser src/index.js -o dist/index.js"
+  },
   "files": [
     "dist"
   ],
