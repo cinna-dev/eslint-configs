@@ -25,7 +25,7 @@
     "publish-config": "npm publish -w @cinna-dev/eslint-config",
     "update-all-dependencies@latest": "pnpm --filter @cinna-dev/eslint* update *@latest",
     "lerna:build": "pnpm lerna run build",
-    "lerna:publish": "lerna publish from-package",
+    "lerna:publish": "lerna publish from-package --no-private",
     "show-changes": "bash ./scripts/git-changes.sh"
   },
   "devDependencies": {
