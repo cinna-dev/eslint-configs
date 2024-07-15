@@ -1,10 +1,12 @@
 import eslintPluginImport, {configs} from 'eslint-plugin-import';
+import { fixupPluginRules } from "@eslint/compat";
 
+/** @type { import("eslint").Linter.FlatConfig[] } */
 export default [
     {
         ...configs['typescript'],
         plugins: {
-            import: eslintPluginImport
+            import: fixupPluginRules(eslintPluginImport)
         },
         settings: {
             "import/internal-regex": "^packages/",

@@ -10,21 +10,34 @@
     "update-all-dependencies@latest": "pnpm --filter @cinna-dev/eslint* update *@latest",
     "lerna:build": "pnpm lerna run build",
     "lerna:publish": "lerna publish from-package --no-private",
-    "lerna:changed": "lerna changed"
+    "lerna:changed": "lerna changed",
+    "lerna:version": "lerna version"
   },
   "devDependencies": {
+    "@eslint/compat": "^1.1.1",
+    "@eslint/js": "^9.7.0",
     "@types/eslint": "^8.56.10",
-    "@types/node": "^20.14.9",
+    "@types/eslint__js": "^8.42.3",
+    "@types/node": "^20.14.10",
+    "@typescript-eslint/eslint-plugin": "^7.16.0",
+    "@typescript-eslint/parser": "^7.16.0",
+    "add": "^2.0.6",
     "babel-minify": "^0.5.2",
-    "eslint": "^8.56.0",
+    "eslint": "^9.7.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsx-a11y": "^6.9.0",
+    "eslint-plugin-react": "^7.34.4",
+    "eslint-plugin-react-hooks": "^4.6.2",
     "globals": "^15.8.0",
-    "lerna": "^8.1.2",
+    "lerna": "^8.1.6",
     "node-fetch": "^3.3.2",
-    "terser": "^5.31.0",
-    "typescript": "^5.4.5"
+    "terser": "^5.31.2",
+    "typescript": "^5.5.3",
+    "typescript-eslint": "^7.16.0"
   },
   "dependencies": {
     "comander": "0.0.1-security",
-    "commander": "^12.0.0"
+    "commander": "^12.1.0"
   }
 }

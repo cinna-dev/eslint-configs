@@ -20,10 +20,13 @@
     "imports"
   ],
   "peerDependencies": {
-    "eslint": "^8",
+    "eslint": "^9",
     "eslint-import-resolver-typescript": "^3",
     "eslint-plugin-import": "^2"
   },
   "author": "cinna-dev",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/compat": "^1.1.1"
+  }
 }

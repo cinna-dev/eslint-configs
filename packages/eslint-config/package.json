@@ -9,7 +9,7 @@
     "eslint-config"
   ],
   "peerDependencies": {
-    "eslint": "^8",
+    "eslint": "^9",
     "globals": "^15"
   },
   "exports": {
