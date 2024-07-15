@@ -10,15 +10,15 @@ import eslintConfig from "@cinna-dev/eslint-config";
 /** @type { import("eslint").Linter.FlatConfig[] } */
 export default [
     // {files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"]},
-    // {languageOptions: {parserOptions: {ecmaFeatures: {jsx: true}}}},
-    // {languageOptions: {globals: globals.browser}},
-    // {
-    //     languageOptions: {
-    //         parserOptions: {
-    //             tsconfigRootDir: import.meta.dirname,
-    //         },
-    //     },
-    // },
+    {languageOptions: {parserOptions: {ecmaFeatures: {jsx: true}}}},
+    {languageOptions: {globals: globals.browser}},
+    {
+        languageOptions: {
+            parserOptions: {
+                tsconfigRootDir: import.meta.dirname,
+            },
+        },
+    },
     ...eslintConfig,
     // ...eslintConfigStyle,
     // ...eslintConfigError,
