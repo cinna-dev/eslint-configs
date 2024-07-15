@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   extends: ["plugin:react/jsx-runtime"],
   plugins: ["react"],
   parserOptions: {

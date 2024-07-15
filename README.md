@@ -2,23 +2,58 @@
 
 a collection of eslint configs
 
-## Optimizations eslint | typescript | next.js | webstorm
+## Lerna
 
-### tsconfig
+by default `lerna` weil look in the `packages` dir for node packages
 
-- exclude `node_modules` and `.next`
-- include `ts` and `tsx files
-- allow incremental
+### Build all packages
 
-```json
-{
- "incremental": true,
- "exclude": [
-    "node_modules",
-    ".next"
-  ]
-}
+```shell
+    lerna build
 ```
+_will build all packages_
+
+### Versioning
+
+### Publish
+
+```shell
+lerne publish
+```
+
+ will also automatically increase the `versioning` fo each `package`.
+
+```shell
+lerna pulbish --no-private
+```
+
+will ensure `private: true` packages are not published to the `npm` registry.
+
+
+## Pnpm
+
+### install a workspace dependency
+
+_--filter_
+
+```shell
+pnpm add <package_to_add> --filter <workspace_name>
+```
+
+### install a root dependency
+
+_-w --workspace-root_
+
+```shell
+pnpm add -w <package_to_add>
+```
+
+## Package.json
+
+### ESM
+
+when exporting **ecma script modules** use `"type": "module`
+
 
 import/group-exports
 

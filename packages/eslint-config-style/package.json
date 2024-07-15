@@ -1,10 +1,11 @@
 {
   "name": "@cinna-dev/eslint-config-style",
   "version": "1.0.31",
+  "type": "module",
   "description": "eslint config",
   "main": "dist/index.js",
   "scripts": {
-    "build": "terser src/index.js -o dist/index.js && terser src/basic.js -o dist/basic.js "
+    "build": "terser src/index.js -o dist/index.js && terser src/basic.js -o dist/basic.js"
   },
   "files": [
     "dist"

@@ -1,0 +1,35 @@
+{
+  "name": "@cinna-dev/eslint-config-test",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "eslint config testing packages",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "eslint",
+    "config",
+    "eslint-config",
+    "test"
+  ],
+  "author": "cinna-dev",
+  "license": "ISC",
+  "dependencies": {
+    "@cinna-dev/eslint-config": "workspace:^",
+    "@cinna-dev/eslint-config-error": "workspace:^",
+    "@cinna-dev/eslint-config-import": "workspace:^",
+    "@cinna-dev/eslint-config-react": "workspace:^",
+    "@cinna-dev/eslint-config-style": "workspace:^",
+    "@cinna-dev/eslint-config-suggestions": "workspace:^",
+    "@cinna-dev/eslint-config-ts": "workspace:^"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.6.0",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react": "^7.34.3",
+    "globals": "^15.8.0",
+    "typescript-eslint": "^7.15.0"
+  }
+}

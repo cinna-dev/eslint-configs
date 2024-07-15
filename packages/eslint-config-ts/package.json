@@ -1,17 +1,20 @@
 {
   "name": "@cinna-dev/eslint-config-ts",
   "version": "1.0.31",
+  "type": "module",
   "description": "eslint config for typescript",
   "main": "dist/index.js",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
-    "build": "terser src/index.js -o dist/index.js && terser src/raw.js -o dist/raw.js "
+    "build": "terser src/index.js -o dist/index.js"
   },
   "files": [
     "dist"
   ],
   "exports": {
-    ".": "./dist/index.js",
-    "./raw": "./dist/raw.js"
+    ".": "./dist/index.js"
   },
   "keywords": [
     "eslint",

@@ -24,7 +24,7 @@ done
 
 packages=($(ls ./packages));
 
-cd ./packages
+cd ./packages || exit
 
 for p in "${packages[@]}"; do
 	cd $p;

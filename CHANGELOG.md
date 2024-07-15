@@ -9,40 +9,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- v1.1 esm support
-
 ### Changed
 
 - Drop CommonJs in favor for ESM
-- Replace broken OpenGraph image with an appropriately-sized Keep a Changelog
-  image that will render properly (although in English for all languages)
-- Fix OpenGraph title & description for all languages so the title and
-description when links are shared are language-appropriate
 
 ### Removed
 
-- Trademark sign previously shown after the project description in version
-0.3.0
-
-
 ### Fixed
 
-- Improve French translation (#377).
-- Improve id-ID translation (#416).
-- Improve Persian translation (#457).
-- Improve Russian translation (#408).
-- Improve Swedish title (#419).
-- Improve zh-CN translation (#359).
-- Improve French translation (#357).
-- Improve zh-TW translation (#360, #355).
-- Improve Spanish (es-ES) transltion (#362).
-- Foldout menu in Dutch translation (#371).
-- Missing periods at the end of each change (#451).
-- Fix missing logo in 1.1 pages.
-- Display notice when translation isn't for most recent version.
-- Various broken links, page versions, and indentations.
-
-## [1.0.0] - 2017-06-20
+## [1.0.66] - 2024-07-01
 
 [unreleased]: https://github.com/olivierlacan/keep-a-changelog/compare/v1.1.1...HEAD
 [1.1.1]: https://github.com/olivierlacan/keep-a-changelog/compare/v1.1.0...v1.1.1

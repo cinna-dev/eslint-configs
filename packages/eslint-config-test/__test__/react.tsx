@@ -1,7 +1,7 @@
 /* eslint-disable strict */
 import {
   type FC, type ReactNode, useState
-} from 'react';
+} from 'packages/eslint-config-test/__test__/react';
 
 interface ComponentProps {
 	children: ReactNode;
@@ -9,7 +9,7 @@ interface ComponentProps {
 
 const Component: FC<ComponentProps> = (props) => {
   const [ click, setClick ] = useState();
-  const handleClick: kEventHandler<HTMLElement> = (event) => setClick(event);
+  const handleClick: EventHandler<HTMLElement> = (event) => setClick(event);
 
   return (
     <>

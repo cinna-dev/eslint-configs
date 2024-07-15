@@ -1,6 +1,7 @@
 {
   "name": "@cinna-dev/eslint-config-react",
   "version": "1.0.10",
+  "type": "module",
   "description": "eslint config for react",
   "main": "dist/index.js",
   "scripts": {
@@ -21,6 +22,11 @@
   "peerDependencies": {
     "eslint": "^8",
     "eslint-plugin-jsx-a11y": "^6",
-    "eslint-plugin-react": "^7"
+    "eslint-plugin-react": "^7",
+    "eslint-plugin-react-hooks": "^4",
+    "globals": "^15"
+  },
+  "dependencies": {
+    "eslint-plugin-react-compiler": "0.0.0-experimental-0998c1e-20240625"
   }
 }

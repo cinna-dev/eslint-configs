@@ -6,6 +6,9 @@
 import test from './exportModule';
 import {test} from './exportModule';
 import {obj} from './exportModule';
+
+let blubb = 1;
+
 const {obj} = require('./exportModule');
 
 const f = obj;

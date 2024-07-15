@@ -1,19 +1,23 @@
 {
   "private": true,
+  "version": "1.0.65",
   "engines": {
-    "node": ">=16"
+    "node": ">=20"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "set TIMING=1 && eslint ./__test__",
+    "lint": "set TIMING=1 && eslint packages/eslint-config-test/__test__",
     "update-all-dependencies@latest": "pnpm --filter @cinna-dev/eslint* update *@latest",
     "lerna:build": "pnpm lerna run build",
     "lerna:publish": "lerna publish from-package --no-private",
-    "show-changes": "bash ./scripts/git-changes.sh"
+    "lerna:changed": "lerna changed"
   },
   "devDependencies": {
+    "@types/eslint": "^8.56.10",
+    "@types/node": "^20.14.9",
     "babel-minify": "^0.5.2",
     "eslint": "^8.56.0",
+    "globals": "^15.8.0",
     "lerna": "^8.1.2",
     "node-fetch": "^3.3.2",
     "terser": "^5.31.0",
