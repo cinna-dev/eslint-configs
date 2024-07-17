@@ -1,7 +1,7 @@
 {
   "name": "@cinna-dev/eslint-config-suggestions",
   "version": "1.0.33-alpha.0",
-  "type": "module",
+  "type": "commonjs",
   "description": "eslint config for suggestions",
   "main": "dist/index.js",
   "scripts": {

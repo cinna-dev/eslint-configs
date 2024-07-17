@@ -1,11 +1,11 @@
-import react  from 'eslint-plugin-react';
-import jsxA11y from 'eslint-plugin-jsx-a11y';
-import globals from 'globals';
-import reactHooks from 'eslint-plugin-react-hooks';
-import reactCompiler from 'eslint-plugin-react-compiler';
+const react = require('eslint-plugin-react');
+const jsxA11y = require('eslint-plugin-jsx-a11y');
+const globals = require('globals');
+const reactHooks = require('eslint-plugin-react-hooks');
+const reactCompiler = require('eslint-plugin-react-compiler');
 
 /** @type { import("eslint").Linter.FlatConfig[] } */
-export default [
+module.exports = [
     {
         plugins: {
             react,

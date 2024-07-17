@@ -1,6 +1,6 @@
 // disable rule if necessary
 /** @type { import("eslint").Linter.FlatConfig[] } */
-export default [
+module.exports = [
     {
         rules: {
             // https://eslint.org/docs/latest/rules/accessor-pairs

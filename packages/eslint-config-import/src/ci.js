@@ -1,8 +1,9 @@
-import eslintPluginImport, {configs} from 'eslint-plugin-import';
-import { fixupPluginRules } from "@eslint/compat";
+const eslintPluginImport = require('eslint-plugin-import');
+const configs = require('eslint-plugin-import').configs;
+const {fixupPluginRules} = require("@eslint/compat");
 
 /** @type { import("eslint").Linter.FlatConfig[] } */
-export default [
+module.exports = [
     {
         ...configs['typescript'],
         plugins: {

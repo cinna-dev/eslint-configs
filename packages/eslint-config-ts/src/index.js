@@ -1,11 +1,11 @@
 /* @ts-check */
-import tseslint from 'typescript-eslint';
+const tseslint = require('typescript-eslint');
 
 const returnTypeWhitelist = [
     "getStaticProps"
 ];
 
-export default tseslint.config(
+module.exports = tseslint.config(
     {
         plugins: {
             '@typescript-eslint': tseslint.plugin,

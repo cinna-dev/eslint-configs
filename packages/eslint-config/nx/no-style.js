@@ -1,12 +1,12 @@
-import globals from "globals";
-import eslintConfigError from "@cinna-dev/eslint-config-error";
-import eslintConfigSuggestions from "@cinna-dev/eslint-config-suggestions";
-import eslintConfigTsRow from "@cinna-dev/eslint-config-ts/raw";
-import eslintConfigReact from "@cinna-dev/eslint-config-react";
-import eslintConfigImport from "@cinna-dev/eslint-config-import";
+const globals = require("globals");
+const eslintConfigError = require("@cinna-dev/eslint-config-error");
+const eslintConfigSuggestions = require("@cinna-dev/eslint-config-suggestions");
+const eslintConfigTsRaw = require("@cinna-dev/eslint-config-ts/raw");
+const eslintConfigReact = require("@cinna-dev/eslint-config-react");
+const eslintConfigImport = require("@cinna-dev/eslint-config-import");
 
 /** @type { import("eslint").Linter.FlatConfig[] } */
-export default [
+module.exports = [
   {
     languageOptions: {
       parserOptions: {
@@ -23,7 +23,7 @@ export default [
   },
   ...eslintConfigError,
   ...eslintConfigSuggestions,
-  ...eslintConfigTsRow,
+  ...eslintConfigTsRaw,
   ...eslintConfigReact,
   ...eslintConfigImport,
 ];

@@ -1,7 +1,7 @@
 {
   "name": "@cinna-dev/eslint-config-ts",
   "version": "1.0.32-alpha.0",
-  "type": "module",
+  "type": "commonjs",
   "description": "eslint config for typescript",
   "main": "dist/index.js",
   "engines": {
