@@ -11,7 +11,7 @@ module.exports = [
     languageOptions: {
       parserOptions: {
         globals: globals.browser,
-        tsconfigRootDir: import.meta.dirname,
+        tsconfigRootDir: __dirname,
         sourceType: 'script',
         ecmaVersion: 'latest',
         ecmaFeatures: {
