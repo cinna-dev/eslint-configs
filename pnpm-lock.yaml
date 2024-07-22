@@ -114,6 +114,9 @@ importers:
 
   packages/eslint-config-import:
     dependencies:
+      '@eslint/compat':
+        specifier: ^1.1.1
+        version: 1.1.1
       eslint:
         specifier: ^9
         version: 9.7.0
@@ -123,10 +126,6 @@ importers:
       eslint-plugin-import:
         specifier: ^2
         version: 2.29.1(@typescript-eslint/parser@7.16.0)(eslint-import-resolver-typescript@3.6.1)(eslint@9.7.0)
-    devDependencies:
-      '@eslint/compat':
-        specifier: ^1.1.1
-        version: 1.1.1
 
   packages/eslint-config-react:
     dependencies:
@@ -529,7 +528,6 @@ packages:
   /@eslint/compat@1.1.1:
     resolution: {integrity: sha512-lpHyRyplhGPL5mGEh6M9O5nnKk0Gz4bFI+Zu6tKlPpDUN7XshWvH9C/px4UVm87IAANE0W81CEsNGbS1KlzXpA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
-    dev: true
 
   /@eslint/config-array@0.17.0:
     resolution: {integrity: sha512-A68TBu6/1mHHuc5YJL0U0VVeGNiklLAL6rRmhTCP2B5XjWLMnrX+HkO+IAXyHvks5cyyY1jjK5ITPQ1HGS2EVA==}
