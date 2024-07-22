@@ -5,7 +5,7 @@ const globals = require("globals");
 // import eslintConfigTs from "@cinna-dev/eslint-config-ts";
 // import eslintConfigReact from "@cinna-dev/eslint-config-react";
 // import eslintConfigImport from "@cinna-dev/eslint-config-import";
-const eslintConfig = require("@cinna-dev/eslint-config");
+const eslintConfig = require("@cinna-dev/eslint-config/nx/no-style");
 
 /** @type { import("eslint").Linter.FlatConfig[] } */
 module.exports = [

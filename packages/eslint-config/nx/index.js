@@ -2,7 +2,7 @@ const globals = require("globals");
 const eslintConfigStyleBasic = require( "@cinna-dev/eslint-config-style/basic");
 const eslintConfigError = require("@cinna-dev/eslint-config-error");
 const eslintConfigSuggestions = require("@cinna-dev/eslint-config-suggestions");
-const eslintConfigTsRaw = require("@cinna-dev/eslint-config-ts/raw");
+const eslintConfigTsRaw = require("@cinna-dev/eslint-config-ts");
 const eslintConfigReact = require("@cinna-dev/eslint-config-react");
 const eslintConfigImport = require("@cinna-dev/eslint-config-import");
 

@@ -26,7 +26,7 @@
   },
   "author": "cinna-dev",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "@eslint/compat": "^1.1.1"
   }
 }
