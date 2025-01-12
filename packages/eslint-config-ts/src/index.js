@@ -6,14 +6,21 @@ const returnTypeWhitelist = [
 ];
 
 module.exports = tseslint.config(
+    tseslint.configs.recommendedTypeChecked,
     {
-        plugins: {
-            '@typescript-eslint': tseslint.plugin,
-        },
         languageOptions: {
             parser: tseslint.parser,
             parserOptions: {
-                project: true,
+                // project: true,
+                project: [
+                    './eslint.config.js',
+                    './packages/*/eslint.config.js',
+                    './packages/apps/*/eslint.config.js',
+                    './packages/libs/*/*/eslint.config.js',
+                    './packages/libs/*/*/*/eslint.config.js',
+                ],
+                projectService: true,
+                tsconfigRootDir: __dirname,
             },
         },
         rules: {
@@ -66,7 +73,46 @@ module.exports = tseslint.config(
             // It's often a good idea to ban certain types to help with consistency and safety.
             // This rule bans specific types and can suggest alternatives.
             /* Note that it does not ban the corresponding runtime objects from being used. */
-            "@typescript-eslint/ban-types": "error",
+            /* ! deprecated */
+            // "@typescript-eslint/ban-types": "error",
+
+            // new
+            // https://typescript-eslint.io/rules/no-unsafe-function-type/
+            // TypeScript's built-in Function type allows being called with any number of arguments and returns type any.
+            // Function also allows classes or plain objects that happen to possess all properties of the Function class.
+            // It's generally better to specify function parameters and return types with the function type syntax.
+            '@typescript-eslint/no-unsafe-function-type': 'error',
+
+            // new
+            // https://typescript-eslint.io/rules/no-wrapper-object-types/
+            // TypeScript defines several confusing pairs of types that look very similar to each other,
+            // but actually mean different things: boolean/Boolean, number/Number, string/String, bigint/BigInt,
+            // symbol/Symbol, object/Object. In general, only the lowercase variant is appropriate to use.
+            // Therefore, this rule enforces that you only use the lowercase variant.
+            // As a result, using the lowercase type names like number in TypeScript types instead of
+            // the uppercase names like Number is a better practice that describes code more accurately.
+            '@typescript-eslint/no-wrapper-object-types': 'error',
+
+            // new
+            // https://typescript-eslint.io/rules/no-empty-object-type/
+            // The {}, or "empty object" type in TypeScript is a common source of confusion for
+            // developers unfamiliar with TypeScript's structural typing. {} represents any non-nullish value,
+            // including literals like 0 and "":
+            // In other words, the "empty object" type {} really means "any value that is defined".
+            // That includes arrays, class instances, functions, and primitives such as string and symbol.
+            // To avoid confusion around the {} type allowing any non-nullish value, this rule bans usage of the {} type.
+            // That includes interfaces and object type aliases with no fields.
+            '@typescript-eslint/no-empty-object-type': 'error',
+
+            // new
+            // https://typescript-eslint.io/rules/no-restricted-types/
+            // It can sometimes be useful to ban specific types from being used in type annotations.
+            // For example, a project might be migrating from using one type to another,
+            // and want to ban references to the old type.
+            //
+            // This rule can be configured to ban a list of specific types and can suggest alternatives.
+            // Note that it does not ban the corresponding runtime objects from being used.
+            '@typescript-eslint/no-restricted-types': 'off',
 
             // https://typescript-eslint.io/rules/class-literal-property-style/
             // Enforce that literals on classes are exposed in a consistent style.
@@ -158,7 +204,8 @@ module.exports = tseslint.config(
 
             // https://typescript-eslint.io/rules/member-delimiter-style/
             /* Require a specific member delimiter style for interfaces and type literals. */
-            "@typescript-eslint/member-delimiter-style": "warn",
+            // deprecated
+            // "@typescript-eslint/member-delimiter-style": "warn",
 
             // https://typescript-eslint.io/rules/member-ordering/
             // Require a consistent member declaration order.

@@ -2,6 +2,7 @@
 
 /** @type { import("eslint").Linter.FlatConfig[] } */
 module.exports = [
+
     {
         rules: {
             // https://eslint.org/docs/latest/rules/array-callback-return

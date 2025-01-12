@@ -7,7 +7,7 @@ module.exports = [
     {
         ...configs['typescript'],
         plugins: {
-            import: fixupPluginRules(eslintPluginImport)
+            "import": fixupPluginRules(eslintPluginImport)
         },
         settings: {
             "import/internal-regex": "^packages/",

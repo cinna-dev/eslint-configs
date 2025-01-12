@@ -58,3 +58,11 @@ when exporting **ecma script modules** use `"type": "module`
 import/group-exports
 
 suggestions
+
+### Test
+
+Validate the Config
+
+```shell
+npx eslint --print-config packages/eslint-config-react/dist/
+```

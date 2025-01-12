@@ -27,6 +27,6 @@
     "globals": "^15"
   },
   "dependencies": {
-    "eslint-plugin-react-compiler": "0.0.0-experimental-0998c1e-20240625"
+    "eslint-plugin-react-compiler": "19.0.0-beta-63e3235-20250105"
   }
 }

@@ -5,14 +5,16 @@
   "description": "eslint config concerning es6 imports",
   "main": "dist/index.js",
   "scripts": {
-    "build": "terser src/index.js -o dist/index.js && terser src/ci.js -o dist/ci.js"
+    "build": "bash ../../scripts/extract-configs.sh ./src/index.js ./src/config.js && terser src/index.js -o dist/index.js && terser src/ci.js -o dist/ci.js && terser src/config.js -o dist/config.js",
+    "create": "bash ../../scripts/extract-configs.sh ./src/index.js ./src/config.js"
   },
   "files": [
     "dist"
   ],
   "exports": {
     ".": "./dist/index.js",
-    "./ci": "./dist/ci.js"
+    "./ci": "./dist/ci.js",
+    "./config": "./dist/config.js"
   },
   "keywords": [
     "eslint",
@@ -27,6 +29,6 @@
   "author": "cinna-dev",
   "license": "ISC",
   "dependencies": {
-    "@eslint/compat": "^1.1.1"
+    "@eslint/compat": "^1.2.5"
   }
 }

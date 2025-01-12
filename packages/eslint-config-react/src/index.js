@@ -97,7 +97,11 @@ module.exports = [
             // https://github.com/jsx-eslint/eslint-plugin-react/blob/c6d082a7b1a95746dfb7f2581723d184b467be65/docs/rules/function-component-definition.md
             // Enforce a specific function type for function components
             // This option enforces a specific function type for function components.
-            "react/function-component-definition": "warn",
+            'react/function-component-definition': ['warn', {
+                'namedComponents': 'arrow-function',
+                'unnamedComponents': 'arrow-function',
+            }],
+
 
             // https://github.com/jsx-eslint/eslint-plugin-react/blob/c6d082a7b1a95746dfb7f2581723d184b467be65/docs/rules/hook-use-state.md
             // Ensure destructuring and symmetric naming of useState hook value and setter variables
@@ -117,7 +121,7 @@ module.exports = [
             // https://github.com/jsx-eslint/eslint-plugin-react/blob/c6d082a7b1a95746dfb7f2581723d184b467be65/docs/rules/jsx-boolean-value.md
             // Enforce boolean attributes notation in JSX
             // `When using a boolean attribute in JSX`, you can set the attribute value to `true` or omit the value.
-            "react/jsx-boolean-value": ["error", "always"],
+            "react/jsx-boolean-value": ["error", "never"],
 
             // https://github.com/jsx-eslint/eslint-plugin-react/blob/c6d082a7b1a95746dfb7f2581723d184b467be65/docs/rules/jsx-child-element-spacing.md
             // Enforce or disallow spaces inside of curly braces in JSX attributes and expressions
@@ -184,13 +188,14 @@ module.exports = [
 
             // https://github.com/jsx-eslint/eslint-plugin-react/blob/c6d082a7b1a95746dfb7f2581723d184b467be65/docs/rules/jsx-filename-extension.md
             // Disallow file extensions that may contain JSX
-            "react/jsx-filename-extension": ["error", {allow: "as-needed"}],
+            "react/jsx-filename-extension": ["error", { extensions: ['.tsx', '.jsx'] }],
 
             // https://github.com/jsx-eslint/eslint-plugin-react/blob/c6d082a7b1a95746dfb7f2581723d184b467be65/docs/rules/jsx-first-prop-new-line.md
             // Enforce proper position of the first property in JSX
             // Ensure correct position of the first property.
             // Note: The fixer does not include indentation. Please rerun lint to correct those errors.
-            "react/jsx-first-prop-new-line": ["warn", "always"],
+            // * should probably be handled by the formater, so no need to lint this
+            "react/jsx-first-prop-new-line": ["off", "multiline"],
 
             // https://github.com/jsx-eslint/eslint-plugin-react/blob/c6d082a7b1a95746dfb7f2581723d184b467be65/docs/rules/jsx-fragments.md
             // Enforce shorthand or standard form for React fragments
@@ -216,8 +221,8 @@ module.exports = [
             // Note: The fixer will fix whitespace and tabs indentation.
             // ! indentation should be done by a formatter
             "react/jsx-indent": [
-                "warn",
                 "off",
+                2,
                 {checkAttributes: false, indentLogicalExpressions: true},
             ],
 
@@ -313,7 +318,7 @@ module.exports = [
                 {
                     noStrings: true,
                     allowedStrings: ["allowed"],
-                    ignoreProps: false,
+                    ignoreProps: true,
                     noAttributeStrings: true,
                 },
             ],
@@ -714,7 +719,7 @@ module.exports = [
             // When using JSX, `<a />` expands to `React.createElement("a")`.
             // Therefore the `React` variable must be in scope.
             // If you are using the @jsx pragma this rule will check the designated variable and not the `React` one.
-            "react/react-in-jsx-scope": "error",
+            "react/react-in-jsx-scope": "off",
 
             // https://github.com/jsx-eslint/eslint-plugin-react/blob/c6d082a7b1a95746dfb7f2581723d184b467be65/docs/rules/require-default-props.md
             // Enforce a defaultProps definition for every prop that is not a required prop
@@ -940,7 +945,7 @@ module.exports = [
                 'warn',
             ],
             /* react hooks */
-            ...reactHooks.configs.recommended,
+            ...reactHooks.configs.recommended.rules,
             /* react compiler */
             "react-compiler/react-compiler": "error"
         },
