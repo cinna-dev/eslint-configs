@@ -15,7 +15,36 @@ _will build all packages_
 
 ### Versioning
 
-### Publish
+### Publish workflow
+
+#### check outdated node modules 
+
+```shell
+pnpm outdated
+```
+#### Update Node Modules
+```shell
+pnpm update
+```
+
+#### git commit and git push
+
+#### Build all packages
+
+```shell
+pnpm run lerna:build
+```
+#### Check Changes
+ 
+```shell
+pnpm run lerna:changed
+```
+#### Versioning (optional)
+
+```shell
+pnpm run lerna:version
+```
+#### Publish 
 
 ```shell
 lerne publish
