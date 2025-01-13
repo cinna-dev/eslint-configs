@@ -23,6 +23,7 @@ module.exports = tseslint.config(
                 tsconfigRootDir: __dirname,
             },
         },
+        files: ["**/*.ts", "**/*.mts", "**/*.cts", "**/*.tsx"],
         rules: {
             // https://typescript-eslint.io/rules/adjacent-overload-signatures/
             // Require that function overload signatures be consecutive.
@@ -704,7 +705,7 @@ module.exports = tseslint.config(
     },
     {
         /* enable the rule specifically for TypeScript files */
-        files: ["*.ts", "*.mts", "*.cts", "*.tsx"],
+        files: ["**/*.ts", "**/*.mts", "**/*.cts", "**/*.tsx"],
         rules: {
             /* Extension Rules */
             /* https://typescript-eslint.io/rules/default-param-last */
@@ -822,7 +823,7 @@ module.exports = tseslint.config(
     },
     {
         /* enable the rule specifically for TypeScript files */
-        files: ["*.tsx"],
+        files: ["**/*.tsx"],
         rules: {
             "@typescript-eslint/naming-convention": [
                 "warn",

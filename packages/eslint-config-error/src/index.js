@@ -2,8 +2,8 @@
 
 /** @type { import("eslint").Linter.FlatConfig[] } */
 module.exports = [
-
     {
+        files: ["**/*.js", "**/*.ts", "**/*.mjs","**/*.cjs", "*cts", "*mts","**/*.jsx","**/*.tsx"],
         rules: {
             // https://eslint.org/docs/latest/rules/array-callback-return
             "array-callback-return": "error",
@@ -369,7 +369,7 @@ module.exports = [
             "valid-typeof": ["error", {requireStringLiterals: true}],
         }
     }, {
-        files: ["*.tsx", "*.ts", "*.mts", "*.cts"], rules: {
+        files: ["**/*.tsx", "**/*.ts", "**/*.mts", "**/*.cts"], rules: {
             "no-undef": "off",
         },
     }

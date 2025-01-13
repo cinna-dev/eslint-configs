@@ -9,6 +9,7 @@ module.exports = [
     },
     {
         rules: {
+            files: ["**/*.js", "**/*.ts", "**/*.mjs","**/*.cjs","**/*.jsx","**/*.tsx"],
             /* Arrays */
 
             // https://eslint.org/docs/latest/rules/array-bracket-newline
@@ -502,7 +503,7 @@ module.exports = [
     },
     // react Components usually encapsulate more code than standard js functions
     {
-        files: ["*.tsx", "*.jsx", "*.ts"],
+        files: ["**/*.tsx", "**/*.jsx", "**/*.ts"],
         rules: {
             // ts is using more boilerplate than js therefore extending the max-len from 80 to 120 seems a requirement
             "max-len": [
@@ -517,14 +518,14 @@ module.exports = [
         },
     },
     {
-        files: ["*.tsx", "*.jsx"],
+        files: ["**/*.tsx", "**/*.jsx"],
         rules: {
             "max-lines-per-function": ["warn", 200],
             "arrow-parens": ["warn", "always"],
         }
     },
     {
-        files: ["*.tsx", "*.ts", "*.mts", "*.cts"],
+        files: ["**/*.tsx", "**/*.ts", "**/*.mts", "**/*.cts"],
         rules: {
             "no-undef": "off"
         }

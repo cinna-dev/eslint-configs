@@ -2,6 +2,7 @@
 /** @type { import("eslint").Linter.FlatConfig[] } */
 module.exports = [
     {
+        files: ["**/*.js", "**/*.ts","**/*.mjs","**/*.cjs","**/*.jsx","**/*.jsx"],
         rules: {
             // https://eslint.org/docs/latest/rules/accessor-pairs
             // Enforce getter and setter pairs in objects and classes
@@ -216,7 +217,7 @@ module.exports = [
             // This rule enforces a maximum number of lines per function,
             // in order to aid in maintainability and reduce complexity.
             "max-lines-per-function": [
-                "warn",
+                "off",
                 {skipBlankLines: true, skipComments: true, IIFEs: false},
             ],
 
@@ -1072,7 +1073,7 @@ module.exports = [
     },
     {
         // React Files
-        files: ["*.tsx", "*.jsx"],
+        files: ["**/*.tsx", "**/*.jsx"],
         rules: {
             "new-cap": ["off", {newIsCap: true, properties: true}],
             "no-magic-numbers": "off",
@@ -1082,7 +1083,7 @@ module.exports = [
     },
     {
         // ts Files
-        files: ["*.ts", "*.mts", "*.cts"],
+        files: ["**/*.ts", "**/*.mts", "**/*.cts"],
         rules: {
             "max-classes-per-file": "off",
             "new-cap": ["error", {newIsCap: true, properties: true}],
@@ -1092,7 +1093,7 @@ module.exports = [
     },
     {
         // Node Files
-        files: ["*.mjs", "*.cjs"],
+        files: ["**/*.mjs", "**/*.cjs"],
         rules: {
             "no-console": 0,
         },

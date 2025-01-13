@@ -33,6 +33,7 @@ module.exports = [
                 }
             }
         },
+        files: ["**/*.js", "**/*.ts", "**/*.mjs","**/*.cjs", "*cts", "*mts","**/*.jsx","**/*.tsx"],
         rules: {
             /* helpful Warning */
 

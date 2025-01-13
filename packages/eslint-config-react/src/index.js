@@ -30,7 +30,7 @@ module.exports = [
         },
         // extends: ["plugin:react/jsx-runtime"],
         // plugins: ["react", "jsx-a11y"],
-        files: ["*.tsx", "*.ts", "*cts", "*mts"],
+        files: ["**/*.js", "**/*.ts", "**/*.mjs","**/*.cjs", "*cts", "*mts","**/*.jsx","**/*.tsx"],
         rules: {
             // https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/boolean-prop-naming.md
             // Allows you to enforce a consistent naming pattern for props which expect a boolean value.
@@ -951,7 +951,7 @@ module.exports = [
         },
     },
     {
-        files: ["*.tsx"],
+        files: ["**/*.tsx"],
         rules: {
             "react/default-props-match-prop-types": "off",
             "react/forbid-foreign-prop-types": "off",
