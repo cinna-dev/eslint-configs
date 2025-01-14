@@ -2,6 +2,63 @@
 
 a collection of eslint configs
 
+## Publish workflow
+
+### 1. check outdated node modules
+
+```shell
+pnpm outdated
+```
+
+### 2. Update Node Modules
+
+```shell
+pnpm update
+```
+
+update dependencies of all packages
+
+```shell
+pnpm run update-all-dependencies@latest
+```
+
+### 3. git commit and git push
+
+### 4. Build all packages
+
+```shell
+pnpm run lerna:build
+```
+### 5. Check Changes (optional)
+
+```shell
+pnpm run lerna:changed
+```
+### 6. Versioning (optional)
+
+```shell
+pnpm run lerna:version
+```
+### 7. Publish
+
+```shell
+pnpm run lerna:publish 
+```
+
+```shell
+lerna pulbish --no-private
+```
+
+will ensure `private: true` packages are not published to the `npm` registry.
+```shell
+lerne publish
+```
+
+will also automatically increase the `versioning` fo each `package`.
+
+---
+
+
 ## Lerna
 
 by default `lerna` weil look in the `packages` dir for node packages
@@ -12,51 +69,6 @@ by default `lerna` weil look in the `packages` dir for node packages
     lerna build
 ```
 _will build all packages_
-
-### Versioning
-
-### Publish workflow
-
-#### check outdated node modules 
-
-```shell
-pnpm outdated
-```
-#### Update Node Modules
-```shell
-pnpm update
-```
-
-#### git commit and git push
-
-#### Build all packages
-
-```shell
-pnpm run lerna:build
-```
-#### Check Changes
- 
-```shell
-pnpm run lerna:changed
-```
-#### Versioning (optional)
-
-```shell
-pnpm run lerna:version
-```
-#### Publish 
-
-```shell
-lerne publish
-```
-
- will also automatically increase the `versioning` fo each `package`.
-
-```shell
-lerna pulbish --no-private
-```
-
-will ensure `private: true` packages are not published to the `npm` registry.
 
 
 ## Pnpm
