@@ -1,6 +1,6 @@
 {
   "name": "@cinna-dev/eslint-config-react",
-  "version": "1.0.13-alpha.0",
+  "version": "1.0.14-alpha.0",
   "type": "commonjs",
   "description": "eslint config for react",
   "main": "dist/index.js",
@@ -23,8 +23,8 @@
     "eslint": "^9",
     "eslint-plugin-jsx-a11y": "^6",
     "eslint-plugin-react": "^7",
+    "eslint-plugin-react-compiler": "^19",
     "eslint-plugin-react-hooks": "^4",
-    "globals": "^15",
-    "eslint-plugin-react-compiler": "^19"
+    "globals": "^15"
   }
 }

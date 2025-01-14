@@ -1,0 +1,167 @@
+0 silly argv {
+0 silly argv   _: [ 'version' ],
+0 silly argv   lernaVersion: '8.1.9',
+0 silly argv   '$0': 'node_modules\\lerna\\dist\\cli.js'
+0 silly argv }
+1 notice cli v8.1.9
+2 verbose packageConfigs Package manager "pnpm" detected. Resolving packages using `pnpm-workspace.yaml`.
+3 verbose rootPath E:\Users\philip\documents\projects\eslint-configs
+4 info versioning independent
+5 silly isAnythingCommitted
+6 verbose isAnythingCommitted 1
+7 silly getCurrentBranch
+8 verbose currentBranch main
+9 silly remoteBranchExists
+10 silly isBehindUpstream
+11 silly isBehindUpstream main is behind origin/main by 0 commit(s) and ahead by 3
+12 silly hasTags
+13 verbose hasTags true
+14 silly git-describe.sync "@cinna-dev/eslint-config-error@1.0.19-alpha.0-4-g32b9db0" => {"lastTagName":"@cinna-dev/eslint-config-error@1.0.19-alpha.0","lastVersion":"1.0.19-alpha.0","refCount":"4","sha":"32b9db0","isDirty":false}
+15 info Looking for changed packages since @cinna-dev/eslint-config-error@1.0.19-alpha.0
+16 silly checking diff packages/eslint-config
+17 silly found diff in packages/eslint-config/basic-style.js
+17 silly found diff in packages/eslint-config/index.js
+17 silly found diff in packages/eslint-config/nx/index.js
+17 silly found diff in packages/eslint-config/nx/no-style.js
+18 verbose filtered diff [
+18 verbose filtered diff   'packages/eslint-config/basic-style.js',
+18 verbose filtered diff   'packages/eslint-config/index.js',
+18 verbose filtered diff   'packages/eslint-config/nx/index.js',
+18 verbose filtered diff   'packages/eslint-config/nx/no-style.js'
+18 verbose filtered diff ]
+19 silly checking diff packages/eslint-config-error
+20 silly found diff in packages/eslint-config-error/dist/index.js
+20 silly found diff in packages/eslint-config-error/src/index.js
+21 verbose filtered diff [
+21 verbose filtered diff   'packages/eslint-config-error/dist/index.js',
+21 verbose filtered diff   'packages/eslint-config-error/src/index.js'
+21 verbose filtered diff ]
+22 silly checking diff packages/eslint-config-import
+23 silly found diff in packages/eslint-config-import/dist/ci.js
+23 silly found diff in packages/eslint-config-import/dist/index.js
+23 silly found diff in packages/eslint-config-import/src/ci.js
+23 silly found diff in packages/eslint-config-import/src/index.js
+24 verbose filtered diff [
+24 verbose filtered diff   'packages/eslint-config-import/dist/ci.js',
+24 verbose filtered diff   'packages/eslint-config-import/dist/index.js',
+24 verbose filtered diff   'packages/eslint-config-import/src/ci.js',
+24 verbose filtered diff   'packages/eslint-config-import/src/index.js'
+24 verbose filtered diff ]
+25 silly checking diff packages/eslint-config-react
+26 silly found diff in packages/eslint-config-react/dist/index.js
+26 silly found diff in packages/eslint-config-react/package.json
+26 silly found diff in packages/eslint-config-react/src/index.js
+27 verbose filtered diff [
+27 verbose filtered diff   'packages/eslint-config-react/dist/index.js',
+27 verbose filtered diff   'packages/eslint-config-react/package.json',
+27 verbose filtered diff   'packages/eslint-config-react/src/index.js'
+27 verbose filtered diff ]
+28 silly checking diff packages/eslint-config-react-mui
+29 silly found diff in packages/eslint-config-react-mui/dist/index.js
+29 silly found diff in packages/eslint-config-react-mui/src/index.js
+30 verbose filtered diff [
+30 verbose filtered diff   'packages/eslint-config-react-mui/dist/index.js',
+30 verbose filtered diff   'packages/eslint-config-react-mui/src/index.js'
+30 verbose filtered diff ]
+31 silly checking diff packages/eslint-config-style
+32 silly found diff in packages/eslint-config-style/dist/basic.js
+32 silly found diff in packages/eslint-config-style/dist/index.js
+32 silly found diff in packages/eslint-config-style/src/basic.js
+32 silly found diff in packages/eslint-config-style/src/index.js
+33 verbose filtered diff [
+33 verbose filtered diff   'packages/eslint-config-style/dist/basic.js',
+33 verbose filtered diff   'packages/eslint-config-style/dist/index.js',
+33 verbose filtered diff   'packages/eslint-config-style/src/basic.js',
+33 verbose filtered diff   'packages/eslint-config-style/src/index.js'
+33 verbose filtered diff ]
+34 silly checking diff packages/eslint-config-suggestions
+35 silly found diff in packages/eslint-config-suggestions/dist/index.js
+35 silly found diff in packages/eslint-config-suggestions/src/index.js
+36 verbose filtered diff [
+36 verbose filtered diff   'packages/eslint-config-suggestions/dist/index.js',
+36 verbose filtered diff   'packages/eslint-config-suggestions/src/index.js'
+36 verbose filtered diff ]
+37 silly checking diff packages/eslint-config-test
+38 silly found diff in packages/eslint-config-test/package.json
+39 verbose filtered diff [ 'packages/eslint-config-test/package.json' ]
+40 silly checking diff packages/eslint-config-ts
+41 silly found diff in packages/eslint-config-ts/dist/index.js
+41 silly found diff in packages/eslint-config-ts/src/index.js
+42 verbose filtered diff [
+42 verbose filtered diff   'packages/eslint-config-ts/dist/index.js',
+42 verbose filtered diff   'packages/eslint-config-ts/src/index.js'
+42 verbose filtered diff ]
+43 verbose updated @cinna-dev/eslint-config
+44 verbose updated @cinna-dev/eslint-config-error
+45 verbose updated @cinna-dev/eslint-config-import
+46 verbose updated @cinna-dev/eslint-config-react
+47 verbose updated @cinna-dev/eslint-config-react-mui
+48 verbose updated @cinna-dev/eslint-config-style
+49 verbose updated @cinna-dev/eslint-config-suggestions
+50 verbose updated @cinna-dev/eslint-config-test
+51 verbose updated @cinna-dev/eslint-config-ts
+52 verbose git-describe undefined => "@cinna-dev/eslint-config-error@1.0.19-alpha.0-4-g32b9db0"
+53 silly git-describe parsed => {"lastTagName":"@cinna-dev/eslint-config-error@1.0.19-alpha.0","lastVersion":"1.0.19-alpha.0","refCount":"4","sha":"32b9db0","isDirty":false}
+54 info execute Skipping releases
+55 silly lifecycle No script for "preversion" in "eslint-configs", continuing
+56 silly lifecycle No script for "preversion" in "@cinna-dev/eslint-config-error", continuing
+57 silly lifecycle No script for "preversion" in "@cinna-dev/eslint-config-import", continuing
+58 silly lifecycle No script for "preversion" in "@cinna-dev/eslint-config-react", continuing
+59 silly lifecycle No script for "preversion" in "@cinna-dev/eslint-config-react-mui", continuing
+60 silly lifecycle No script for "preversion" in "@cinna-dev/eslint-config-style", continuing
+61 silly lifecycle No script for "preversion" in "@cinna-dev/eslint-config-suggestions", continuing
+62 silly lifecycle No script for "preversion" in "@cinna-dev/eslint-config-ts", continuing
+63 verbose version @cinna-dev/eslint-config-error has no lockfile. Skipping lockfile update.
+64 verbose version @cinna-dev/eslint-config-react-mui has no lockfile. Skipping lockfile update.
+65 verbose version @cinna-dev/eslint-config-import has no lockfile. Skipping lockfile update.
+66 verbose version @cinna-dev/eslint-config-react has no lockfile. Skipping lockfile update.
+67 verbose version @cinna-dev/eslint-config-style has no lockfile. Skipping lockfile update.
+68 verbose version @cinna-dev/eslint-config-ts has no lockfile. Skipping lockfile update.
+69 verbose version @cinna-dev/eslint-config-suggestions has no lockfile. Skipping lockfile update.
+70 silly lifecycle No script for "version" in "@cinna-dev/eslint-config-error", continuing
+71 silly lifecycle No script for "version" in "@cinna-dev/eslint-config-react-mui", continuing
+72 silly lifecycle No script for "version" in "@cinna-dev/eslint-config-style", continuing
+73 silly lifecycle No script for "version" in "@cinna-dev/eslint-config-import", continuing
+74 silly lifecycle No script for "version" in "@cinna-dev/eslint-config-react", continuing
+75 silly lifecycle No script for "version" in "@cinna-dev/eslint-config-suggestions", continuing
+76 silly lifecycle No script for "version" in "@cinna-dev/eslint-config-ts", continuing
+77 silly lifecycle No script for "preversion" in "@cinna-dev/eslint-config", continuing
+78 verbose version @cinna-dev/eslint-config has no lockfile. Skipping lockfile update.
+79 silly lifecycle No script for "version" in "@cinna-dev/eslint-config", continuing
+80 silly lifecycle No script for "preversion" in "@cinna-dev/eslint-config-test", continuing
+81 verbose version @cinna-dev/eslint-config-test has no lockfile. Skipping lockfile update.
+82 silly lifecycle No script for "version" in "@cinna-dev/eslint-config-test", continuing
+83 silly lifecycle No script for "version" in "eslint-configs", continuing
+84 verbose version Updating root pnpm-lock.yaml
+85 error Error: Command failed with exit code 1: pnpm install --lockfile-only --ignore-scripts
+85 error Scope: all 10 workspace projects
+85 error  WARN  `node_modules` is present. Lockfile only installation will make it out-of-date
+85 error
+85 error    ╭──────────────────────────────────────────────────────────────────╮
+85 error    │                                                                  │
+85 error    │                Update available! 8.15.1 → 9.15.4.                │
+85 error    │   Changelog: https://github.com/pnpm/pnpm/releases/tag/v9.15.4   │
+85 error    │         Run a script from: https://pnpm.io/installation          │
+85 error    │                                                                  │
+85 error    │      Follow @pnpmjs for updates: https://twitter.com/pnpmjs      │
+85 error    │                                                                  │
+85 error    ╰──────────────────────────────────────────────────────────────────╯
+85 error
+85 error Progress: resolved 0, reused 1, downloaded 0, added 0
+85 error E:\Users\philip\documents\projects\eslint-configs\packages\eslint-config-react:
+85 error  ERR_PNPM_NO_MATCHING_VERSION  No matching version found for eslint-plugin-react-compiler@^19
+85 error
+85 error This error happened while installing a direct dependency of E:\Users\philip\documents\projects\eslint-configs\packages\eslint-config-react
+85 error
+85 error The latest release of eslint-plugin-react-compiler is "19.0.0-beta-e552027-20250112".
+85 error
+85 error Other releases are:
+85 error   * experimental: 0.0.0-experimental-e552027-20250113
+85 error   * beta: 19.0.0-beta-e552027-20250112
+85 error
+85 error If you need the full list of all 123 published versions run "$ pnpm view eslint-plugin-react-compiler versions".
+85 error     at makeError (E:\Users\philip\documents\projects\eslint-configs\node_modules\.pnpm\execa@5.0.0\node_modules\execa\lib\error.js:59:11)
+85 error     at handlePromise (E:\Users\philip\documents\projects\eslint-configs\node_modules\.pnpm\execa@5.0.0\node_modules\execa\index.js:114:26)
+85 error     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+85 error     at async VersionCommand.updatePackageVersions (E:\Users\philip\documents\projects\eslint-configs\node_modules\.pnpm\lerna@8.1.9\node_modules\lerna\dist\index.js:9866:11)
+85 error     at async Promise.all (index 0)
