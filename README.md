@@ -45,14 +45,15 @@ pnpm run lerna:version
 pnpm run lerna:publish 
 ```
 
-```shell
-lerna pulbish --no-private
-```
-
-will ensure `private: true` packages are not published to the `npm` registry.
-```shell
-lerne publish
-```
+_Explanation:_
+> `pnpm run lerna:publish` is composed of
+> ```shell
+> lerna pulbish --no-private
+> ```
+> will ensure `private: true` packages are not published to the `npm` registry.
+> ```shell
+> lerne publish
+> ```
 
 will also automatically increase the `versioning` fo each `package`.
 
