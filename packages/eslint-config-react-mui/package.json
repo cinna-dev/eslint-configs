@@ -1,6 +1,6 @@
 {
   "name": "@cinna-dev/eslint-config-react-mui",
-  "version": "1.0.2-alpha.0",
+  "version": "1.0.3-alpha.0",
   "private": true,
   "description": "eslint config for react",
   "main": "dist/index.js",

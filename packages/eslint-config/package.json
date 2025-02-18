@@ -1,6 +1,6 @@
 {
   "name": "@cinna-dev/eslint-config",
-  "version": "1.0.71-alpha.0",
+  "version": "1.0.72-alpha.0",
   "description": "eslint config",
   "type": "commonjs",
   "main": "index.js",

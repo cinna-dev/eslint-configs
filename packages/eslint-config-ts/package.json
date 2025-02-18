@@ -1,6 +1,6 @@
 {
   "name": "@cinna-dev/eslint-config-ts",
-  "version": "1.0.35-alpha.0",
+  "version": "1.0.36-alpha.0",
   "type": "commonjs",
   "description": "eslint config for typescript",
   "main": "dist/index.js",
@@ -30,8 +30,8 @@
     "@typescript-eslint/eslint-plugin": ">=7",
     "@typescript-eslint/parser": ">=7",
     "eslint": ">=9",
+    "globals": ">=15",
     "typescript": ">=5",
-    "typescript-eslint": ">=7",
-    "globals": ">=15"
+    "typescript-eslint": ">=7"
   }
 }
