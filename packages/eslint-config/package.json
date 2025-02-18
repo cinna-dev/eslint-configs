@@ -14,10 +14,8 @@
   },
   "exports": {
     ".": "./index.js",
-    "./basic-style": "./basic-style.js",
-    "./no-style": "./no-style.js",
-    "./nx": "./nx/index.js",
-    "./nx/no-style": "./nx/no-style.js"
+    "./styled": "./styled.js",
+    "./configure": "./configure.js"
   },
   "author": "cinna-dev",
   "license": "ISC",

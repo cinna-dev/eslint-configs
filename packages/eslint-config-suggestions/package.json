@@ -17,7 +17,7 @@
     "linter"
   ],
   "peerDependencies": {
-    "eslint": "^9"
+    "eslint": ">=9"
   },
   "author": "cinna-dev",
   "license": "ISC"

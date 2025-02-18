@@ -463,7 +463,7 @@ module.exports = [
         }
     },
     {
-        files: ["**/pages/**/*.tsx", "**/app/**/*.tsx"],
+        files: ["**/src/app/**/*.tsx","**/src/app/**/*.jsx","**/src/app/**/*.js","**/src/app/**/*.ts"],
         rules: {
             // * framework specific exceptions. Next.js ... .etc
             "import/no-default-export": "off",

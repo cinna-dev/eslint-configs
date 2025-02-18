@@ -1,28 +1,35 @@
 /* @ts-check */
 const tseslint = require('typescript-eslint');
+const globals = require("globals");
 
 const returnTypeWhitelist = [
     "getStaticProps"
 ];
 
-module.exports = tseslint.config(
-    tseslint.configs.recommendedTypeChecked,
+const configure = (projectUrl = '' , parserOptions = {}) => [
     {
         languageOptions: {
             parser: tseslint.parser,
             parserOptions: {
-                // project: true,
-                project: [
-                    './eslint.config.js',
-                    './packages/*/eslint.config.js',
-                    './packages/apps/*/eslint.config.js',
-                    './packages/libs/*/*/eslint.config.js',
-                    './packages/libs/*/*/*/eslint.config.js',
-                ],
+                project:projectUrl,
+                globals: globals.browser,
                 projectService: true,
                 tsconfigRootDir: __dirname,
+                sourceType: 'script',
+                ecmaVersion: 'latest',
+                ecmaFeatures: {
+                    impliedStrict: true,
+                    jsx: true
+                },
+                ...parserOptions,
             },
         },
+    },
+    ...rules
+];
+
+const rules = [
+    {
         files: ["**/*.ts", "**/*.mts", "**/*.cts", "**/*.tsx"],
         rules: {
             // https://typescript-eslint.io/rules/adjacent-overload-signatures/
@@ -173,14 +180,14 @@ module.exports = tseslint.config(
             // Functions in TypeScript often don't need to be given an explicit return type annotation. Leaving off the return type is less code to read or write and allows the compiler to infer it from the contents of the function.
             // However, explicit return types do make it visually more clear what type is returned by a function.
             /* They can also speed up TypeScript type checking performance in large codebases with many large functions. */
-            "@typescript-eslint/explicit-function-return-type": ["error", {
+            "@typescript-eslint/explicit-function-return-type": ["warn", {
                 allowExpressions: true,
                 allowTypedFunctionExpressions: true,
                 allowHigherOrderFunctions: true,
                 allowConciseArrowFunctionExpressionsStartingWithVoid: true,
-                allowedNames: [
-                    "getStaticProps"
-                ]
+                allowDirectConstAssertionInArrowFunctions: true,
+                allowIIFEs: true,
+                allowedNames:returnTypeWhitelist,
             }],
 
             // https://typescript-eslint.io/rules/explicit-member-accessibility/
@@ -736,8 +743,9 @@ module.exports = tseslint.config(
                 }
             ],
             /* https://typescript-eslint.io/rules/no-extra-semi */
-            "no-extra-semi": "off",
-            "@typescript-eslint/no-extra-semi": "error",
+            /*  !deprecated and moved to style-eslint */
+            // "no-extra-semi": "off",
+            // "@typescript-eslint/no-extra-semi": "error",
             /* https://typescript-eslint.io/rules/no-implied-eval */
             "no-implied-eval": "off",
             "@typescript-eslint/no-implied-eval": "error",
@@ -778,7 +786,8 @@ module.exports = tseslint.config(
             "@typescript-eslint/no-shadow": "warn",
             /* https://typescript-eslint.io/rules/no-throw-literal/ */
             "no-throw-literal": "off",
-            "@typescript-eslint/no-throw-literal": "warn",
+            /* @typescript-eslint/no-throw-literal renamed to @typescript-eslint/only-throw-error */
+            "@typescript-eslint/only-throw-error": "warn",
             /* https://typescript-eslint.io/rules/no-unused-expressions */
             "no-unused-expressions": "off",
             "@typescript-eslint/no-unused-expressions": "warn",
@@ -811,11 +820,13 @@ module.exports = tseslint.config(
                     },
                 },
             ],
-            "@typescript-eslint/explicit-function-return-type": ["error", {
+            "@typescript-eslint/explicit-function-return-type": ["warn", {
                 allowExpressions: true,
                 allowTypedFunctionExpressions: true,
                 allowHigherOrderFunctions: true,
                 allowConciseArrowFunctionExpressionsStartingWithVoid: true,
+                allowDirectConstAssertionInArrowFunctions: true,
+                allowIIFEs: true,
                 allowedNames: returnTypeWhitelist
             }],
             "@typescript-eslint/explicit-module-boundary-types": "error",
@@ -857,4 +868,28 @@ module.exports = tseslint.config(
             ],
         },
     }
+];
+
+const config = tseslint.config(
+    tseslint.configs.recommendedTypeChecked,
+    {
+        languageOptions: {
+            parser: tseslint.parser,
+            parserOptions: {
+                // project: true,
+                project: [
+                    './eslint.config.js',
+                    './packages/*/eslint.config.js',
+                    './packages/apps/*/eslint.config.js',
+                    './packages/libs/*/*/eslint.config.js',
+                    './packages/libs/*/*/*/eslint.config.js',
+                ],
+                projectService: true,
+                tsconfigRootDir: __dirname,
+            },
+        },
+    },
+    ...rules
 );
+
+module.exports = { config, rules, configure};
