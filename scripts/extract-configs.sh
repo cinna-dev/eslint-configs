@@ -9,6 +9,12 @@
 input_file="$1"
 output_file="$2"
 
+inline_comment="//"
+block_comment="[[:space:]]\/\*"
+spread_operator="\.\.\."
+declaration="^const"
+empty_line="^[[:space:]]*$"
+
 if [[ -z $input_file ]]; then
    echo "please define a input file path";
    exit 1;
@@ -38,14 +44,18 @@ nesting=0;
 
 {
     while IFS= read -r line; do
+#      echo $line;
       # ignore comments, declarations, spread
-      if [[ $line =~ // || $line =~ \/\* || $line =~ \.\.\. || $line =~ ^const ]]; then
+      if [[ $line =~ $inline_comment || $line =~ $block_comment || $line =~ $spread_operator || $line =~ $declaration ]]; then
         continue;
       fi
+
+#      echo $line;
       # ignore empty line
-      if [[ $line =~ ^[[:space:]]*$ ]]; then
+      if [[ $line =~ $empty_line ]]; then
         continue;
       fi
+#      echo $line;
 
       # make sure active at begin of each iteration if not inside a nested object
       if [[ $nesting == 0 ]]; then
@@ -54,16 +64,13 @@ nesting=0;
 
       # ignore object keys/values content
       if [[ $line =~ settings: || $line =~ plugins: ]]; then
-#        echo "found!"
         active=0;
       fi
 
       if [[ $active == 0 ]]; then
-        if [[ "$line" =~ "{" ]]; then
-#          echo "$nesting++";
+        if [[ "$line" =~ "{" || "$line" =~ "[" ]]; then
           ((nesting++));
-        elif  [[ "$line" =~ "}" ]]; then
-#          echo "$nesting--";
+        elif  [[ "$line" =~ "}" || "$line" =~ "]" ]]; then
           ((nesting--));
         fi
       fi
