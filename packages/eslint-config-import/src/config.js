@@ -1,5 +1,7 @@
+/** @type { import("eslint").Linter.FlatConfig[] } */
 module.exports = [
     {
+        files: ["**/*.js", "**/*.ts", "**/*.mjs","**/*.cjs", "*cts", "*mts","**/*.jsx","**/*.tsx"],
         rules: {
             "import/export": 2,
             "import/no-deprecated": "off",
@@ -8,6 +10,9 @@ module.exports = [
                 "off",
                 {
                     "devDependencies": [
+                        "**/*.test.js",
+                        "**/*.test.ts",
+                        "packages/**/*"
                     ],
                     "includeInternal": true,
                     "optionalDependencies": false,
@@ -20,6 +25,7 @@ module.exports = [
             "import/no-named-as-default-member": "off",
             "import/no-unused-modules": ["off", {
                 "unusedExports": true,
+                "ignoreExports": ["node_modules/*"],
                 "src": ["components"]
             }],
             "import/no-amd": 2,
@@ -37,6 +43,25 @@ module.exports = [
                 "off",
                 {
                     "allow": [
+                        "@mui/icons-material/*",
+                        "@mui/material/*",
+                        "next/*",
+                        "@apollo/*",
+                        "next-i18next/*",
+                        "nextjs-routes/*",
+                        "next-seo/**",
+                        "@apollo/*",
+                        "@hoc/*",
+                        "@graphql/generated/*",
+                        "lodash/*",
+                        "@public/**/*",
+                        "react-mui/*",
+                        "@graphql/*",
+                        "@graphql/generated/*",
+                        "@iconify/**",
+                        "next-auth/*",
+                        "@theme/*",
+                        "**/*.css"
                     ]
                 }
             ],
@@ -102,6 +127,7 @@ module.exports = [
                 "error",
                 {
                     "allow": [
+                        "**/*.css"
                     ]
                 }
             ],
