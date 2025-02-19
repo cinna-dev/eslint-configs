@@ -44,18 +44,15 @@ nesting=0;
 
 {
     while IFS= read -r line; do
-#      echo $line;
       # ignore comments, declarations, spread
       if [[ $line =~ $inline_comment || $line =~ $block_comment || $line =~ $spread_operator || $line =~ $declaration ]]; then
         continue;
       fi
 
-#      echo $line;
       # ignore empty line
       if [[ $line =~ $empty_line ]]; then
         continue;
       fi
-#      echo $line;
 
       # make sure active at begin of each iteration if not inside a nested object
       if [[ $nesting == 0 ]]; then
