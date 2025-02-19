@@ -135,7 +135,6 @@ module.exports = [
         }
     },
     {
-        files: ["**/src/app/**/*.tsx","**/src/app/**/*.jsx","**/src/app/**/*.js","**/src/app/**/*.ts"],
         rules: {
             "import/no-default-export": "off",
             "import/prefer-default-export": [
