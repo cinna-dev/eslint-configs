@@ -314,7 +314,7 @@ module.exports = [
             // There are a few scenarios where you want to avoid string literals in JSX. You may want to enforce consistency, reduce syntax highlighting issues,
             // or ensure that strings are part of a translation system.
             "react/jsx-no-literals": [
-                "warn",
+                "off",
                 {
                     noStrings: true,
                     allowedStrings: ["allowed"],

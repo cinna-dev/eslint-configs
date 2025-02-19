@@ -12,15 +12,6 @@ const configure = (projectUrl = '' , parserOptions = {}) => [
             parser: tseslint.parser,
             parserOptions: {
                 project:projectUrl,
-                globals: globals.browser,
-                projectService: true,
-                tsconfigRootDir: __dirname,
-                sourceType: 'script',
-                ecmaVersion: 'latest',
-                ecmaFeatures: {
-                    impliedStrict: true,
-                    jsx: true
-                },
                 ...parserOptions,
             },
         },
@@ -328,7 +319,7 @@ const rules = [
             // Disallow extra non-null assertions.
             // The `!` non-null assertion operator in TypeScript is used to assert that a value's type does not include null or undefined.
             /* Using the operator any more than once on a single value does nothing. */
-            "@typescript-eslint/no-extra-non-null-assertion": "error",
+            "@typescript-eslint/no-extra-non-null-assertion": "warn",
 
             // https://typescript-eslint.io/rules/no-extraneous-class/
             // This rule reports when a class has no non-static members,
