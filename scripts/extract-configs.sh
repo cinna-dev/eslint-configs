@@ -65,6 +65,7 @@ nesting=0;
       fi
 
       if [[ $active == 0 ]]; then
+        # shellcheck disable=SC2076
         if [[ "$line" =~ "{" || "$line" =~ "[" ]]; then
           ((nesting++));
         elif  [[ "$line" =~ "}" || "$line" =~ "]" ]]; then
