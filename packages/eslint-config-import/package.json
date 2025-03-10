@@ -5,8 +5,9 @@
   "description": "eslint config concerning es6 imports",
   "main": "dist/index.js",
   "scripts": {
-    "build": "bash ../../scripts/extract-configs.sh ./src/index.js ./src/config.js && terser src/index.js -o dist/index.js && terser src/ci.js -o dist/ci.js && terser src/config.js -o dist/config.js",
-    "create": "bash ../../scripts/extract-configs.sh ./src/index.js ./src/config.js"
+    "build": "bash ../../scripts/extract-rules.sh ./src/index.js ./src/config.js && terser src/index.js -o dist/index.js && terser src/ci.js -o dist/ci.js && terser src/config.js -o dist/config.js",
+    "create": "bash ../../scripts/extract-rules.sh ./src/index.js ./src/config.js",
+    "create2": "bash ../../scripts/remove-deactivated-rules.sh ./src/index.js ./src/config.js"
   },
   "files": [
     "dist"

@@ -195,7 +195,7 @@ const rules = [
             // Explicit types for function return values and arguments makes it clear to any calling code what is the module boundary's input and output. Adding explicit type annotations for those types can help improve code readability.
             /* It can also improve TypeScript type checking performance on larger codebases. */
             "@typescript-eslint/explicit-module-boundary-types": [
-                "error",
+                "warn",
                 {
                     "allowedNames": returnTypeWhitelist
                 }
@@ -783,8 +783,9 @@ const rules = [
             "no-unused-expressions": "off",
             "@typescript-eslint/no-unused-expressions": "warn",
             /* https://typescript-eslint.io/rules/no-unused-vars */
+            /* taken care of by IDE */
             "no-unused-vars": "off",
-            "@typescript-eslint/no-unused-vars": "warn",
+            "@typescript-eslint/no-unused-vars": "off",
             /* https://typescript-eslint.io/rules/no-use-before-define */
             "no-use-before-define": "off",
             "@typescript-eslint/no-use-before-define": "warn",

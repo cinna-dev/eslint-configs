@@ -271,7 +271,7 @@ module.exports = [
             // Note that this behavior is different for `ref` props, which is a special case in React that does not cause re-renders when a brand new function is passed.
             // See `ignore-refs` below for more information.
             "react/jsx-no-bind": [
-                "error",
+                "warn",
                 {
                     ignoreDOMComponents: false,
                     ignoreRefs: false,
@@ -727,7 +727,7 @@ module.exports = [
             // so typechecking will also apply to your `defaultProps`.
             // The same also holds true for stateless functional components: default function parameters do not behave the same as `defaultProps` and thus using `defaultProps` is still preferred.
             "react/require-default-props": [
-                "warn",
+                "off",
                 {
                     forbidDefaultForRequired: false,
                     classes: "defaultProps",
