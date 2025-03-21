@@ -21,11 +21,12 @@
   "license": "ISC",
   "packageManager": "pnpm@8.0.0",
   "dependencies": {
-    "@cinna-dev/eslint-config-error": "workspace:^",
-    "@cinna-dev/eslint-config-import": "workspace:^",
-    "@cinna-dev/eslint-config-react": "workspace:^",
-    "@cinna-dev/eslint-config-style": "workspace:^",
-    "@cinna-dev/eslint-config-suggestions": "workspace:^",
-    "@cinna-dev/eslint-config-ts": "workspace:^"
-  }
+    "@cinna-dev/eslint-config-error": "^1.0.21-alpha.0",
+    "@cinna-dev/eslint-config-import": "^1.0.31-alpha.0",
+    "@cinna-dev/eslint-config-react": "^1.0.18-alpha.0",
+    "@cinna-dev/eslint-config-style": "^1.0.35-alpha.0",
+    "@cinna-dev/eslint-config-suggestions": "^1.0.36-alpha.0",
+    "@cinna-dev/eslint-config-ts": "^1.0.39-alpha.0"
+  },
+  "gitHead": "ab42ba9e8c1f688bff6cf6b2b9d8fb23fe9693db"
 }

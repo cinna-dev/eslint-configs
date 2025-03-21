@@ -37,5 +37,6 @@
     "eslint-import-resolver-typescript": "^4.2.2",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-react-refresh": "^0.4.19"
-  }
+  },
+  "gitHead": "ab42ba9e8c1f688bff6cf6b2b9d8fb23fe9693db"
 }

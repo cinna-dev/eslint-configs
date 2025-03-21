@@ -34,5 +34,6 @@
     "globals": ">=15",
     "typescript": ">=5",
     "typescript-eslint": ">=7"
-  }
+  },
+  "gitHead": "ab42ba9e8c1f688bff6cf6b2b9d8fb23fe9693db"
 }
