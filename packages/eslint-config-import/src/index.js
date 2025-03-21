@@ -1,6 +1,7 @@
 const eslintPluginImport = require('eslint-plugin-import');
 const configs = require('eslint-plugin-import').configs;
 const {fixupPluginRules} = require("@eslint/compat");
+const reactRefresh = require( 'eslint-plugin-react-refresh' );
 
 /** @type { import("eslint").Linter.FlatConfig[] } */
 module.exports = [

@@ -21,14 +21,13 @@ update dependencies of all packages
 ```shell
 pnpm run update-all-dependencies@latest
 ```
-
-### 3. git commit and git push
-
 ### 4. Build all packages
 
 ```shell
 pnpm run lerna:build
 ```
+### 4. git commit and git push
+
 ### 5. Check Changes (optional)
 
 ```shell

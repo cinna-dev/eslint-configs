@@ -171,7 +171,7 @@ const rules = [
             // Functions in TypeScript often don't need to be given an explicit return type annotation. Leaving off the return type is less code to read or write and allows the compiler to infer it from the contents of the function.
             // However, explicit return types do make it visually more clear what type is returned by a function.
             /* They can also speed up TypeScript type checking performance in large codebases with many large functions. */
-            "@typescript-eslint/explicit-function-return-type": ["warn", {
+            "@typescript-eslint/explicit-function-return-type": ["off", {
                 allowExpressions: true,
                 allowTypedFunctionExpressions: true,
                 allowHigherOrderFunctions: true,
@@ -812,7 +812,7 @@ const rules = [
                     },
                 },
             ],
-            "@typescript-eslint/explicit-function-return-type": ["warn", {
+            "@typescript-eslint/explicit-function-return-type": ["off", {
                 allowExpressions: true,
                 allowTypedFunctionExpressions: true,
                 allowHigherOrderFunctions: true,

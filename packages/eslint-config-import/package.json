@@ -6,8 +6,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "bash ../../scripts/extract-rules.sh ./src/index.js ./src/config.js && terser src/index.js -o dist/index.js && terser src/ci.js -o dist/ci.js && terser src/config.js -o dist/config.js",
-    "create": "bash ../../scripts/extract-rules.sh ./src/index.js ./src/config.js",
-    "create2": "bash ../../scripts/remove-deactivated-rules.sh ./src/index.js ./src/config.js"
+    "create": "bash ../../scripts/extract-rules.sh ./src/index.js ./src/config.js"
   },
   "files": [
     "dist"
@@ -25,11 +24,18 @@
   "peerDependencies": {
     "eslint": ">=9",
     "eslint-import-resolver-typescript": ">=3",
-    "eslint-plugin-import": ">=2"
+    "eslint-plugin-import": ">=2",
+    "eslint-plugin-react-refresh": ">=0.4"
   },
   "author": "cinna-dev",
   "license": "ISC",
   "dependencies": {
     "@eslint/compat": "^1.2.6"
+  },
+  "devDependencies": {
+    "eslint": "^9.20.1",
+    "eslint-import-resolver-typescript": "^4.2.2",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-react-refresh": "^0.4.19"
   }
 }

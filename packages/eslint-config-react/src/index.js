@@ -3,9 +3,12 @@ const jsxA11y = require('eslint-plugin-jsx-a11y');
 const globals = require('globals');
 const reactHooks = require('eslint-plugin-react-hooks');
 const reactCompiler = require('eslint-plugin-react-compiler');
+const reactRefresh = require( 'eslint-plugin-react-refresh' );
+
 
 /** @type { import("eslint").Linter.FlatConfig[] } */
 module.exports = [
+    reactRefresh.configs.vite,
     {
         plugins: {
             react,
@@ -399,7 +402,7 @@ module.exports = [
             // This enhances readability of code by being more explicit about what props are received by the component.
             // It is also good for maintainability by avoiding passing unintentional extra props and allowing react to emit warnings when invalid HTML props are passed to HTML elements.
             "react/jsx-props-no-spreading": [
-                "error",
+                "off",
                 {
                     html: "enforce",
                     custom: "ignore",
