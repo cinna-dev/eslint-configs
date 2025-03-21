@@ -11,8 +11,7 @@
     "lerna:build": "pnpm lerna run build",
     "lerna:changed": "lerna changed",
     "lerna:version": "lerna version",
-    "lerna:publish": "lerna publish from-package --no-private",
-    "publish": "bash ./scripts/publish.sh"
+    "lerna:publish": "lerna publish from-package --no-private"
   },
   "devDependencies": {
     "@eslint/compat": "^1.2.7",
