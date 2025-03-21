@@ -38,6 +38,8 @@ if [[ ! -e $output_file ]]; then
     exit 1;
 fi
 
+clear_deactivated_rules=0
+
 nesting_level=0; # if nested we map over an object
 is_buffering=0;
 start_buffer_level=0; # the level at wich we start buffering
@@ -82,7 +84,6 @@ function join_buffer() {
           discard_buffer_level=$nesting_level;
       fi
 
-
       if [[ $line =~ rules ]]; then
         is_rules=1;
         rules_level=$nesting_level;
@@ -109,7 +110,7 @@ function join_buffer() {
         is_rules=0;
       fi
 
-      if [[ "$is_buffering" = 0 && $line =~ \"off\" ]]; then
+      if [[ $clear_deactivated_rules = 1 && "$is_buffering" = 0 && $line =~ \"off\" ]]; then
         continue;
       fi
 
@@ -129,7 +130,7 @@ function join_buffer() {
         if [[ "$nesting_level" = "$start_buffer_level" ]]; then
           is_buffering=0;
           # filter rules
-          if [[ "$buffer" =~ \[\"off\" || "$buffer" =~ \[[[:space:]]\"off\" || "$buffer" =~ \"off\" ]]; then
+          if [[ $clear_deactivated_rules = 1 && ("$buffer" =~ \[\"off\" || "$buffer" =~ \[[[:space:]]\"off\" || "$buffer" =~ \"off\") ]]; then
             flush_buffer;
             continue;
           fi
