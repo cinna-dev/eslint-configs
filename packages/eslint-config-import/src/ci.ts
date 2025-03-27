@@ -1,12 +1,10 @@
-const eslintPluginImport = require('eslint-plugin-import');
-const configs = require('eslint-plugin-import').configs;
-const {fixupPluginRules} = require("@eslint/compat");
-const reactRefresh = require( 'eslint-plugin-react-refresh' );
+import eslintPluginImport , {config} from 'eslint-plugin-import';
+import {fixupPluginRules} from "@eslint/compat";
 
 /** @type { import("eslint").Linter.FlatConfig[] } */
-module.exports = [
+export default  [
     {
-        ...configs['typescript'],
+        ...config.configs['typescript'],
         plugins: {
             "import": fixupPluginRules(eslintPluginImport)
         },
@@ -36,7 +34,7 @@ module.exports = [
         },
         files: ["**/*.js", "**/*.ts", "**/*.mjs","**/*.cjs", "*cts", "*mts","**/*.jsx","**/*.tsx"],
         rules: {
-            /* helpful Warning */
+            /* Warning */
 
             // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/export.md
             // Reports funny business with exports, like repeated exports of names or defaults.
@@ -59,14 +57,12 @@ module.exports = [
             // Normally ignores imports of modules marked internal, but this can be changed with the rule option includeInternal.
             // Type imports can be verified by specifying includeTypes.
             "import/no-extraneous-dependencies": [
-                "off",
+                "error",
                 {
                     "devDependencies": [
                         "**/*.test.js",
-                        "**/*.test.ts",
-                        "packages/**/*"
+                        "**/*.test.ts"
                     ],
-                    "includeInternal": true,
                     "optionalDependencies": false,
                     "peerDependencies": false,
                     "packageDir": "."
@@ -83,8 +79,8 @@ module.exports = [
             // - misleading: others familiar with foo.js probably expect the name to be foo
             // - a mistake: only needed to import bar and forgot the brackets (the case that is prompting this)
             // ! ci only
-            // * when accounting an error make sure your not accidentally also exporting a type with the same name.
             "import/no-named-as-default": "off",
+            // * when accounting an error make sure your not accidentally also exporting a type with the same name.
 
             // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-named-as-default-member.md
             // Reports use of an exported name as a property on the default export.
@@ -118,7 +114,7 @@ module.exports = [
             // Reports require([string]) function calls. Will not report if >1 argument, or single argument is not a literal string.
             // Reports module.exports or exports.*, also.
             // Intended for temporary use when migrating to pure ES6 modules.
-            "import/no-commonjs": "off",
+            "import/no-commonjs": 2,
 
             // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-import-module-exports.md
             // Reports the use of import declarations with CommonJS exports in any module except for the main module.
@@ -197,30 +193,16 @@ module.exports = [
             // This rule has two mutally exclusive options that are arrays of `minimatch/glob patterns` patterns:
             // - `allow` that include paths and import statements that can be imported with reaching.
             // - `forbid` that exclude paths and import statements that can be imported with reaching.
-            // * nx requires relative imports for apps
             "import/no-internal-modules": [
-                "off",
+                "error",
                 {
                     "allow": [
                         "@mui/icons-material/*",
                         "@mui/material/*",
                         "next/*",
+                        "next-mui/*",
                         "@apollo/*",
-                        "next-i18next/*",
-                        "nextjs-routes/*",
-                        "next-seo/**",
-                        "@apollo/*",
-                        "@hoc/*",
-                        "@graphql/generated/*",
-                        "lodash/*",
-                        "@public/**/*",
-                        "react-mui/*",
-                        "@graphql/*",
-                        "@graphql/generated/*",
-                        "@iconify/**",
-                        "next-auth/*",
-                        "@theme/*",
-                        "**/*.css"
+                        "@iconify/icons-carbon/*"
                     ]
                 }
             ],
@@ -241,21 +223,15 @@ module.exports = [
             // To enable this, send { commonjs: true/false, amd: true/false } as a rule option.
             // Both are disabled by default.
             // If you are using Webpack, see the section on resolvers.
-            "import/no-unresolved": "off",
+            "import/no-unresolved": 2,
 
             // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-relative-parent-imports.md
-            // Use this rule to prevent imports to folders in relative parent paths.
-            // This rule is useful for enforcing tree-like folder structures instead of complex graph-like folder structures.
-            // While this restriction might be a departure from Node's default resolution style, it can lead large,
-            // complex codebases to be easier to maintain.
-            // If you've ever had debates over "where to put files" this rule is for you.
             // ! can not resolve path aliases from typescript and node
             "import/no-relative-parent-imports": "off",
 
             // * used in favor for import/no-relative-parent-imports
-            // ! nx requires relative imports for apps
             "no-restricted-imports": [
-                "off",
+                "error",
                 {
                     "patterns": [
                         {
@@ -298,7 +274,7 @@ module.exports = [
             // In order to provide a consistent use of file extensions across your code base,
             // this rule can enforce or disallow the use of certain file extensions.
             // ! https://typescript-eslint.io/linting/troubleshooting/performance-troubleshooting/#importextensions
-            // ! you want to enforce file extensions are always used and you're NOT using `moduleResolution`
+            // !  you want to enforce file extensions are always used and you're NOT using `moduleResolution`
             // ! `node16` or `nodenext`, then there's not really a good alternative for you,
             // ! and you should continue using the `import/extensions` lint rule.
             "import/extensions": [
@@ -337,7 +313,7 @@ module.exports = [
             // Importing multiple named exports from a single module will only count once (e.g. `import {x, y, z} from './foo'` will only count as a single dependency).
             "import/max-dependencies": ["warn", {
                 "max": 10,
-                "ignoreTypeImports": true,
+                "ignoreTypeImports": false,
             }],
 
             // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/newline-after-import.md
@@ -354,15 +330,14 @@ module.exports = [
                 "allowAnonymousClass": false,
                 "allowAnonymousFunction": false,
                 "allowCallExpression": true, // The true value here is for backward compatibility
-                // "allowNew": false, // creates error
+                "allowNew": false,
                 "allowLiteral": false,
                 "allowObject": false
             }],
 
             // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-default-export.md
             // Prohibit default exports. Mostly an inverse of `prefer-default-export`.
-            // * should prefer names export and prohibit default exports
-            "import/no-default-export": "error",
+            "import/no-default-export": "off",
 
             // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-duplicates.md
             // Reports if a resolved path is imported more than once. +(fixable) The --fix option on the [command line] automatically fixes some problems reported by this rule.
@@ -371,107 +346,22 @@ module.exports = [
             // this version distinguishes Flow type imports from standard imports. (#334)
             "import/no-duplicates": "error",
 
-            // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-named-default.md
-            // Reports use of a default export as a locally named import.
-            // Rationale: the syntax exists to import default exports expressively, let's use it.
-            // Note that type imports, as used by `Flow`, are always ignored.
-            "import/no-named-default": "error",
-
-            // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-named-export.md
-            // Prohibit named exports. Mostly an inverse of `no-default-export`.
-            // * in favor of named exports
-            "import/no-named-export": "off",
-
-            // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-namespace.md
-            // Enforce a convention of not using namespace (a.k.a. "wildcard" *) imports.
-            "import/no-namespace": "warn",
-
-            // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-unassigned-import.md
-            // With both CommonJS' `require` and the ES6 modules' `import` syntax,
-            // it is possible to import a module but not to use
-            // its result. This can be done explicitly by not assigning the module to as variable.
-            // Doing so can mean either of the following things:
-            // The module is imported but not used
-            // - The module has side-effects (like should).
-            // - Having side-effects, makes it hard to know whether the module is actually used or can be removed.
-            //   It can also make it harder to test or mock parts of your application.
-            // This rule aims to remove modules with side-effects by reporting when a module is imported but not assigned.
-            "import/no-unassigned-import": [
+            "import/order": [
                 "error",
                 {
-                    "allow": [
-                        "**/*.css"
-                    ]
-                }
-            ],
-
-            // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/order.md
-            // Enforce a convention in the order of `require()` / `import` statements.
-            "import/order": [
-                "warn",
-                {
                     "groups": [
-                        "builtin",
-                        "external",
-                        "internal",
-                        "parent",
-                        "sibling",
                         "index",
+                        "sibling",
+                        "parent",
+                        "internal",
+                        "external",
+                        "builtin",
                         "object",
                         "type"
                     ],
                     "newlines-between": "always",
                     "alphabetize": {"order": "asc", "caseInsensitive": true},
                     "warnOnUnassignedImports": true
-                }
-            ],
-
-            // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/prefer-default-export.md
-            // In exporting files, this rule checks if there is default export or not.
-            "import/prefer-default-export": [
-                "off",
-                //{ "target": "single"  }  // no items allowed
-            ],
-
-            // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-restricted-paths.md
-            // Some projects contain files which are not always meant to be executed in the same environment.
-            // For example consider a web application that contains specific code for the server and some specific code for the browser/client.
-            // In this case you don’t want to import server-only files in your client code.
-            // In order to prevent such scenarios this rule allows you to define restricted zones where you can forbid files from imported if they match a specific path.
-            "import/no-restricted-paths": "off",
-
-            // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-self-import.md
-            // Forbid a module from importing itself. This can sometimes happen during refactoring.
-            "import/no-self-import": "error",
-
-            // // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-unresolved.md
-            // // Ensures an imported module can be resolved to a module on the local filesystem,
-            // // as defined by standard Node `require.resolve` behavior.
-            // "import/no-unresolved": "off",
-
-            // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-useless-path-segments.md
-            // Use this rule to prevent unnecessary path segments in import and require statements.
-            "import/no-useless-path-segments": ["error", {
-                noUselessIndex: true
-            }],
-
-            // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-webpack-loader-syntax.md
-            // Forbid Webpack loader syntax in imports.
-            // Webpack allows specifying the loaders to use in the import source string using a special syntax like this:
-            // This syntax is non-standard, so it couples the code to Webpack.
-            // The recommended way to specify Webpack loader configuration is in a Webpack configuration file.
-            "import/no-webpack-loader-syntax": "off"
-        }
-    },
-    {
-        files: ["**/src/app/**/*.tsx","**/src/app/**/*.jsx","**/src/app/**/*.js","**/src/app/**/*.ts"],
-        rules: {
-            // * framework specific exceptions. Next.js ... .etc
-            "import/no-default-export": "off",
-            "import/prefer-default-export": [
-                "error",
-                {
-                    "target": "any"
                 }
             ]
         }

@@ -1,15 +1,17 @@
 {
   "name": "@cinna-dev/eslint-config-suggestions",
   "version": "1.0.36-alpha.0",
-  "type": "commonjs",
+  "type": "module",
   "description": "eslint config for suggestions",
   "main": "dist/index.js",
   "scripts": {
-    "build": "terser src/index.js -o dist/index.js"
+    "build": "tsup --dts --minify --format esm,cjs src/index.ts"
   },
-  "files": [
-    "dist"
-  ],
+  "types": "dist/index.d.ts",
+  "exports": {
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
   "keywords": [
     "eslint",
     "eslint config",

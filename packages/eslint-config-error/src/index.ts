@@ -1,7 +1,7 @@
 // disable rule if necessary
 
 /** @type { import("eslint").Linter.FlatConfig[] } */
-module.exports = [
+export default [
     {
         files: ["**/*.js", "**/*.ts", "**/*.mjs","**/*.cjs", "*cts", "*mts","**/*.jsx","**/*.tsx"],
         rules: {
@@ -56,12 +56,6 @@ module.exports = [
             // Control characters are special, invisible characters in the ASCII range 0-31.
             // These characters are rarely used in JavaScript strings so a regular expression
             // containing elements that explicitly match these characters is most likely a mistake.
-            "no-control-regex": "error",
-
-            // https://eslint.org/docs/latest/rules/no-control-regex
-            // Control characters are special, invisible characters in the ASCII range 0-31.
-            // These characters are rarely used in JavaScript strings so a regular expression containing
-            // elements that explicitly match these characters is most likely a mistake.
             "no-control-regex": "error",
 
             // https://eslint.org/docs/latest/rules/no-debugger

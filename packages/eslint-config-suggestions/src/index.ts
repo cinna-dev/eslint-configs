@@ -1,6 +1,6 @@
 // disable rule if necessary
 /** @type { import("eslint").Linter.FlatConfig[] } */
-module.exports = [
+export default [
     {
         files: ["**/*.js", "**/*.ts","**/*.mjs","**/*.cjs","**/*.jsx","**/*.jsx"],
         rules: {

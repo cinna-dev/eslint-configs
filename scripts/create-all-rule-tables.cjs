@@ -2,7 +2,7 @@ const path = require("path");
 const createRuleTable = require("./create-rule-table.cjs");
 
 const createPath = (modulePath) => [
-  path.join(__dirname, modulePath, "dist/index.js"),
+  path.join(__dirname, modulePath, "dist/index.ts"),
   path.join(__dirname, modulePath, "README.md"),
 ];
 

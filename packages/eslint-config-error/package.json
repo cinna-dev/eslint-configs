@@ -1,15 +1,12 @@
 {
   "name": "@cinna-dev/eslint-config-error",
   "version": "1.0.21-alpha.0",
-  "type": "commonjs",
+  "type": "module",
   "description": "eslint config finding potential errors",
-  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "terser src/index.js -o dist/index.js"
+    "build": "tsup --dts --minify --format esm,cjs src/index.ts"
   },
-  "files": [
-    "dist"
-  ],
   "keywords": [
     "eslint",
     "eslint config",

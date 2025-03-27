@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# this script takes in a eslint.config.js flat config and returns the reduced configs
+# this script takes in a eslint.config.ts flat config and returns the reduced configs
 # to the keys "files" and "rules"
 
 input_file="$1"

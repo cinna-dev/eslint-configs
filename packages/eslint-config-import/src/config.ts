@@ -1,4 +1,7 @@
-module.exports = [
+import eslintPluginImport from 'eslint-plugin-import';
+import {config} from 'eslint-plugin-import'
+import {fixupPluginRules} from "@eslint/compat";
+export default [
     {
         files: ["**/*.js", "**/*.ts", "**/*.mjs","**/*.cjs", "*cts", "*mts","**/*.jsx","**/*.tsx"],
         rules: {

@@ -1,15 +1,18 @@
 {
   "name": "@cinna-dev/eslint-config-react",
   "version": "1.0.18-alpha.0",
-  "type": "commonjs",
+  "type": "module",
   "description": "eslint config for react",
-  "main": "dist/index.js",
   "scripts": {
-    "build": "terser src/index.js -o dist/index.js"
+    "build": "tsup --dts --minify --format esm,cjs src/index.ts"
   },
-  "files": [
-    "dist"
-  ],
+  "types": "dist/index.d.ts",
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs",
+    "default": "./dist/index.js"
+  },
   "keywords": [
     "eslint",
     "config",

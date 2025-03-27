@@ -1,21 +1,20 @@
 {
   "name": "@cinna-dev/eslint-config-ts",
   "version": "1.0.39-alpha.0",
-  "type": "commonjs",
+  "type": "module",
   "description": "eslint config for typescript",
   "main": "dist/index.js",
   "engines": {
     "node": ">=20"
   },
   "scripts": {
-    "build": "terser src/index.js -o dist/index.js",
-    "create": "bash ../../scripts/remove-deactivated-rules.sh ./src/index.js ./src/config.js"
+    "build": "tsup --dts --minify --format esm,cjs src/index.ts",
+    "create": "bash ../../scripts/remove-deactivated-rules.sh src/index.ts ./src/config.js"
   },
-  "files": [
-    "dist"
-  ],
+  "types": "dist/index.d.ts",
   "exports": {
-    ".": "./dist/index.js"
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
   },
   "keywords": [
     "eslint",

@@ -1,6 +1,5 @@
 /** @type { import("eslint").Linter.FlatConfig[] } */
-
-module.exports = [
+export default [
     {
         languageOptions: {
             parserOptions: {

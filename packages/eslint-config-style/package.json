@@ -1,18 +1,17 @@
 {
   "name": "@cinna-dev/eslint-config-style",
   "version": "1.0.35-alpha.0",
-  "type": "commonjs",
+  "type": "module",
   "description": "eslint config",
-  "main": "dist/index.js",
   "scripts": {
-    "build": "terser src/index.js -o dist/index.js && terser src/basic.js -o dist/basic.js"
+    "build": "tsup --dts --minify --format esm,cjs src/index.ts src/basic.ts"
   },
-  "files": [
-    "dist"
-  ],
+  "types": "dist/index.d.ts",
   "exports": {
-    ".": "./dist/index.js",
-    "./basic": "./dist/basic.js"
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs",
+    "import/basic": "./dist/basic.js",
+    "require/basic": "./dist/basic.cjs"
   },
   "keywords": [
     "eslint",

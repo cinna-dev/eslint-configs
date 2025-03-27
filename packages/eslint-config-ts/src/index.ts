@@ -1,15 +1,17 @@
 /* @ts-check */
-const tseslint = require('typescript-eslint');
-const globals = require("globals");
+import tseslint,  { type ConfigArray } from 'typescript-eslint';
+import type {Linter} from 'eslint';
+// import type ESLint from 'eslint';
+import type {ESLint} from 'eslint';
 
 const returnTypeWhitelist = [
     "getStaticProps"
 ];
 
-const configure = (projectUrl = '' , parserOptions = {}) => [
+export const configure = (projectUrl = '' , parserOptions = {}):Linter.Config[] => [
     {
         languageOptions: {
-            parser: tseslint.parser,
+            parser: tseslint.parser as  Linter.Parser,
             parserOptions: {
                 project:projectUrl,
                 ...parserOptions,
@@ -19,7 +21,7 @@ const configure = (projectUrl = '' , parserOptions = {}) => [
     ...rules
 ];
 
-const rules = [
+export const rules:Linter.Config[]  = [
     {
         files: ["**/*.ts", "**/*.mts", "**/*.cts", "**/*.tsx"],
         rules: {
@@ -862,7 +864,7 @@ const rules = [
     }
 ];
 
-const config = tseslint.config(
+export const config: ConfigArray = tseslint.config(
     tseslint.configs.recommendedTypeChecked,
     {
         languageOptions: {
@@ -870,11 +872,11 @@ const config = tseslint.config(
             parserOptions: {
                 // project: true,
                 project: [
-                    './eslint.config.js',
-                    './packages/*/eslint.config.js',
-                    './packages/apps/*/eslint.config.js',
-                    './packages/libs/*/*/eslint.config.js',
-                    './packages/libs/*/*/*/eslint.config.js',
+                    './eslint.config.ts',
+                    './packages/*/eslint.config.ts',
+                    './packages/apps/*/eslint.config.ts',
+                    './packages/libs/*/*/eslint.config.ts',
+                    './packages/libs/*/*/*/eslint.config.ts',
                 ],
                 projectService: true,
                 tsconfigRootDir: __dirname,
@@ -884,4 +886,4 @@ const config = tseslint.config(
     ...rules
 );
 
-module.exports = { config, rules, configure};
+// export default { config, rules, configure} //as { config: ESLint.Linter.Config, rules: ESLint.Linter.RulesRecord, configure: (options: ESLint.Linter.Config) => void }; ;

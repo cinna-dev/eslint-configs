@@ -1,20 +1,31 @@
 {
   "name": "@cinna-dev/eslint-config-import",
   "version": "1.0.31-alpha.0",
-  "type": "commonjs",
+  "type": "module",
   "description": "eslint config concerning es6 imports",
-  "main": "dist/index.js",
   "scripts": {
-    "build": "bash ../../scripts/extract-rules.sh ./src/index.js ./src/config.js && terser src/index.js -o dist/index.js && terser src/ci.js -o dist/ci.js && terser src/config.js -o dist/config.js",
-    "create": "bash ../../scripts/extract-rules.sh ./src/index.js ./src/config.js"
+    "build": "pnpm run create && tsup --dts --minify --format esm,cjs --entry src/index.ts --entry src/config.ts --entry src/ci.ts",
+    "create": "bash ../../scripts/extract-rules.sh src/index.ts src/config.ts"
   },
-  "files": [
-    "dist"
-  ],
   "exports": {
-    ".": "./dist/index.js",
-    "./ci": "./dist/ci.js",
-    "./config": "./dist/config.js"
+    "." : {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.cjs"
+    },
+    "./config": {
+      "types": "./dist/config.d.cts",
+      "import": "./dist/config.js",
+      "require": "./dist/config.cjs",
+      "default": "./dist/config.cjs"
+    },
+    "./ci": {
+      "types": "./dist/ci.d.ts",
+      "import": "./dist/ci.js",
+      "require": "./dist/ci.cjs",
+      "default": "./dist/ci.cjs"
+    }
   },
   "keywords": [
     "eslint",

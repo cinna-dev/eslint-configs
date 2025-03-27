@@ -1,18 +1,20 @@
-const react = require('eslint-plugin-react');
-const jsxA11y = require('eslint-plugin-jsx-a11y');
-const globals = require('globals');
-const reactHooks = require('eslint-plugin-react-hooks');
-const reactCompiler = require('eslint-plugin-react-compiler');
-const reactRefresh = require( 'eslint-plugin-react-refresh' );
+import react from 'eslint-plugin-react';
+import jsxA11y  from 'eslint-plugin-jsx-a11y';
+import type { Rule }  from 'eslint';
+import globals from 'globals';
+import reactHooks  from 'eslint-plugin-react-hooks';
+import reactCompiler from 'eslint-plugin-react-compiler';
+import reactRefresh from  'eslint-plugin-react-refresh' ;
 
 
-/** @type { import("eslint").Linter.FlatConfig[] } */
-module.exports = [
+
+// /** @type { import("eslint").Linter.Config[] } */
+export default  [
     reactRefresh.configs.vite,
     {
         plugins: {
             react,
-            'jsx-a11y': jsxA11y,
+            'jsx-a11y': jsxA11y as unknown as Rule.RuleModule,
             'react-hooks': reactHooks,
             'react-compiler': reactCompiler,
         },
@@ -31,8 +33,6 @@ module.exports = [
                 version: "detect"
             }
         },
-        // extends: ["plugin:react/jsx-runtime"],
-        // plugins: ["react", "jsx-a11y"],
         files: ["**/*.js", "**/*.ts", "**/*.mjs","**/*.cjs", "*cts", "*mts","**/*.jsx","**/*.tsx"],
         rules: {
             // https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/boolean-prop-naming.md

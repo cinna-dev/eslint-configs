@@ -2,8 +2,8 @@
   "name": "@cinna-dev/eslint-config",
   "version": "1.0.76-alpha.0",
   "description": "eslint config",
-  "type": "commonjs",
-  "main": "index.js",
+  "type": "module",
+  "main": "src/index.ts",
   "keywords": [
     "eslint",
     "eslint-config"
@@ -12,10 +12,26 @@
     "eslint": "^9",
     "globals": "^15"
   },
+  "types": "dist/index.d.ts",
   "exports": {
-    ".": "./index.js",
-    "./styled": "./styled.js",
-    "./configure": "./configure.js"
+    "." : {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./styled" : {
+      "types": "./dist/styled.d.ts",
+      "import": "./dist/styled.js",
+      "require": "./dist/styled.cjs"
+    },
+    "./configure": {
+      "types": "./dist/configure.d.ts",
+      "import": "./dist/configure.js",
+      "require": "./dist/configure.cjs"
+    }
+  },
+  "scripts": {
+    "build": "tsup --dts --format esm,cjs src/index.ts src/configure.ts src/styled.ts"
   },
   "author": "cinna-dev",
   "license": "ISC",
