@@ -1,6 +1,6 @@
 {
   "name": "@cinna-dev/eslint-config-error",
-  "version": "1.0.21-alpha.0",
+  "version": "1.0.22-alpha.0",
   "type": "module",
   "description": "eslint config finding potential errors",
   "types": "dist/index.d.ts",

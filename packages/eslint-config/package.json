@@ -1,6 +1,6 @@
 {
   "name": "@cinna-dev/eslint-config",
-  "version": "1.0.76-alpha.0",
+  "version": "1.0.77-alpha.0",
   "description": "eslint config",
   "type": "module",
   "main": "src/index.ts",
@@ -14,12 +14,12 @@
   },
   "types": "dist/index.d.ts",
   "exports": {
-    "." : {
+    ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.js"
     },
-    "./styled" : {
+    "./styled": {
       "types": "./dist/styled.d.ts",
       "import": "./dist/styled.js",
       "require": "./dist/styled.cjs"
@@ -37,12 +37,12 @@
   "license": "ISC",
   "packageManager": "pnpm@8.0.0",
   "dependencies": {
-    "@cinna-dev/eslint-config-error": "^1.0.21-alpha.0",
-    "@cinna-dev/eslint-config-import": "^1.0.31-alpha.0",
-    "@cinna-dev/eslint-config-react": "^1.0.18-alpha.0",
-    "@cinna-dev/eslint-config-style": "^1.0.35-alpha.0",
-    "@cinna-dev/eslint-config-suggestions": "^1.0.36-alpha.0",
-    "@cinna-dev/eslint-config-ts": "^1.0.39-alpha.0"
+    "@cinna-dev/eslint-config-error": "^1.0.22-alpha.0",
+    "@cinna-dev/eslint-config-import": "^1.0.32-alpha.0",
+    "@cinna-dev/eslint-config-react": "^1.0.19-alpha.0",
+    "@cinna-dev/eslint-config-style": "^1.0.36-alpha.0",
+    "@cinna-dev/eslint-config-suggestions": "^1.0.37-alpha.0",
+    "@cinna-dev/eslint-config-ts": "^1.0.40-alpha.0"
   },
   "gitHead": "ab42ba9e8c1f688bff6cf6b2b9d8fb23fe9693db"
 }
