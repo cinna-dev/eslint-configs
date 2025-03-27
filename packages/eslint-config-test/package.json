@@ -1,7 +1,7 @@
 {
   "name": "@cinna-dev/eslint-config-test",
   "version": "1.0.12-alpha.0",
-  "type": "commonjs",
+  "type": "module",
   "private": true,
   "description": "eslint config testing packages",
   "main": "index.js",

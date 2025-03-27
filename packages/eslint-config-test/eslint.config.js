@@ -1,11 +1,13 @@
 const globals = require("globals");
-const eslintConfigStyle = require('@cinna-dev/eslint-config-style');
-const eslintConfigError = require('@cinna-dev/eslint-config-error');
-const eslintConfigSuggestions = require("@cinna-dev/eslint-config-suggestions");
-const eslintConfigTs = require("@cinna-dev/eslint-config-ts");
-const eslintConfigReact = require("@cinna-dev/eslint-config-react");
-const eslintConfigImport = require("@cinna-dev/eslint-config-import");
-// const eslintConfig = require("@cinna-dev/eslint-config/nx/no-style");
+// const eslintConfigStyle = require('@cinna-dev/eslint-config-style');
+// const eslintConfigError = require('@cinna-dev/eslint-config-error');
+// const eslintConfigSuggestions = require("@cinna-dev/eslint-config-suggestions");
+// const eslintConfigTs = require("@cinna-dev/eslint-config-ts");
+// const eslintConfigReact = require("@cinna-dev/eslint-config-react");
+// const eslintConfigImport = require("@cinna-dev/eslint-config-import");
+const eslintConfig = require("@cinna-dev/eslint-config");
+
+console.log(eslintConfig)
 
 /** @type { import("eslint").Linter.FlatConfig[] } */
 module.exports = [
@@ -21,10 +23,10 @@ module.exports = [
         },
     },
     // ...eslintConfig,
-    ...eslintConfigStyle,
-    ...eslintConfigError,
-    ...eslintConfigSuggestions,
-    ...eslintConfigTs,
-    ...eslintConfigReact,
-    ...eslintConfigImport,
+    // ...eslintConfigStyle,
+    // ...eslintConfigError,
+    // ...eslintConfigSuggestions,
+    // ...eslintConfigTs,
+    // ...eslintConfigReact,
+    // ...eslintConfigImport,
 ];
