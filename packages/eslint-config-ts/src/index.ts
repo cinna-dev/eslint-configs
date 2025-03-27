@@ -1,8 +1,13 @@
 /* @ts-check */
 import tseslint,  { type ConfigArray } from 'typescript-eslint';
 import type {Linter} from 'eslint';
-// import type ESLint from 'eslint';
+import { dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
 import type {ESLint} from 'eslint';
+
+// @ts-ignore
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const returnTypeWhitelist = [
     "getStaticProps"
