@@ -7,6 +7,12 @@
   "scripts": {
     "build": "tsup --dts --minify --format esm,cjs src/index.ts"
   },
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs",
+    "default": "./dist/index.cjs"
+  },
   "keywords": [
     "eslint",
     "eslint config",
