@@ -3,7 +3,7 @@
   "version": "1.0.77-alpha.0",
   "description": "eslint config",
   "type": "module",
-  "main": "src/index.ts",
+  "main": "src/module/index.ts",
   "keywords": [
     "eslint",
     "eslint-config"
@@ -12,26 +12,40 @@
     "eslint": "^9",
     "globals": "^15"
   },
-  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.js"
+      "import": {
+        "types":  "./dist/module/index.d.ts",
+        "default":"./dist/module/index.js"
+      },
+      "require": {
+        "types":  "./dist/commonjs/index.d.cts",
+        "default": "./dist/commonjs/index.cjs"
+      }
     },
     "./styled": {
-      "types": "./dist/styled.d.ts",
-      "import": "./dist/styled.js",
-      "require": "./dist/styled.cjs"
+      "import": {
+        "types": "./dist/module/styled.d.ts",
+        "default":"./dist/module/styled.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/styled.d.cts",
+        "default": "./dist/commonjs/styled.cjs"
+      }
     },
     "./configure": {
-      "types": "./dist/configure.d.ts",
-      "import": "./dist/configure.js",
-      "require": "./dist/configure.cjs"
+      "import": {
+        "types": "./dist/module/configure.d.ts",
+        "default": "./dist/module/configure.js"
+      },
+      "require":{
+        "types": "./dist/commonjs/configure.d.cts",
+        "default":"./dist/commonjs/configure.cjs"
+      }
     }
-  },
-  "scripts": {
-    "build": "tsup --dts --format esm,cjs src/index.ts src/configure.ts src/styled.ts"
   },
   "author": "cinna-dev",
   "license": "ISC",

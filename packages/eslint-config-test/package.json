@@ -1,10 +1,9 @@
 {
   "name": "@cinna-dev/eslint-config-test",
   "version": "1.0.12-alpha.0",
-  "type": "module",
   "private": true,
+  "type": "commonjs",
   "description": "eslint config testing packages",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint __test__"

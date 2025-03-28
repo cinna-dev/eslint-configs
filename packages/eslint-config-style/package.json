@@ -6,12 +6,27 @@
   "scripts": {
     "build": "tsup --dts --minify --format esm,cjs src/index.ts src/basic.ts"
   },
-  "types": "dist/index.d.ts",
   "exports": {
-    "import": "./dist/index.js",
-    "require": "./dist/index.cjs",
-    "import/basic": "./dist/basic.js",
-    "require/basic": "./dist/basic.cjs"
+    ".": {
+      "import": {
+        "types":  "./dist/index.d.ts",
+        "default":"./dist/index.js"
+      },
+      "require": {
+        "types":  "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./basic": {
+      "import": {
+        "types": "./dist/basic.d.ts",
+        "default":"./dist/basic.js"
+      },
+      "require": {
+        "types": "./dist/basic.d.cts",
+        "default": "./dist/basic.cjs"
+      }
+    }
   },
   "keywords": [
     "eslint",

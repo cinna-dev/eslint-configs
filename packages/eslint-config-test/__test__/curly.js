@@ -66,3 +66,4 @@ else foo();
 while (true) {
     doSomething();
     doSomethingElse();
+}
