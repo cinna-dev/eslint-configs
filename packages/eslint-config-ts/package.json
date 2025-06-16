@@ -1,6 +1,6 @@
 {
   "name": "@cinna-dev/eslint-config-ts",
-  "version": "1.0.41-alpha.0",
+  "version": "1.0.42-alpha.0",
   "type": "module",
   "description": "eslint config for typescript",
   "engines": {
@@ -10,7 +10,9 @@
     "build": "tsdown --dts --minify --format esm,cjs src/index.ts",
     "create": "bash ../../scripts/remove-deactivated-rules.sh src/index.ts ./src/config.js"
   },
-  "files": ["./dist*"],
+  "files": [
+    "./dist*"
+  ],
   "exports": {
     "import": {
       "types": "./dist/index.d.ts",

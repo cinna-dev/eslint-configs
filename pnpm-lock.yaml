@@ -97,22 +97,22 @@ importers:
   packages/eslint-config:
     dependencies:
       '@cinna-dev/eslint-config-error':
-        specifier: ^1.0.23-alpha.0
+        specifier: ^1.0.24-alpha.0
         version: link:../eslint-config-error
       '@cinna-dev/eslint-config-import':
-        specifier: ^1.0.33-alpha.0
+        specifier: ^1.0.34-alpha.0
         version: link:../eslint-config-import
       '@cinna-dev/eslint-config-react':
-        specifier: ^1.0.20-alpha.0
+        specifier: ^1.0.21-alpha.0
         version: link:../eslint-config-react
       '@cinna-dev/eslint-config-style':
-        specifier: ^1.0.37-alpha.0
+        specifier: ^1.0.38-alpha.0
         version: link:../eslint-config-style
       '@cinna-dev/eslint-config-suggestions':
-        specifier: ^1.0.38-alpha.0
+        specifier: ^1.0.39-alpha.0
         version: link:../eslint-config-suggestions
       '@cinna-dev/eslint-config-ts':
-        specifier: ^1.0.41-alpha.0
+        specifier: ^1.0.42-alpha.0
         version: link:../eslint-config-ts
       eslint:
         specifier: ^9

@@ -1,6 +1,6 @@
 {
   "name": "@cinna-dev/eslint-config-error",
-  "version": "1.0.23-alpha.0",
+  "version": "1.0.24-alpha.0",
   "type": "module",
   "description": "eslint config finding potential errors",
   "scripts": {

@@ -1,6 +1,6 @@
 {
   "name": "@cinna-dev/eslint-config-react",
-  "version": "1.0.20-alpha.0",
+  "version": "1.0.21-alpha.0",
   "type": "module",
   "description": "eslint config for react",
   "scripts": {
