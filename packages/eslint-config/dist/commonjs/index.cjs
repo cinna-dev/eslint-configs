@@ -15,9 +15,9 @@ module.exports = [
     //         }
     //     }
     // },
-    ...eslintConfigError.default,
-    ...eslintConfigSuggestions.default,
+    ...eslintConfigError,
+    ...eslintConfigSuggestions,
     ...rules,
-    ...eslintConfigReact.default,
-    ...eslintConfigImport.default,
+    ...eslintConfigReact,
+    ...eslintConfigImport,
 ]; //as Linter.Config[];

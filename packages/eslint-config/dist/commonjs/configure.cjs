@@ -10,10 +10,10 @@ const eslintConfigImport = require("@cinna-dev/eslint-config-import/config");
 module.exports = function (projectDir = '', parserOptions = {}) {
     return [
         ...eslintConfigTs.configure(projectDir, parserOptions),
-        ...eslintConfigStyle.default,
-        ...eslintConfigError.default,
-        ...eslintConfigSuggestions.default,
-        ...eslintConfigReact.default,
-        ...eslintConfigImport.default,
+        ...eslintConfigStyle,
+        ...eslintConfigError,
+        ...eslintConfigSuggestions,
+        ...eslintConfigReact,
+        ...eslintConfigImport,
     ]; //as Linter.Config[]
 };

@@ -8,10 +8,10 @@ const eslintConfigReact = require("@cinna-dev/eslint-config-react");
 const eslintConfigImport = require("@cinna-dev/eslint-config-import/config");
 // import type { Linter } from 'eslint';
 module.exports = [
-    ...eslintConfigStyle.default,
-    ...eslintConfigError.default,
-    ...eslintConfigSuggestions.default,
-    ...eslintConfigTs.rules.default,
-    ...eslintConfigReact.default,
-    ...eslintConfigImport.default,
+    ...eslintConfigStyle,
+    ...eslintConfigError,
+    ...eslintConfigSuggestions,
+    ...eslintConfigTs.rules,
+    ...eslintConfigReact,
+    ...eslintConfigImport,
 ]; //as Linter.Config[];
