@@ -1,6 +1,6 @@
 {
   "name": "@cinna-dev/eslint-config",
-  "version": "1.0.80-alpha.0",
+  "version": "1.0.81-alpha.0",
   "description": "eslint config",
   "type": "module",
   "main": "src/module/index.ts",
