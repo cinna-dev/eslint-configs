@@ -7,6 +7,9 @@
     "build": "pnpm run create && tsdown --dts --minify --format esm,cjs --entry src/index.ts --entry src/config.ts --entry src/ci.ts",
     "create": "bash ../../scripts/extract-rules.sh src/index.ts src/config.ts"
   },
+  "files": [
+    "dist/"
+  ],
   "exports": {
     ".": {
       "import": {

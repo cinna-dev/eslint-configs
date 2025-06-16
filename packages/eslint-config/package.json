@@ -15,6 +15,9 @@
   "scripts": {
     "build": "tsc"
   },
+  "files": [
+    "dist/"
+  ],
   "exports": {
     ".": {
       "import": {

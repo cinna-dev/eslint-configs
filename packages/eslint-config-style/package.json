@@ -6,6 +6,9 @@
   "scripts": {
     "build": "tsdown --dts --minify --format esm,cjs src/index.ts src/basic.ts"
   },
+  "files": [
+    "dist/"
+  ],
   "exports": {
     ".": {
       "import": {

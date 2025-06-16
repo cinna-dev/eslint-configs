@@ -8,10 +8,12 @@
   },
   "scripts": {
     "build": "tsdown --dts --minify --format esm,cjs src/index.ts",
-    "create": "bash ../../scripts/remove-deactivated-rules.sh src/index.ts ./src/config.js"
+    "create": "bash ../../scripts/remove-deactivated-rules.sh src/index.ts ./src/config.js",
+    "pack-test": "npm pack && tar -tf cinna-dev-eslint-config-ts*.tgz && rm cinna-dev-eslint-config-ts*.tgz",
+    "show-package": "tar -tf cinna-dev-eslint-config-ts*.tgz"
   },
   "files": [
-    "./dist*"
+    "dist/"
   ],
   "exports": {
     "import": {

@@ -8,7 +8,7 @@
     "build": "terser src/index.js -o dist/index.js"
   },
   "files": [
-    "dist"
+    "dist/"
   ],
   "keywords": [
     "eslint",
