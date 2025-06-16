@@ -4,7 +4,7 @@
   "type": "module",
   "description": "eslint config for react",
   "scripts": {
-    "build": "tsup --dts --minify --format esm,cjs src/index.ts"
+    "build": "tsdown --dts --minify --format esm,cjs src/index.ts"
   },
   "types": "dist/index.d.ts",
   "exports": {

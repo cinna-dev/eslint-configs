@@ -172,7 +172,7 @@ export default  [
             // This rule aims to maintain consistency around the spacing inside of JSX attributes and expressions inside element children.
             // It either requires or disallows spaces between those braces and the values inside of them.
             "react/jsx-curly-spacing": [
-                "warn",
+                "off",
                 {
                     when: "never",
                     children: true,
@@ -276,8 +276,8 @@ export default  [
             "react/jsx-no-bind": [
                 "warn",
                 {
-                    ignoreDOMComponents: false,
-                    ignoreRefs: false,
+                    ignoreDOMComponents: true,
+                    ignoreRefs: true,
                     allowArrowFunctions: false,
                     allowFunctions: true,
                     allowBind: false,

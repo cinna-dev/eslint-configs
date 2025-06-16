@@ -4,7 +4,7 @@
   "type": "module",
   "description": "eslint config",
   "scripts": {
-    "build": "tsup --dts --minify --format esm,cjs src/index.ts src/basic.ts"
+    "build": "tsdown --dts --minify --format esm,cjs src/index.ts src/basic.ts"
   },
   "exports": {
     ".": {

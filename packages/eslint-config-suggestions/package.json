@@ -4,7 +4,7 @@
   "type": "module",
   "description": "eslint config for suggestions",
   "scripts": {
-    "build": "tsup --dts --minify --format esm,cjs src/index.ts"
+    "build": "tsdown --dts --minify --format esm,cjs src/index.ts"
   },
   "exports": {
     "import": {

@@ -347,7 +347,7 @@ export default [
             // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-anonymous-default-export.md
             // Reports if a module's default export is unnamed. This includes several types of unnamed data types; literals, object expressions, arrays, anonymous functions, arrow functions, and anonymous class declarations.
             // Ensuring that default exports are named helps improve the grepability of the codebase by encouraging the re-use of the same identifier for the module's default export at its declaration site and at its import sites.
-            "import/no-anonymous-default-export": ["error", {
+            "import/no-anonymous-default-export": ["off", {
                 "allowArray": false,
                 "allowArrowFunction": false,
                 "allowAnonymousClass": false,
@@ -361,7 +361,7 @@ export default [
             // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-default-export.md
             // Prohibit default exports. Mostly an inverse of `prefer-default-export`.
             // * should prefer names export and prohibit default exports
-            "import/no-default-export": "error",
+            "import/no-default-export": "off",
 
             // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-duplicates.md
             // Reports if a resolved path is imported more than once. +(fixable) The --fix option on the [command line] automatically fixes some problems reported by this rule.

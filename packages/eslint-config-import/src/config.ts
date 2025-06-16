@@ -37,8 +37,8 @@ export default [
             "import/group-exports": "off",
             "import/max-dependencies": ["warn", {                "max": 10,                "ignoreTypeImports": true,            }],
             "import/newline-after-import": ["off", {"count": 2}],
-            "import/no-anonymous-default-export": ["error", {                "allowArray": false,                "allowArrowFunction": false,                "allowAnonymousClass": false,                "allowAnonymousFunction": false,                "allowLiteral": false,                "allowObject": false            }],
-            "import/no-default-export": "error",
+            "import/no-anonymous-default-export": ["off", {                "allowArray": false,                "allowArrowFunction": false,                "allowAnonymousClass": false,                "allowAnonymousFunction": false,                "allowLiteral": false,                "allowObject": false            }],
+            "import/no-default-export": "off",
             "import/no-duplicates": "error",
             "import/no-named-default": "error",
             "import/no-named-export": "off",

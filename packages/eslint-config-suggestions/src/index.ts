@@ -35,7 +35,7 @@ export default [
             // This rule focuses on using the camelcase approach.
             // If your style guide calls for camelCasing your variable names, then this rule is for you!
             camelcase: [
-                "warn",
+                "off",
                 {
                     "properties": "never"
                 }
@@ -239,7 +239,7 @@ export default [
             // https://eslint.org/docs/latest/rules/multiline-comment-style
             // Enforce a particular style for multiline comments
             // This rule aims to enforce a particular style for multiline comments.
-            "multiline-comment-style": ["warn", "separate-lines"],
+            "multiline-comment-style": ["off", "separate-lines"],
 
             // https://eslint.org/docs/latest/rules/new-cap
             // Require constructor names to begin with a capital letter
@@ -293,7 +293,7 @@ export default [
             // it’s considered a best practice to avoid using methods on `console`.
             // Such messages are considered to be for debugging purposes and therefore not suitable to ship to the client.
             // In general, calls using `console` should be stripped before being pushed to production.
-            "no-console": ["error", {allow: ["warn", "error"]}],
+            'no-console': ['error', { allow: ['warn', 'error', 'info', 'debug', 'time', 'timeEnd'] }],
 
             // https://eslint.org/docs/latest/rules/no-continue
             // Disallow `continue` statements
@@ -336,7 +336,7 @@ export default [
             // Disallow `null` comparisons without type-checking operators
             // The `no-eq-null` rule aims reduce potential bug and unwanted behavior by ensuring that comparisons to null only match `null`,
             // and not also `undefined`. As such it will flag comparisons to null when using `==` and `!=.`
-            "no-eq-null": "error",
+            "no-eq-null": "off",
 
             // https://eslint.org/docs/latest/rules/no-eval
             // Disallow the use of `eval()`

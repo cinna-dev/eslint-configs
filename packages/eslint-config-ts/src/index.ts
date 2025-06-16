@@ -201,7 +201,7 @@ export const rules:Linter.Config[]  = [
             // Explicit types for function return values and arguments makes it clear to any calling code what is the module boundary's input and output. Adding explicit type annotations for those types can help improve code readability.
             /* It can also improve TypeScript type checking performance on larger codebases. */
             "@typescript-eslint/explicit-module-boundary-types": [
-                "warn",
+                "off",
                 {
                     "allowedNames": returnTypeWhitelist
                 }
@@ -523,7 +523,7 @@ export const rules:Linter.Config[]  = [
 
             // https://typescript-eslint.io/rules/prefer-enum-initializers/
             /* Require each enum member value to be explicitly initialized. */
-            "@typescript-eslint/prefer-enum-initializers": "warn",
+            "@typescript-eslint/prefer-enum-initializers": "off",
 
             // https://typescript-eslint.io/rules/prefer-for-of/
             /* Enforce the use of `for-of` loop over the standard `for` loop where possible. */
@@ -730,7 +730,7 @@ export const rules:Linter.Config[]  = [
             /* https://typescript-eslint.io/rules/no-empty-function */
             "no-empty-function": "off",
             "@typescript-eslint/no-empty-function": [
-                "error", {
+                "off", {
                     "allow": [
                         "private-constructors",
                         "protected-constructors",
@@ -800,7 +800,7 @@ export const rules:Linter.Config[]  = [
             "@typescript-eslint/no-useless-constructor": "warn",
             /* https://typescript-eslint.io/rules/require-await */
             "require-await": "off",
-            "@typescript-eslint/require-await": "error",
+            "@typescript-eslint/require-await": "off",
             /* https://typescript-eslint.io/rules/return-await */
             "no-return-await": "off",
             "@typescript-eslint/return-await": "warn",

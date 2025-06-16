@@ -91,14 +91,22 @@ pnpm add -w <package_to_add>
 
 ## Package.json
 
+## ignore `src` when publishing
+
+define the files that only should be included in the published `node_module`
+
+_package.json_
+
+```json
+{
+  "files": ["dist/*"]
+}
+```
+
 ### ESM
 
 when exporting **ecma script modules** use `"type": "module`
 
-
-import/group-exports
-
-suggestions
 
 ### Test
 

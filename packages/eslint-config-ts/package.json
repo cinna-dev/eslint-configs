@@ -7,9 +7,10 @@
     "node": ">=20"
   },
   "scripts": {
-    "build": "tsup --dts --minify --format esm,cjs src/index.ts",
+    "build": "tsdown --dts --minify --format esm,cjs src/index.ts",
     "create": "bash ../../scripts/remove-deactivated-rules.sh src/index.ts ./src/config.js"
   },
+  "files": ["./dist*"],
   "exports": {
     "import": {
       "types": "./dist/index.d.ts",
