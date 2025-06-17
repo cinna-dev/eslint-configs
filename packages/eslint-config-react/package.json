@@ -4,16 +4,19 @@
   "type": "module",
   "description": "eslint config for react",
   "scripts": {
-    "build": "tsdown --dts --minify --format esm,cjs src/index.ts"
+    "build": "tsdown --dts --minify --format esm,cjs --entry src/index.ts --entry src/withReactCompiler.ts"
   },
   "types": "dist/index.d.ts",
   "files": [
-    "dist/"
+    "dist/withReactCompiler.d.ts",
+    "dist/withReactCompiler.js",
+    "dist/index.d.cts",
+    "dist/index.cjs"
   ],
   "exports": {
     "import": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
+      "types": "./dist/withReactCompiler.d.ts",
+      "default": "./dist/withReactCompiler.js"
     },
     "require": {
       "types": "./dist/index.d.cts",

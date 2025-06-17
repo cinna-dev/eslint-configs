@@ -3,7 +3,7 @@ import jsxA11y  from 'eslint-plugin-jsx-a11y';
 import type { Rule }  from 'eslint';
 import globals from 'globals';
 import reactHooks  from 'eslint-plugin-react-hooks';
-import reactCompiler from 'eslint-plugin-react-compiler';
+// import reactCompiler from 'eslint-plugin-react-compiler';
 import reactRefresh from  'eslint-plugin-react-refresh' ;
 
 
@@ -16,7 +16,7 @@ export default  [
             react,
             'jsx-a11y': jsxA11y as unknown as Rule.RuleModule,
             'react-hooks': reactHooks,
-            'react-compiler': reactCompiler,
+            // 'react-compiler': reactCompiler,
         },
         languageOptions: {
             parserOptions: {
@@ -950,7 +950,7 @@ export default  [
             /* react hooks */
             ...reactHooks.configs.recommended.rules,
             /* react compiler */
-            "react-compiler/react-compiler": "error"
+            // "react-compiler/react-compiler": "error"
         },
     },
     {

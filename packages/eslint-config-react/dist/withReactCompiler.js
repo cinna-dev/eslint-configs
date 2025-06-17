@@ -1,0 +1,1 @@
+import{src_default as e}from"./src-DPk-_c5g.js";import t from"eslint-plugin-react-compiler";var n=[...e,{...e[0],plugins:{...e[0].plugins,"react-compiler":t},rules:{...e[0].rules,"react-compiler/react-compiler":`error`}}];export{n as default};
