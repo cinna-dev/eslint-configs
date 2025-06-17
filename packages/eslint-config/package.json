@@ -1,6 +1,6 @@
 {
   "name": "@cinna-dev/eslint-config",
-  "version": "1.0.81-alpha.0",
+  "version": "1.0.82-alpha.0",
   "description": "eslint config",
   "type": "module",
   "main": "src/module/index.ts",
@@ -56,7 +56,7 @@
   "dependencies": {
     "@cinna-dev/eslint-config-error": "^1.0.25-alpha.0",
     "@cinna-dev/eslint-config-import": "^1.0.35-alpha.0",
-    "@cinna-dev/eslint-config-react": "^1.0.22-alpha.0",
+    "@cinna-dev/eslint-config-react": "^1.0.23-alpha.0",
     "@cinna-dev/eslint-config-style": "^1.0.39-alpha.0",
     "@cinna-dev/eslint-config-suggestions": "^1.0.40-alpha.0",
     "@cinna-dev/eslint-config-ts": "^1.0.43-alpha.0"
