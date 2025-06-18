@@ -6,7 +6,6 @@
   "scripts": {
     "build": "tsdown --dts --minify --format cjs --entry src/index.ts && tsdown --dts --minify --no-clean --format esm --entry src/withReactCompiler.ts"
   },
-  "types": "dist/index.d.ts",
   "files": [
     "dist/withReactCompiler.d.ts",
     "dist/withReactCompiler.js",
