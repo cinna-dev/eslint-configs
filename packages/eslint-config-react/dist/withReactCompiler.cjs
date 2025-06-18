@@ -1,1 +1,0 @@
-const e=require(`./src-DzLMczR8.cjs`),t=e.__toESM(require(`eslint-plugin-react-compiler`));var n=[...e.src_default,{...e.src_default[0],plugins:{...e.src_default[0].plugins,"react-compiler":t.default},rules:{...e.src_default[0].rules,"react-compiler/react-compiler":`error`}}];module.exports=n;

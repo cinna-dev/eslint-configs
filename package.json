@@ -20,9 +20,9 @@
     "@swc/core": "^1.12.1",
     "@types/eslint": "^9.6.1",
     "@types/eslint-plugin-jsx-a11y": "^6.10.0",
-    "@types/node": "^24.0.1",
-    "@typescript-eslint/eslint-plugin": "^8.34.0",
-    "@typescript-eslint/parser": "^8.34.0",
+    "@types/node": "^24.0.3",
+    "@typescript-eslint/eslint-plugin": "^8.34.1",
+    "@typescript-eslint/parser": "^8.34.1",
     "add": "^2.0.6",
     "babel-minify": "^0.5.2",
     "eslint": "^9.29.0",
@@ -35,11 +35,11 @@
     "jiti": "^2.4.2",
     "lerna": "^8.2.2",
     "node-fetch": "^3.3.2",
-    "terser": "^5.42.0",
-    "tsdown": "^0.12.7",
+    "terser": "^5.43.0",
+    "tsdown": "^0.12.8",
     "tsup": "^8.5.0",
     "typescript": "^5.8.3",
-    "typescript-eslint": "^8.34.0"
+    "typescript-eslint": "^8.34.1"
   },
   "dependencies": {
     "comander": "0.0.1-security",
